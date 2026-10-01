@@ -99,7 +99,7 @@ export const RoundedDrawerNavExample = ({ children }: { children?: React.ReactNo
                         },
                         {
                             title: "Equipo e Institucional",
-                            description: "DTIC y comunidad técnica",
+                            description: "Equipo UMSA",
                             href: "/sobre-dataumsa/equipo-institucional",
                             icon: FiUsers,
                         },
