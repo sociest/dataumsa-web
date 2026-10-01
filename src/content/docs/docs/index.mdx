@@ -1,13 +1,11 @@
 ---
-title: Documentación de DataUMSA
+title: Documentación de DATAUMSA
 description: Guías completas, especificaciones técnicas y manuales operativos de la plataforma de recolección y análisis de datos de la Universidad Mayor de San Andrés.
 template: splash
 hero:
-  tagline: Diseña formularios avanzados, recolecta datos offline con DataUMSA Collect y analiza resultados en tiempo real con total soberanía tecnológica universitaria.
-  image:
-    file: ../../../assets/houston.webp
+  tagline: Diseña formularios avanzados, recolecta datos offline con DATAUMSA Collect y analiza resultados en tiempo real con total soberanía tecnológica universitaria.
   actions:
-    - text: Empezar con DataUMSA
+    - text: Empezar con DATAUMSA
       link: /docs/guides/empezando/
       icon: rocket
     - text: Inicio Rápido (5 Pasos)
@@ -26,27 +24,27 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 
 <CardGrid stagger>
 	<Card title="1. Primeros Pasos" icon="rocket">
-		Conoce la arquitectura general de DataUMSA, el ciclo de vida del dato y da tus primeros pasos en minutos con la [Guía de Inicio Rápido](/docs/guides/inicio-rapido/) y la introducción a la plataforma en [Empezando con DataUMSA](/docs/guides/empezando/).
+		Conoce la arquitectura general de DATAUMSA, el ciclo de vida del dato y da tus primeros pasos en minutos con la [Guía de Inicio Rápido](/docs/guides/inicio-rapido/) y la introducción a la plataforma en [Empezando con DATAUMSA](/docs/guides/empezando/).
 	</Card>
 	<Card title="2. Diseño de Cuestionarios" icon="pencil">
 		Crea encuestas intuitivas desde el [Constructor Web](/docs/guides/constructor-formularios/) o construye formularios complejos con [XLSForm en Excel](/docs/guides/formularios-excel-xlsform/). Añade soporte multilingüe con [Aymara, Quechua y Guaraní](/docs/guides/configuracion-idiomas/).
 	</Card>
 	<Card title="3. Operaciones de Campo" icon="mobile">
-		Despliega brigadas universitarias con [DataUMSA Collect para Android](/docs/guides/recoleccion-datos-campo-web/) para capturar coordenadas GPS, fotografías y firmas sin conexión a internet, o comparte enlaces web con Enketo.
+		Despliega brigadas universitarias con [DATAUMSA Collect para Android](/docs/guides/recoleccion-datos-campo-web/) para capturar coordenadas GPS, fotografías y firmas sin conexión a internet, o comparte enlaces web con Enketo.
 	</Card>
 	<Card title="4. Gestión y Control de Calidad" icon="setting">
 		Monitorea el avance del levantamiento en formato tabla interactiva, audita inconsistencias y califica encuestas (Aprobado, En Revisión, Rechazado) con la [Guía de Gestión de Datos](/docs/guides/gestion-proyectos-datos/).
 	</Card>
 	<Card title="5. Análisis, Reportes y Mapas" icon="bars">
-		Genera reportes estadísticos automáticos en tiempo real y visualiza la cobertura geográfica de tu brigada en mapas interactivos con la guía de [Análisis Rápido y Mapas GPS](/docs/guides/analisis-datos-reportes/).
+		Genera resúmenes estadísticos al instante, gráficos automáticos por variable y mapas con puntos GPS recogidos en terreno con la [Guía de Análisis de Datos](/docs/guides/analisis-datos-reportes/).
 	</Card>
-	<Card title="6. Conectividad y Business Intelligence" icon="laptop">
-		Automatiza la carga de tus bases de datos hacia **Microsoft Power BI** y **Excel** mediante sincronización dinámica por API REST en la guía de [Integración con Power BI y Excel](/docs/guides/integracion-powerbi-excel/).
+	<Card title="6. Integración Externa y Exportación" icon="laptop">
+		Conecta tus datos en tiempo real mediante API REST con Microsoft Power BI, Excel o exporta bases procesadas a SPSS y Stata con la [Guía de Integración con Power BI](/docs/guides/integracion-powerbi-excel/).
 	</Card>
-	<Card title="7. Soberanía Tecnológica y Seguridad" icon="approve-check-circle">
-		Aprende sobre la infraestructura local de servidores UMSA, cifrado de extremo a extremo y buenas prácticas éticas en [Seguridad y Protección de Datos](/docs/guides/seguridad-proteccion-datos/).
+	<Card title="7. Soberanía y Seguridad Institucional" icon="open-book">
+		Aprende sobre la infraestructura On-Premise alojada en servidores de la UMSA, control de roles por proyecto y respaldo seguro en la [Guía de Seguridad y Protección](/docs/guides/seguridad-proteccion-datos/).
 	</Card>
-	<Card title="8. Referencia Técnica XLSForm" icon="document">
-		Consulta el diccionario exhaustivo de tipos de preguntas, operadores lógicos, funciones matemáticas y sintaxis avanzada en la [Referencia de XLSForm](/docs/reference/xlsform/).
+	<Card title="8. Referencia XLSForm" icon="document">
+		Consulta la lista completa de tipos de preguntas, restricciones (`constraint`), lógica de salto (`relevant`) y cálculos de fórmulas en la [Referencia de XLSForm](/docs/reference/xlsform/).
 	</Card>
 </CardGrid>

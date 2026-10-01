@@ -1,21 +1,21 @@
 ---
-import { ClientRouter } from 'astro:transitions';
+import { ClientRouter } from "astro:transitions";
 import { RoundedDrawerNavExample } from "../components/Navbar";
 import Footer from "../components/components-astro/Footer.astro";
 import "../styles/global.css";
 
 interface Props {
-  title: string;
-  description?: string;
+    title: string;
+    description?: string;
 }
 
 const {
-  title,
-  description = "DataUMSA - Plataforma moderna y robusta para gestión de datos, encuestas y flujos de trabajo institucionales.",
+    title,
+    description = "DATAUMSA - Plataforma moderna y robusta para gestión de datos, encuestas y flujos de trabajo institucionales.",
 } = Astro.props;
 
-// Evitar títulos redundantes como "Casos de Uso | DataUMSA | DataUMSA"
-const displayTitle = title.includes("DataUMSA") ? title : `${title} | DataUMSA`;
+// Evitar títulos redundantes como "Casos de Uso | DATAUMSA | DATAUMSA"
+const displayTitle = title.includes("DATAUMSA") ? title : `${title} | DATAUMSA`;
 const siteUrl = "https://data.umsa.bo";
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 const absoluteOgImage = new URL("/logo_dataumsa.png", siteUrl).href;
@@ -23,57 +23,52 @@ const absoluteOgImage = new URL("/logo_dataumsa.png", siteUrl).href;
 
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="canonical" href={canonicalUrl} />
-    <meta name="generator" content={Astro.generator} />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="generator" content={Astro.generator} />
 
-    <!-- Primary Meta Tags -->
-    <title>{displayTitle}</title>
-    <meta name="title" content={displayTitle} />
-    <meta name="description" content={description} />
+        <!-- Primary Meta Tags -->
+        <title>{displayTitle}</title>
+        <meta name="title" content={displayTitle} />
+        <meta name="description" content={description} />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:title" content={displayTitle} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={absoluteOgImage} />
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:title" content={displayTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={absoluteOgImage} />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalUrl} />
-    <meta property="twitter:title" content={displayTitle} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={absoluteOgImage} />
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={canonicalUrl} />
+        <meta property="twitter:title" content={displayTitle} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={absoluteOgImage} />
 
-
-
-    <!-- Structured Data (JSON-LD) for SEO visibility -->
-    <script type="application/ld+json" is:inline>
-      {
-        "@context": "https://schema.org",
-        "@type": "EducationalOrganization",
-        "name": "DataUMSA",
-        "url": "https://data.umsa.bo",
-        "logo": "https://data.umsa.bo/logo_dataumsa.png",
-        "sameAs": [
-          "https://github.com/dataumsa"
-        ],
-        "description": "Plataforma avanzada de recolección y análisis de información académica, estadística y de investigación de la Universidad Mayor de San Andrés."
-      }
-    </script>
-
-    <!-- View Transitions -->
-    <ClientRouter />
-  </head>
-  <body class="bg-glow-container">
-    <RoundedDrawerNavExample client:load />
-    <main>
-      <slot />
-    </main>
-    <Footer />
-  </body>
+        <!-- Structured Data (JSON-LD) for SEO visibility -->
+        <script type="application/ld+json" is:inline>
+            {
+                "@context": "https://schema.org",
+                "@type": "EducationalOrganization",
+                "name": "DATAUMSA",
+                "url": "https://data.umsa.bo",
+                "logo": "https://data.umsa.bo/logo_dataumsa.png",
+                "sameAs": ["https://github.com/dataumsa"],
+                "description": "Plataforma avanzada de recolección y análisis de información académica, estadística y de investigación de la Universidad Mayor de San Andrés."
+            }
+        </script>
+        <!-- View Transitions -->
+        <ClientRouter />
+    </head>
+    <body class="bg-canvas text-ink min-h-screen flex flex-col font-sans">
+        <RoundedDrawerNavExample client:load />
+        <main>
+            <slot />
+        </main>
+        <Footer />
+    </body>
 </html>

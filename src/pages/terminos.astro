@@ -1,247 +1,362 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Badge from "../components/components-astro/Badge.astro";
+import Button from "../components/components-astro/Button.astro";
+import TextReveal from "../components/components-astro/TextReveal.astro";
+import {
+    FiShield,
+    FiAlertTriangle,
+    FiFileText,
+    FiArrowRight,
+} from "react-icons/fi";
 ---
 
 <Layout
-  title="Términos y Condiciones de Servicio"
-  description="Términos y condiciones de uso de la plataforma DataUMSA, Universidad Mayor de San Andrés."
+    title="Términos y Condiciones de Servicio | DATAUMSA"
+    description="Términos y condiciones de uso de la plataforma DATAUMSA, Universidad Mayor de San Andrés."
 >
-  <div
-    class="w-full relative py-20 px-6 md:px-8 overflow-hidden bg-glow-container min-h-screen"
-  >
-    {/* Fondo decorativo sutil con los tokens de acento */}
-    <div
-      class="absolute -left-40 top-20 w-[500px] h-[500px] bg-primary/5 rounded-full filter blur-3xl opacity-60 pointer-events-none"
-    >
+    <div class="w-full bg-canvas py-16 md:py-24 px-4 sm:px-6 lg:px-8 min-h-screen flex flex-col items-center">
+        <div class="max-w-4xl w-full mx-auto">
+            <!-- Cabecera de la página -->
+            <div class="mb-12 text-center md:text-left flex flex-col items-center md:items-start">
+                <Badge variant="primary" class="mb-4">
+                    Marco Legal
+                </Badge>
+                <h1 class="text-ink font-display text-4xl sm:text-5xl font-extrabold tracking-[-0.035em] leading-tight mb-4">
+                    Términos de Servicio y{" "}
+                    <TextReveal variant="light">Condiciones de Uso</TextReveal>
+                </h1>
+                <div class="flex flex-wrap items-center gap-3 mt-2">
+                    <span class="inline-block bg-primary-light border border-ink text-ink font-mono text-xs font-bold px-3 py-1 rounded-full">
+                        Última actualización: 12 de julio de 2026
+                    </span>
+                    <span class="text-sm font-sans font-medium text-text-muted">
+                        Vigente para el ecosistema universitario DATAUMSA
+                    </span>
+                </div>
+            </div>
+
+            <!-- Contenedor Bento Principal (White Plate) -->
+            <div class="bg-white border-[2.5px] border-ink rounded-[2.5rem] p-7 sm:p-10 md:p-12 space-y-10">
+                <!-- Sección 1 -->
+                <section class="space-y-4">
+                    <h2 class="text-ink font-display text-xl sm:text-2xl font-bold tracking-tight flex items-center gap-3.5">
+                        <span class="w-9 h-9 rounded-xl bg-primary-light border-2 border-ink text-ink font-mono font-bold text-sm flex items-center justify-center shrink-0">
+                            1
+                        </span>
+                        Aceptación de los Términos
+                    </h2>
+                    <p class="text-text-muted font-sans text-base leading-relaxed font-medium">
+                        Al acceder, registrarse o utilizar la plataforma{" "}
+                        <strong class="text-ink font-bold">DATAUMSA</strong>{" "}
+                        (incluyendo su entorno web y la aplicación móvil de
+                        recolección en campo), usted acepta cumplir y estar
+                        sujeto a los presentes términos de servicio. Si no está
+                        de acuerdo con alguna de las cláusulas, deberá
+                        abstenerse inmediatamente de utilizar la plataforma.
+                    </p>
+                </section>
+
+                <!-- Sección 2 -->
+                <section class="space-y-4 border-t-2 border-ink/10 pt-8">
+                    <h2 class="text-ink font-display text-xl sm:text-2xl font-bold tracking-tight flex items-center gap-3.5">
+                        <span class="w-9 h-9 rounded-xl bg-primary-light border-2 border-ink text-ink font-mono font-bold text-sm flex items-center justify-center shrink-0">
+                            2
+                        </span>
+                        Uso Permitido y Responsabilidad del Contenido
+                    </h2>
+                    <p class="text-text-muted font-sans text-base leading-relaxed font-medium">
+                        <strong class="text-ink font-bold">DATAUMSA</strong> es
+                        una infraestructura soberana provista para fines de
+                        investigación académica, proyectos institucionales,
+                        encuestas de campo y recolección ética de datos. La
+                        plataforma adopta un modelo abierto y democrático, por
+                        lo que{" "}
+                        <strong class="text-ink font-bold">
+                            cada autor de proyecto es el único y absoluto
+                            responsable legal
+                        </strong>{" "}
+                        del contenido, preguntas, fines y consecuencias
+                        derivadas de sus formularios.
+                    </p>
+                </section>
+
+                <!-- Sección 3 -->
+                <section class="space-y-4 border-t-2 border-ink/10 pt-8">
+                    <h2 class="text-ink font-display text-xl sm:text-2xl font-bold tracking-tight flex items-center gap-3.5">
+                        <span class="w-9 h-9 rounded-xl bg-primary-light border-2 border-ink text-ink font-mono font-bold text-sm flex items-center justify-center shrink-0">
+                            3
+                        </span>
+                        Prohibiciones Estrictas y Uso Indebido
+                    </h2>
+                    <p class="text-text-muted font-sans text-base leading-relaxed font-medium">
+                        Queda terminantemente prohibido utilizar la
+                        infraestructura de{" "}
+                        <strong class="text-ink font-bold">DATAUMSA</strong>{" "}
+                        para realizar cualquiera de las siguientes acciones:
+                    </p>
+                    <ul class="space-y-2.5 text-text-muted font-sans text-sm sm:text-base leading-relaxed font-medium pl-2">
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-2 h-2 rounded-full bg-danger border border-ink mt-2 shrink-0"></span>
+                            <span>
+                                <strong class="text-ink font-bold">
+                                    Actividades Ilícitas y Fraude:
+                                </strong>{" "}
+                                Creación de formularios destinados al robo de
+                                identidad (phishing), solicitud de contraseñas,
+                                credenciales de acceso, números de tarjetas de
+                                crédito o cualquier tipo de estafa digital.
+                            </span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-2 h-2 rounded-full bg-danger border border-ink mt-2 shrink-0"></span>
+                            <span>
+                                <strong class="text-ink font-bold">
+                                    Vulneración de Derechos:
+                                </strong>{" "}
+                                Recolección de información que atente contra los
+                                derechos humanos, promueva discursos de odio,
+                                extorsión o explotación de cualquier índole.
+                            </span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-2 h-2 rounded-full bg-danger border border-ink mt-2 shrink-0"></span>
+                            <span>
+                                <strong class="text-ink font-bold">
+                                    Abuso Técnico:
+                                </strong>{" "}
+                                Ejecución de scripts automatizados, ataques de
+                                denegación de servicio (DoS), inyección de
+                                código malicioso o uso desproporcionado de las
+                                APIs que ponga en riesgo la estabilidad del
+                                servidor universitario.
+                            </span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-2 h-2 rounded-full bg-danger border border-ink mt-2 shrink-0"></span>
+                            <span>
+                                <strong class="text-ink font-bold">
+                                    Uso Comercial No Autorizado:
+                                </strong>{" "}
+                                Explotación masiva de la plataforma con fines
+                                netamente lucrativos comerciales ajenos a los
+                                convenios académicos o institucionales de la
+                                universidad.
+                            </span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Sección 4: Advertencia y Rescisión -->
+                <section class="space-y-4 border-t-2 border-ink/10 pt-8">
+                    <h2 class="text-ink font-display text-xl sm:text-2xl font-bold tracking-tight flex items-center gap-3.5">
+                        <span class="w-9 h-9 rounded-xl bg-danger/15 border-2 border-danger text-danger font-mono font-bold text-sm flex items-center justify-center shrink-0">
+                            4
+                        </span>
+                        Cláusula de Rescisión Inmediata y Destrucción de Datos
+                    </h2>
+                    <p class="text-text-muted font-sans text-base leading-relaxed font-medium">
+                        El equipo técnico y la administración de{" "}
+                        <strong class="text-ink font-bold">DATAUMSA</strong>{" "}
+                        monitorizan la estabilidad del sistema y atienden
+                        reportes de abuso. Ante cualquier sospecha, indicio
+                        técnico o denuncia fundada de{" "}
+                        <strong class="text-ink font-bold">Uso Indebido</strong>{" "}
+                        (detallado en la Sección 3), la plataforma procederá de
+                        la siguiente manera:
+                    </p>
+
+                    <!-- Bento Warning Box -->
+                    <div class="p-6 rounded-2xl bg-danger/10 border-2 border-danger text-text-muted space-y-3">
+                        <div class="flex items-center gap-2 text-sm font-bold text-danger">
+                            <FiAlertTriangle className="w-5 h-5 shrink-0" />
+                            <span>
+                                Consecuencias de la infracción de términos:
+                            </span>
+                        </div>
+                        <ul class="space-y-2 text-xs sm:text-sm font-sans leading-relaxed font-medium pl-1">
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-danger mt-2 shrink-0"></span>
+                                <span>
+                                    <strong class="text-ink font-bold">
+                                        Baja Definitiva:
+                                    </strong>{" "}
+                                    Suspensión y eliminación inmediata de la
+                                    cuenta del usuario infractor sin previo
+                                    aviso.
+                                </span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-danger mt-2 shrink-0"></span>
+                                <span>
+                                    <strong class="text-ink font-bold">
+                                        Destrucción Irreversible:
+                                    </strong>{" "}
+                                    Borrado absoluto de todos los proyectos,
+                                    formularios y bases de datos recolectadas
+                                    asociadas a dicha cuenta.
+                                </span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-danger mt-2 shrink-0"></span>
+                                <span>
+                                    <strong class="text-ink font-bold">
+                                        Sin Derecho a Reclamación:
+                                    </strong>{" "}
+                                    El infractor pierde de manera definitiva
+                                    todo derecho a reclamar la recuperación,
+                                    exportación o copia de seguridad de la
+                                    información alojada.
+                                </span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="w-1.5 h-1.5 rounded-full bg-danger mt-2 shrink-0"></span>
+                                <span>
+                                    <strong class="text-ink font-bold">
+                                        Acciones Legales:
+                                    </strong>{" "}
+                                    La UMSA se reserva el derecho de derivar los
+                                    antecedentes técnicos ante las autoridades
+                                    competentes en caso de delitos informáticos
+                                    penados por la legislación vigente.
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Sección 5 -->
+                <section class="space-y-4 border-t-2 border-ink/10 pt-8">
+                    <h2 class="text-ink font-display text-xl sm:text-2xl font-bold tracking-tight flex items-center gap-3.5">
+                        <span class="w-9 h-9 rounded-xl bg-primary-light border-2 border-ink text-ink font-mono font-bold text-sm flex items-center justify-center shrink-0">
+                            5
+                        </span>
+                        Seguridad de Cuentas y Credenciales de Campo
+                    </h2>
+                    <p class="text-text-muted font-sans text-base leading-relaxed font-medium">
+                        Cada investigador es plenamente responsable de mantener
+                        el resguardo confidencial de sus llaves de acceso y
+                        tokens de sincronización móvil. Las credenciales
+                        utilizadas para vincular los dispositivos de campo deben
+                        ser manejadas con estricta reserva. En caso de detectar
+                        o sospechar de un acceso no autorizado, el usuario debe
+                        notificar inmediatamente a la administración de TI del
+                        sistema.
+                    </p>
+                </section>
+
+                <!-- Sección 6 -->
+                <section class="space-y-4 border-t-2 border-ink/10 pt-8">
+                    <h2 class="text-ink font-display text-xl sm:text-2xl font-bold tracking-tight flex items-center gap-3.5">
+                        <span class="w-9 h-9 rounded-xl bg-primary-light border-2 border-ink text-ink font-mono font-bold text-sm flex items-center justify-center shrink-0">
+                            6
+                        </span>
+                        Disponibilidad de la Infraestructura
+                    </h2>
+                    <p class="text-text-muted font-sans text-base leading-relaxed font-medium">
+                        Al tratarse de una infraestructura de red universitaria
+                        propia,{" "}
+                        <strong class="text-ink font-bold">DATAUMSA</strong> no
+                        garantiza un tiempo de actividad del 100% libre de
+                        interrupciones técnicas debidas a mantenimiento
+                        preventivo del centro de datos o actualizaciones
+                        críticas.{" "}
+                        <strong class="text-ink font-bold">
+                            Es obligación estricta de los investigadores
+                            realizar descargas y respaldos locales periódicos
+                        </strong>{" "}
+                        de sus bases de datos para evitar contingencias en sus
+                        cronogramas de trabajo.
+                    </p>
+                </section>
+
+                <!-- Sección 7 -->
+                <section class="space-y-4 border-t-2 border-ink/10 pt-8">
+                    <h2 class="text-ink font-display text-xl sm:text-2xl font-bold tracking-tight flex items-center gap-3.5">
+                        <span class="w-9 h-9 rounded-xl bg-primary-light border-2 border-ink text-ink font-mono font-bold text-sm flex items-center justify-center shrink-0">
+                            7
+                        </span>
+                        Evolución de la Plataforma, Actualizaciones y Deber de
+                        Revisión
+                    </h2>
+                    <p class="text-text-muted font-sans text-base leading-relaxed font-medium">
+                        Con el propósito de acompañar el crecimiento del
+                        proyecto, la incorporación paulatina de nuevas
+                        funcionalidades técnicas y la continua adecuación a las
+                        normativas de ciberseguridad y ética institucional de la
+                        Universidad Mayor de San Andrés,{" "}
+                        <strong class="text-ink font-bold">
+                            DATAUMSA se reserva el derecho de revisar, adaptar y
+                            actualizar los presentes Términos de Servicio cuando
+                            resulte necesario
+                        </strong>
+                        . Estas modificaciones responderán exclusivamente a
+                        criterios de mejora técnica, escalabilidad y
+                        fortalecimiento operativo de la plataforma.
+                    </p>
+
+                    <!-- Bento Callout Rojo / Aviso Importante -->
+                    <div class="p-5 sm:p-6 rounded-2xl bg-danger/10 border-2 border-danger text-text-muted space-y-2.5">
+                        <div class="flex items-center gap-2 text-sm font-bold text-danger">
+                            <FiAlertTriangle className="w-5 h-5 shrink-0" />
+                            <span class="font-mono uppercase tracking-wider text-xs sm:text-sm">
+                                Aviso Importante: Responsabilidad del Usuario y
+                                Aceptación Tácita
+                            </span>
+                        </div>
+                        <p class="text-xs sm:text-sm font-sans leading-relaxed text-ink font-medium">
+                            <strong class="text-danger font-bold">
+                                Es responsabilidad exclusiva de cada usuario
+                                revisar periódicamente esta página
+                            </strong>{" "}
+                            para mantenerse informado sobre las condiciones
+                            vigentes.{" "}
+                            <strong class="text-danger font-bold">
+                                DATAUMSA queda exenta de toda responsabilidad
+                                derivada del desconocimiento, omisión o falta de
+                                lectura de las actualizaciones por parte del
+                                usuario.
+                            </strong>
+                        </p>
+                        <p class="text-xs sm:text-sm font-sans leading-relaxed text-text-muted font-medium">
+                            El acceso o uso continuado de la plataforma (ya sea
+                            mediante el portal web o las aplicaciones móviles de
+                            recolección en campo) tras la publicación de
+                            cualquier cambio formaliza la aceptación plena,
+                            tácita y vinculante de los términos actualizados. Si
+                            no estuviera de acuerdo con las nuevas
+                            disposiciones, el usuario deberá abstenerse de
+                            continuar utilizando el servicio.
+                        </p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Quick Navigation Bento Pill Footer -->
+            <div class="mt-10 flex flex-wrap items-center justify-between gap-4 bg-white border-2 border-ink rounded-2xl p-5">
+                <div class="flex items-center gap-2">
+                    <FiShield className="w-5 h-5 text-primary" />
+                    <span class="text-xs font-mono font-bold text-ink">
+                        Documentación Legal DATAUMSA
+                    </span>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <Button
+                        href="/privacidad"
+                        variant="bento-secondary"
+                        class="text-xs py-2 px-4"
+                    >
+                        <span>Políticas de Privacidad</span>
+                    </Button>
+                    <Button
+                        href="/sobre-dataumsa/equipo-institucional"
+                        variant="bento-secondary"
+                        class="text-xs py-2 px-4"
+                    >
+                        <span>Equipo e Institucional</span>
+                    </Button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div
-      class="absolute -right-40 bottom-20 w-[400px] h-[400px] bg-accent/5 rounded-full filter blur-3xl opacity-40 pointer-events-none"
-    >
-    </div>
-
-    <div class="max-w-4xl mx-auto relative z-10">
-      {/* Cabecera de la página */}
-      <div class="mb-12 text-center md:text-left">
-        <h1
-          class="text-4xl md:text-5xl font-black tracking-tight text-text-main leading-tight mb-4"
-        >
-          Términos de Servicio y Condiciones de Uso
-        </h1>
-        <p class="text-text-muted dark:text-text-dark-muted text-lg">
-          Última actualización: 12 de julio de 2026. Por favor, lea
-          detenidamente estas condiciones antes de utilizar la plataforma
-          DataUMSA.
-        </p>
-      </div>
-
-      {/* Contenedor con fondo adaptativo sólido y alto contraste */}
-      <div
-        class="bg-white dark:bg-bg-dark-surface rounded-[2.5rem] p-8 md:p-12 border border-border/60 dark:border-border-dark shadow-xl space-y-10"
-      >
-        <section class="space-y-4">
-          <h2
-            class="text-2xl font-bold text-text-main dark:text-white flex items-center gap-3"
-          >
-            <span
-              class="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary-dark dark:text-primary-light text-sm font-bold"
-              >1</span
-            >
-            Aceptación de los Términos
-          </h2>
-          <p class="text-text-muted dark:text-text-dark-muted leading-relaxed">
-            Al acceder, registrarse o utilizar la plataforma <strong
-              class="text-text-main dark:text-white">DataUMSA</strong
-            > (incluyendo su entorno web y la aplicación móvil de recolección en campo),
-            usted acepta cumplir y estar sujeto a los presentes términos de servicio.
-            Si no está de acuerdo con alguna de las cláusulas, deberá abstenerse inmediatamente
-            de utilizar la plataforma.
-          </p>
-        </section>
-
-        <section class="space-y-4">
-          <h2
-            class="text-2xl font-bold text-text-main dark:text-white flex items-center gap-3"
-          >
-            <span
-              class="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary-dark dark:text-primary-light text-sm font-bold"
-              >2</span
-            >
-            Uso Permitido y Responsabilidad del Contenido
-          </h2>
-          <p class="text-text-muted dark:text-text-dark-muted leading-relaxed">
-            DataUMSA es una infraestructura soberana provista para fines de
-            investigación académica, proyectos institucionales, encuestas de
-            campo y recolección ética de datos. La plataforma adopta un modelo
-            abierto y democrático, por lo que <strong
-              class="text-text-main dark:text-white"
-              >cada autor de proyecto es el único y absoluto responsable legal</strong
-            > del contenido, preguntas, fines y consecuencias derivadas de sus formularios.
-          </p>
-        </section>
-
-        <section class="space-y-4">
-          <h2
-            class="text-2xl font-bold text-text-main dark:text-white flex items-center gap-3"
-          >
-            <span
-              class="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary-dark dark:text-primary-light text-sm font-bold"
-              >3</span
-            >
-            Prohibiciones Estrictas y Uso Indebido
-          </h2>
-          <p class="text-text-muted dark:text-text-dark-muted leading-relaxed">
-            Queda terminantemente prohibido utilizar la infraestructura de
-            DataUMSA para realizar cualquiera de las siguientes acciones:
-          </p>
-          <ul
-            class="list-disc pl-6 space-y-2 text-text-muted dark:text-text-dark-muted leading-relaxed"
-          >
-            <li>
-              <strong class="text-text-main dark:text-white"
-                >Actividades Ilícitas y Fraude:</strong
-              > Creación de formularios destinados al robo de identidad (phishing),
-              solicitud de contraseñas, credenciales de acceso, números de tarjetas
-              de crédito o cualquier tipo de estafa digital.
-            </li>
-            <li>
-              <strong class="text-text-main dark:text-white"
-                >Vulneración de Derechos:</strong
-              > Recolección de información que atente contra los derechos humanos,
-              promueva discursos de odio, extorsión o explotación de cualquier índole.
-            </li>
-            <li>
-              <strong class="text-text-main dark:text-white"
-                >Abuso Técnico:</strong
-              > Ejecución de scripts automatizados, ataques de denegación de servicio
-              (DoS), inyección de código malicioso o uso desproporcionado de las APIs
-              que ponga en riesgo la estabilidad del servidor universitario.
-            </li>
-            <li>
-              <strong class="text-text-main dark:text-white"
-                >Uso Comercial No Autorizado:</strong
-              > Explotación masiva de la plataforma con fines netamente lucrativos
-              comerciales ajenos a los convenios académicos o institucionales de la
-              universidad.
-            </li>
-          </ul>
-        </section>
-        <section class="space-y-4">
-          <h2
-            class="text-2xl font-bold text-text-main dark:text-white flex items-center gap-3"
-          >
-            <span
-              class="flex items-center justify-center w-8 h-8 rounded-lg bg-red-500/10 dark:bg-red-500/25 text-red-600 dark:text-red-400 text-sm font-bold"
-              >4</span
-            >
-            Cláusula de Rescisión Inmediata y Destrucción de Datos
-          </h2>
-          <p class="text-text-muted dark:text-text-dark-muted leading-relaxed">
-            El equipo técnico y la administración de DataUMSA monitorizan la
-            estabilidad del sistema y atienden reportes de abuso. Ante cualquier
-            sospecha, indicio técnico o denuncia fundada de <strong
-              class="text-text-main dark:text-white">Uso Indebido</strong
-            > (detallado en la Sección 3), la plataforma procederá de la siguiente
-            manera:
-          </p>
-          <div
-            class="p-5 rounded-2xl bg-red-500/5 border border-red-500/20 dark:bg-red-500/10 text-text-muted dark:text-text-dark-muted space-y-3"
-          >
-            <p class="font-semibold text-red-600 dark:text-red-400">
-              Consecuencias de la infracción de términos:
-            </p>
-            <ul class="list-disc pl-6 space-y-1.5 text-sm leading-relaxed">
-              <li>
-                <strong class="text-text-main dark:text-white"
-                  >Baja Definitiva:</strong
-                > Suspensión y eliminación inmediata de la cuenta del usuario infractor
-                sin previo aviso.
-              </li>
-              <li>
-                <strong class="text-text-main dark:text-white"
-                  >Destrucción Irreversible:</strong
-                > Borrado absoluto de todos los proyectos, formularios y bases de
-                datos recolectadas asociadas a dicha cuenta.
-              </li>
-              <li>
-                <strong class="text-text-main dark:text-white"
-                  >Sin Derecho a Reclamación:</strong
-                > El infractor pierde de manera definitiva todo derecho a reclamar
-                la recuperación, exportación o copia de seguridad de la información
-                alojada.
-              </li>
-              <li>
-                <strong class="text-text-main dark:text-white"
-                  >Acciones Legales:</strong
-                > La UMSA se reserva el derecho de derivar los antecedentes técnicos
-                ante las autoridades competentes en caso de delitos informáticos penados
-                por la legislación vigente.
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <section class="space-y-4">
-          <h2
-            class="text-2xl font-bold text-text-main dark:text-white flex items-center gap-3"
-          >
-            <span
-              class="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary-dark dark:text-primary-light text-sm font-bold"
-              >5</span
-            >
-            Seguridad de Cuentas y Credenciales de Campo
-          </h2>
-          <p class="text-text-muted dark:text-text-dark-muted leading-relaxed">
-            Cada investigador es plenamente responsable de mantener el resguardo
-            confidencial de sus llaves de acceso y tokens de sincronización
-            móvil. Las credenciales utilizadas para vincular los dispositivos de
-            campo deben ser manejadas con estricta reserva. En caso de detectar
-            o sospechar de un acceso no autorizado, el usuario debe notificar
-            inmediatamente a la administración de TI del sistema.
-          </p>
-        </section>
-
-        <section class="space-y-4">
-          <h2
-            class="text-2xl font-bold text-text-main dark:text-white flex items-center gap-3"
-          >
-            <span
-              class="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary-dark dark:text-primary-light text-sm font-bold"
-              >6</span
-            >
-            Disponibilidad de la Infraestructura
-          </h2>
-          <p class="text-text-muted dark:text-text-dark-muted leading-relaxed">
-            Al tratarse de una infraestructura de red universitaria propia,
-            DataUMSA no garantiza un tiempo de actividad del 100% libre de
-            interrupciones técnicas debidas a mantenimiento preventivo del
-            centro de datos o actualizaciones críticas. <strong
-              class="text-text-main dark:text-white"
-              >Es obligación estricta de los investigadores realizar descargas y
-              respaldos locales periódicos</strong
-            > de sus bases de datos para evitar contingencias en sus cronogramas de
-            trabajo.
-          </p>
-        </section>
-
-        <section class="space-y-4">
-          <h2
-            class="text-2xl font-bold text-text-main dark:text-white flex items-center gap-3"
-          >
-            <span
-              class="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary-dark dark:text-primary-light text-sm font-bold"
-              >7</span
-            >
-            Modificación de las Condiciones
-          </h2>
-          <p class="text-text-muted dark:text-text-dark-muted leading-relaxed">
-            La administración de la plataforma se reserva el derecho de
-            modificar estos términos de servicio con el fin de adaptarlos a las
-            normativas de ética científica de la UMSA o a nuevas políticas de
-            ciberseguridad. El uso continuado del sistema tras una actualización
-            implica la aceptación plena de las nuevas condiciones.
-          </p>
-        </section>
-      </div>
-    </div>
-  </div>
 </Layout>

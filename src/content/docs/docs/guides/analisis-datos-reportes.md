@@ -1,9 +1,9 @@
 ---
 title: Análisis Rápido, Gráficos y Mapas GPS
-description: Herramientas integradas en DataUMSA para visualizar reportes estadísticos y mapas territoriales al instante.
+description: Herramientas integradas en DATAUMSA para visualizar reportes estadísticos y mapas territoriales al instante.
 ---
 
-No es estrictamente necesario descargar los datos y procesarlos en herramientas externas para tener una primera lectura de los resultados. **DataUMSA** incorpora herramientas de análisis descriptivo y visualización geoespacial en tiempo real.
+No es estrictamente necesario descargar los datos y procesarlos en herramientas externas para tener una primera lectura de los resultados. **DATAUMSA** incorpora herramientas de análisis descriptivo y visualización geoespacial en tiempo real.
 
 Para acceder a estas herramientas, abre tu proyecto y dirígete a la pestaña **Datos**.
 
@@ -11,7 +11,7 @@ Para acceder a estas herramientas, abre tu proyecto y dirígete a la pestaña **
 
 ## Informes y Gráficos Estadísticos Automáticos
 
-Al hacer clic en la sección **Informes** del submenú lateral izquierdo, DataUMSA genera automáticamente representaciones gráficas para cada variable del cuestionario:
+Al hacer clic en la sección **Informes** del submenú lateral izquierdo, DATAUMSA genera automáticamente representaciones gráficas para cada variable del cuestionario:
 
 * **Preguntas de opción simple (`select_one`):** Gráficos de barras y circulares (torta) con distribución porcentual y conteo absoluto de frecuencias.
 * **Preguntas de opción múltiple (`select_multiple`):** Gráficos de frecuencia desagregados por cada alternativa seleccionada.
@@ -36,7 +36,7 @@ Si al formular tu cuestionario agregaste una pregunta de tipo **Punto GPS** (`ge
 3. Haz clic sobre cualquier punto para abrir una ventana emergente que despliega el resumen completo de la entrevista realizada en esa ubicación exacta.
 
 ```
-       [ Mapa Interactivo DataUMSA ]
+       [ Mapa Interactivo DATAUMSA ]
   ┌─────────────────────────────────────────┐
   │  ▲ [La Paz - Sede Central]              │
   │    📍 Punto A: 15 encuestas completadas │

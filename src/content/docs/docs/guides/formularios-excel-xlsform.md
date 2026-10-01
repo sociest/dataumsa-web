@@ -3,7 +3,7 @@ title: Creación con Microsoft Excel (XLSForm)
 description: Aprende a estructurar tus encuestas de manera masiva y eficiente utilizando el estándar internacional XLSForm en hojas de cálculo.
 ---
 
-Aunque el Constructor Web de **DataUMSA** es idóneo para cuestionarios breves, cuando una investigación académica requiere cuestionarios extensos (más de 50 o 100 preguntas), cálculos matemáticos automáticos en campo o traducciones a lenguas originarias, el diseño en **Microsoft Excel** mediante el estándar internacional **XLSForm** representa el método más potente y productivo.
+Aunque el Constructor Web de **DATAUMSA** es idóneo para cuestionarios breves, cuando una investigación académica requiere cuestionarios extensos (más de 50 o 100 preguntas), cálculos matemáticos automáticos en campo o traducciones a lenguas originarias, el diseño en **Microsoft Excel** mediante el estándar internacional **XLSForm** representa el método más potente y productivo.
 
 ---
 
@@ -69,16 +69,16 @@ Esta hoja contiene una única fila con las propiedades del formulario:
 
 ---
 
-## Subir y Compilar tu XLSForm en DataUMSA
+## Subir y Compilar tu XLSForm en DATAUMSA
 
 1. Guarda tu archivo en formato `.xlsx`.
-2. Dirígete a la pantalla principal de proyectos en **DataUMSA**.
+2. Dirígete a la pantalla principal de proyectos en **DATAUMSA**.
 3. Haz clic en **NUEVO** y selecciona **Subir un archivo XLSForm**.
 4. Arrastra tu documento Excel o selecciónalo desde tu explorador de archivos.
 
 ### Detección y Resolución de Errores
 
-Si tu hoja de Excel contiene algún error de sintaxis (por ejemplo, haber escrito un espacio en un `name` o referenciar una lista en `choices` con un nombre diferente), el motor de validación de DataUMSA te indicará exactamente:
+Si tu hoja de Excel contiene algún error de sintaxis (por ejemplo, haber escrito un espacio en un `name` o referenciar una lista en `choices` con un nombre diferente), el motor de validación de DATAUMSA te indicará exactamente:
 * El nombre de la hoja (`survey` o `choices`).
 * El número exacto de fila donde se produjo la incoherencia.
 * La causa específica del error sintáctico.

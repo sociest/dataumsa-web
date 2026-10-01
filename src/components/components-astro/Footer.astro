@@ -1,156 +1,205 @@
 ---
-// Componente Footer para DataUMSA
+// Componente Footer para DATAUMSA
 const currentYear = new Date().getFullYear();
 ---
 
-<footer
-  class="w-full border-t border-border/40 bg-bg-main dark:bg-bg-dark py-16 px-6 lg:px-8 mt-auto flex justify-center"
->
-  <div class="w-full max-w-7xl flex flex-col gap-12">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
-      {/* Columna 1: Branding y Eslogan */}
-      <div class="lg:col-span-2 flex flex-col gap-6">
-        <a href="/" class="flex items-center no-underline max-w-max">
-          <img
-            src="/logo_dataumsa.png"
-            alt="Logo DataUMSA"
-            width="200"
-            height="40"
-            class="h-10 w-auto object-contain"
-          />
-        </a>
-        <p
-          class="text-text-muted dark:text-text-dark-muted text-sm leading-relaxed max-w-sm"
-        >
-          Plataforma avanzada de recolección y análisis de información
-          académica, estadística y de investigación de la Universidad Mayor de
-          San Andrés. Garantizando soberanía tecnológica y científica.
-        </p>
-      </div>
+<footer class="w-full border-t-[2.5px] border-ink bg-midnight text-white py-16 px-6 lg:px-8 mt-auto flex justify-center">
+    <div class="w-full max-w-300 flex flex-col gap-12">
+        <!-- Rejilla Principal de 5 Columnas -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10">
+            <!-- Columna 1: Branding y Propósito (4 cols) -->
+            <div class="lg:col-span-4 flex flex-col gap-5">
+                <a
+                    href="/"
+                    class="flex items-center no-underline max-w-max group"
+                >
+                    <div class="bg-white border-2 border-ink rounded-2xl px-3.5 py-2 flex items-center group-hover:scale-[1.02] transition-transform duration-200">
+                        <img
+                            src="/logo_dataumsa.png"
+                            alt="Logo DATAUMSA"
+                            width="180"
+                            height="36"
+                            class="h-8 w-auto object-contain"
+                        />
+                    </div>
+                </a>
+                <p class="text-text-dark-muted font-sans text-sm leading-relaxed max-w-sm font-medium">
+                    Plataforma avanzada de recolección y análisis de información
+                    académica, estadística y de investigación de la Universidad
+                    Mayor de San Andrés. Garantizando soberanía tecnológica y
+                    científica.
+                </p>
+                <div class="flex items-center gap-2 text-xs font-mono text-primary bg-midnight-surface border border-border-dark px-3.5 py-1.5 rounded-full w-fit">
+                    <span class="w-2 h-2 rounded-full bg-success"></span>
+                    <span>Nodos UMSA 100% Operativos</span>
+                </div>
+            </div>
 
-      {/* Columna 2: La Plataforma */}
-      <div class="flex flex-col gap-4">
-        <h4
-          class="text-xs font-bold text-text-main dark:text-text-inverse uppercase tracking-wider"
-        >
-          La Plataforma
-        </h4>
-        <ul class="flex flex-col gap-3 list-none p-0 m-0">
-          <li>
-            <a
-              href="/la-plataforma/caracteristicas"
-              class="text-sm text-text-muted dark:text-text-dark-muted hover:text-primary transition-colors no-underline"
-            >
-              Características
-            </a>
-          </li>
-          <li>
-            <a
-              href="/la-plataforma/comparativa"
-              class="text-sm text-text-muted dark:text-text-dark-muted hover:text-primary transition-colors no-underline"
-            >
-              Comparativa
-            </a>
-          </li>
-          <li>
-            <a
-              href="/la-plataforma/casos-de-uso"
-              class="text-sm text-text-muted dark:text-text-dark-muted hover:text-primary transition-colors no-underline"
-            >
-              Casos de Uso
-            </a>
-          </li>
-        </ul>
-      </div>
+            <!-- Columna 2: La Plataforma (2 cols) -->
+            <div class="lg:col-span-2 flex flex-col gap-4">
+                <h4 class="text-xs font-mono font-bold text-primary uppercase tracking-wider">
+                    La Plataforma
+                </h4>
+                <ul class="flex flex-col gap-2.5 list-none p-0 m-0">
+                    <li>
+                        <a
+                            href="/la-plataforma/caracteristicas"
+                            class="text-sm font-sans font-medium text-text-dark-muted hover:text-white transition-colors no-underline"
+                        >
+                            Características
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="/la-plataforma/comparativa"
+                            class="text-sm font-sans font-medium text-text-dark-muted hover:text-white transition-colors no-underline"
+                        >
+                            Comparativa
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="/la-plataforma/casos-de-uso"
+                            class="text-sm font-sans font-medium text-text-dark-muted hover:text-white transition-colors no-underline"
+                        >
+                            Casos de Uso
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-      {/* Columna 3: Documentación y Descargas */}
-      <div class="flex flex-col gap-4">
-        <h4
-          class="text-xs font-bold text-text-main dark:text-text-inverse uppercase tracking-wider"
-        >
-          Documentación
-        </h4>
-        <ul class="flex flex-col gap-3 list-none p-0 m-0">
-          <li>
-            <a
-              href="/docs/guides/inicio-rapido"
-              class="text-sm text-text-muted dark:text-text-dark-muted hover:text-primary transition-colors no-underline"
-            >
-              Inicio Rápido
-            </a>
-          </li>
-          <li>
-            <a
-              href="/docs/guides/configuracion-idiomas"
-              class="text-sm text-text-muted dark:text-text-dark-muted hover:text-primary transition-colors no-underline"
-            >
-              Configuración de Idiomas
-            </a>
-          </li>
-          <li>
-            <a
-              href="/app-movil/descargas"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-sm text-text-muted dark:text-text-dark-muted hover:text-primary transition-colors no-underline flex items-center gap-2"
-            >
-              Descargar App Movil
-              <span class="w-1.5 h-1.5 rounded-full bg-success"></span>
-            </a>
-          </li>
-        </ul>
-      </div>
+            <!-- Columna 3: App Móvil & Docs (2 cols) -->
+            <div class="lg:col-span-2 flex flex-col gap-4">
+                <h4 class="text-xs font-mono font-bold text-primary uppercase tracking-wider">
+                    App & Docs
+                </h4>
+                <ul class="flex flex-col gap-2.5 list-none p-0 m-0">
+                    <li>
+                        <a
+                            href="/app-movil/dataumsa-collect"
+                            class="text-sm font-sans font-medium text-text-dark-muted hover:text-white transition-colors no-underline"
+                        >
+                            DATAUMSA Collect
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="/app-movil/descargas"
+                            class="text-sm font-sans font-medium text-text-dark-muted hover:text-white transition-colors no-underline inline-flex items-center gap-1.5"
+                        >
+                            <span>Descargas APK</span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-success"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="/docs"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-sm font-sans font-medium text-text-dark-muted hover:text-white transition-colors no-underline inline-flex items-center gap-1"
+                        >
+                            <span>Documentación</span>
+                            <svg
+                                class="w-3.5 h-3.5 text-text-muted shrink-0"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="10 9 15 9 15 14" />
+                                <line x1="9" y1="15" x2="15" y2="9" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-      {/* Columna 4: Legal */}
-      <div class="flex flex-col gap-4">
-        <h4
-          class="text-xs font-bold text-text-main dark:text-text-inverse uppercase tracking-wider"
-        >
-          Legal y Soporte
-        </h4>
-        <ul class="flex flex-col gap-3 list-none p-0 m-0">
-          <li>
-            <a
-              href="/terminos"
-              class="text-sm text-text-muted dark:text-text-dark-muted hover:text-primary transition-colors no-underline"
-            >
-              Términos de Servicio
-            </a>
-          </li>
-          <li>
-            <a
-              href="/privacidad"
-              class="text-sm text-text-muted dark:text-text-dark-muted hover:text-primary transition-colors no-underline"
-            >
-              Políticas de Privacidad
-            </a>
-          </li>
-          <li>
-            <a
-              href="/sobre-dataumsa/equipo-institucional"
-              class="text-sm text-text-muted dark:text-text-dark-muted hover:text-primary transition-colors no-underline"
-            >
-              Equipo Institucional
-            </a>
-          </li>
-        </ul>
-      </div>
+            <!-- Columna 4: Sobre DATAUMSA (2 cols) -->
+            <div class="lg:col-span-2 flex flex-col gap-4">
+                <h4 class="text-xs font-mono font-bold text-primary uppercase tracking-wider">
+                    Sobre DATAUMSA
+                </h4>
+                <ul class="flex flex-col gap-2.5 list-none p-0 m-0">
+                    <li>
+                        <a
+                            href="/sobre-dataumsa/historia"
+                            class="text-sm font-sans font-medium text-text-dark-muted hover:text-white transition-colors no-underline"
+                        >
+                            Nuestra Historia
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="/sobre-dataumsa/equipo-institucional"
+                            class="text-sm font-sans font-medium text-text-dark-muted hover:text-white transition-colors no-underline"
+                        >
+                            Equipo e Institucional
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Columna 5: Legal (2 cols) -->
+            <div class="lg:col-span-2 flex flex-col gap-4">
+                <h4 class="text-xs font-mono font-bold text-primary uppercase tracking-wider">
+                    Legal y Soporte
+                </h4>
+                <ul class="flex flex-col gap-2.5 list-none p-0 m-0">
+                    <li>
+                        <a
+                            href="/terminos"
+                            class="text-sm font-sans font-medium text-text-dark-muted hover:text-white transition-colors no-underline"
+                        >
+                            Términos de Servicio
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="/privacidad"
+                            class="text-sm font-sans font-medium text-text-dark-muted hover:text-white transition-colors no-underline"
+                        >
+                            Políticas de Privacidad
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://app-dataumsa.sociest.org/accounts/login/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-sm font-sans font-medium text-primary hover:underline transition-colors no-underline inline-flex items-center gap-1"
+                        >
+                            <span>Acceso Web</span>
+                            <svg
+                                class="w-3.5 h-3.5 text-primary shrink-0"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                aria-hidden="true"
+                            >
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="10 9 15 9 15 14" />
+                                <line x1="9" y1="15" x2="15" y2="9" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Sección inferior: Copyright e Información adicional -->
+        <div class="border-t-2 border-border-dark pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+            <p class="text-text-dark-muted font-sans text-xs">
+                &copy; {currentYear}{" "}
+                <strong class="text-white font-bold">DATAUMSA</strong>. Todos
+                los derechos reservados.
+            </p>
+        </div>
     </div>
-
-    {/* Sección inferior: Copyright e Información adicional */}
-    <div
-      class="border-t border-border/40 dark:border-border-dark pt-8 flex flex-col md:flex-row items-center justify-start gap-4 text-center md:text-left"
-    >
-      <p class="text-text-muted dark:text-text-dark-muted text-xs">
-        &copy; {currentYear} DataUMSA. Todos los derechos reservados.
-      </p>
-      <span class="hidden md:inline text-border dark:text-border-dark">|</span>
-      <p class="text-text-muted dark:text-text-dark-muted text-xs">
-        Desarrollado para el ecosistema tecnológico de la
-        <span class="font-bold text-text-main dark:text-text-inverse mx-1">
-          Universidad Mayor de San Andrés</span
-        >
-      </p>
-    </div>
-  </div>
 </footer>

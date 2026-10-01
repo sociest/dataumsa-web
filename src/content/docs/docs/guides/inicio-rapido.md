@@ -1,9 +1,9 @@
 ---
 title: Guía de Inicio Rápido
-description: Aprende a recolectar y analizar datos con la plataforma DataUMSA en 5 minutos.
+description: Aprende a recolectar y analizar datos con la plataforma DATAUMSA en 5 minutos.
 ---
 
-Esta guía te guiará a través del flujo completo de trabajo en la plataforma **DataUMSA**, desde el diseño del cuestionario hasta la obtención de datos listos para el análisis estadístico.
+Esta guía te guiará a través del flujo completo de trabajo en la plataforma **DATAUMSA**, desde el diseño del cuestionario hasta la obtención de datos listos para el análisis estadístico.
 
 ---
 
@@ -15,7 +15,7 @@ Esta guía te guiará a través del flujo completo de trabajo en la plataforma *
 3. Al ingresar, verás tu panel de control (Dashboard) con el listado de tus proyectos activos.
 
 ### Paso 2: Crear un Proyecto e Importar Cuestionario
-DataUMSA utiliza el estándar científico **XLSForm** para estructurar las encuestas.
+DATAUMSA utiliza el estándar científico **XLSForm** para estructurar las encuestas.
 1. Haz clic en el botón **"Nuevo Proyecto"**.
 2. Asigna un nombre al proyecto (ej. *Estudio de Salud Altiplano 2026*).
 3. Sube tu archivo excel `.xlsx` con la especificación de tu formulario o selecciona una plantilla existente del repositorio académico.
@@ -28,7 +28,7 @@ Para recolectar datos en campo mediante dispositivos móviles, debes asignar enc
 3. El sistema generará una credencial de vinculación exclusiva para cada encuestador.
 
 ### Paso 4: Instalar y Vincular la App Móvil
-1. Desde el dispositivo Android del encuestador, accede al [Centro de Descargas](/app-movil/descargas) e instala **DataUMSA Collect**.
+1. Desde el dispositivo Android del encuestador, accede al [Centro de Descargas](/app-movil/descargas) e instala **DATAUMSA Collect**.
 2. Abre la aplicación e ingresa las credenciales del encuestador.
 3. Selecciona la opción **"Obtener Formulario Blanco"**, marca tu cuestionario del listado y presiona **"Descargar"**.
 

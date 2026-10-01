@@ -1,185 +1,117 @@
 ---
-// Componente ComparativeSection (Google Forms vs DataUMSA) para DataUMSA
+// Componente ComparativeSection (Google Forms vs DATAUMSA) - Adaptado a Bento DESIGN2.md
 import { FiCheck, FiX } from "react-icons/fi";
 import Badge from "./Badge.astro";
-import TextReveal from "./TextReveal.astro";
 
 const comparativeData = [
-  {
-    feature: "Privacidad de los datos",
-    icon: "privacy",
-    google: {
-      text: "Tus datos son el producto",
-      supported: false,
+    {
+        feature: "Privacidad de los datos",
+        google: {
+            text: "Tus datos son el producto de big tech",
+            supported: false,
+        },
+        umsa: {
+            text: "Soberanía total (Datacenter UMSA)",
+            supported: true,
+        },
     },
-    umsa: {
-      text: "Soberanía total (UMSA)",
-      supported: true,
-    }
-  },
-  {
-    feature: "Trabajo sin internet",
-    icon: "offline",
-    google: {
-      text: "No soportado nativamente",
-      supported: false,
+    {
+        feature: "Trabajo en campo sin internet",
+        google: {
+            text: "No soportado nativamente",
+            supported: false,
+        },
+        umsa: {
+            text: "100% Offline (App móvil dedicada)",
+            supported: true,
+        },
     },
-    umsa: {
-      text: "Excelente (App dedicada)",
-      supported: true,
-    }
-  },
-  {
-    feature: "Formularios avanzados",
-    icon: "forms",
-    google: {
-      text: "Muy básico (Lógica lineal)",
-      supported: false,
+    {
+        feature: "Complejidad de formularios",
+        google: {
+            text: "Muy básico (Lógica lineal simple)",
+            supported: false,
+        },
+        umsa: {
+            text: "Estándar XLSForm (Saltos, matrices, GPS)",
+            supported: true,
+        },
     },
-    umsa: {
-      text: "Profesional (XLSForm)",
-      supported: true,
-    }
-  },
-  {
-    feature: "Análisis e investigación",
-    icon: "analysis",
-    google: {
-      text: "Limitado y genérico",
-      supported: false,
+    {
+        feature: "Análisis e investigación",
+        google: {
+            text: "Limitado a gráficos genéricos y sheets",
+            supported: false,
+        },
+        umsa: {
+            text: "Exportación directa a SPSS y Stata",
+            supported: true,
+        },
     },
-    umsa: {
-      text: "Avanzado + exportaciones (SPSS, Stata)",
-      supported: true,
-    }
-  }
 ];
 ---
 
-<section
-    class="w-full bg-bg-dark rounded-[2.5rem] py-20 px-6 sm:px-12 relative overflow-hidden border border-border-dark shadow-2xl my-16"
->
-    <!-- Elementos de luz de fondo (Glow) de marca -->
-    <div
-        class="absolute -top-40 left-1/4 w-[600px] h-[300px] bg-danger/5 rounded-full blur-[150px] pointer-events-none"
-    >
-    </div>
-    <div
-        class="absolute -bottom-20 right-1/4 w-[600px] h-[300px] bg-success/10 rounded-full blur-[150px] pointer-events-none"
-    >
-    </div>
-
-    <div class="max-w-7xl w-full mx-auto relative z-10">
+<section class="w-full bg-midnight py-16 lg:py-24 px-4 sm:px-6 border-y-[2.5px] border-ink">
+    <div class="max-w-300 w-full mx-auto">
         <!-- Encabezado de la sección -->
-        <div class="text-center mb-16 md:mb-20 relative z-10">
-            <Badge variant="mono" class="mb-4">
-                <span class="text-text-dark-muted/80">Análisis Comparativo</span>
-                <span class="text-danger">No es lo mismo</span>
+        <div class="text-center mb-14">
+            <Badge variant="mono" class="mb-4 inline-flex">
+                <span>Análisis Comparativo</span>
             </Badge>
-            <h2
-                class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight"
-            >
-                ¿Google Forms o <TextReveal variant="light">DataUMSA?</TextReveal>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.035em] text-white font-display leading-tight">
+                ¿Google Forms o <span class="text-primary">DATAUMSA?</span>
             </h2>
+            <p class="text-base sm:text-lg text-text-dark-muted font-medium mt-3 max-w-xl mx-auto font-sans">
+                Diferencias claras para investigación académica rigurosa.
+            </p>
         </div>
 
-        <!-- Tabla comparativa responsiva -->
-        <div
-            class="w-full overflow-x-auto pb-6 rounded-[2rem] border border-border-dark bg-bg-dark-surface/40 backdrop-blur-xl relative z-10 scrollbar-thin"
-        >
-            <div class="min-w-[840px] w-full">
+        <!-- Tabla bento comparativa -->
+        <div class="w-full overflow-x-auto rounded-card border-[2.5px] border-ink bg-midnight-surface">
+            <div class="min-w-190 w-full">
                 <!-- Cabecera de la tabla -->
-                <div
-                    class="grid grid-cols-12 border-b border-border-dark px-8 py-6 items-center bg-bg-dark-surface/20 font-mono text-xs uppercase tracking-wider"
-                >
-                    <div class="col-span-4 text-text-dark-muted/80">
+                <div class="grid grid-cols-12 border-b-2 border-ink px-8 py-5 items-center bg-midnight font-mono text-xs uppercase tracking-wider">
+                    <div class="col-span-4 text-text-dark-muted font-bold">
                         Característica
                     </div>
-                    <div
-                        class="col-span-4 pl-6 text-text-dark-muted flex items-center gap-2"
-                    >
-                        <span
-                            class="w-1.5 h-1.5 rounded-full bg-text-dark-muted/55"
-                        ></span> Google Forms
+                    <div class="col-span-4 pl-6 text-text-dark-muted flex items-center gap-2 font-bold">
+                        <span class="w-2 h-2 rounded-full bg-danger"></span>{" "}
+                        Google Forms
                     </div>
-                    <div
-                        class="col-span-4 pl-6 border-l border-success/20 bg-success/10 py-2 -my-2 rounded-t-xl text-success flex items-center gap-2"
-                    >
-                        <span
-                            class="w-1.5 h-1.5 rounded-full bg-success animate-pulse"
-                        ></span> DataUMSA
+                    <div class="col-span-4 pl-6 border-l-2 border-ink bg-primary/10 py-3 -my-3 text-primary flex items-center gap-2 font-bold">
+                        <span class="w-2 h-2 rounded-full bg-primary"></span>{" "}
+                        DATAUMSA
                     </div>
                 </div>
 
-                <!-- Filas comparativas dinámicas -->
-                <div class="divide-y divide-border-dark/50">
-                    {comparativeData.map((row, index) => (
-                        <div
-                            class={`matrix-row grid grid-cols-12 px-8 py-7 items-center group ${index === comparativeData.length - 1 ? 'rounded-b-[2rem]' : ''}`}
-                        >
-                            <!-- Columna de Característica con Micro-Ilustración CSS -->
-                            <div class="col-span-4 pr-4 flex items-center gap-4">
-                                <div class="hidden sm:flex w-12 h-12 rounded-xl bg-bg-dark border border-border-dark flex-shrink-0 items-center justify-center relative overflow-hidden group-hover:border-primary/30 group-hover:shadow-[0_0_15px_rgba(41,185,242,0.15)] transition-all duration-300">
-                                    {row.icon === "privacy" && (
-                                        <div class="relative w-6 h-6 flex items-center justify-center">
-                                            <div class="absolute inset-0.5 border border-accent/30 rounded rotate-45 group-hover:rotate-90 transition-transform duration-500"></div>
-                                            <div class="w-2.5 h-2.5 bg-accent rounded-sm rotate-45 flex items-center justify-center shadow-[0_0_8px_rgba(139,92,246,0.5)]">
-                                                <div class="w-1 h-1 bg-white rounded-full"></div>
-                                            </div>
-                                        </div>
-                                    )}
-                                    {row.icon === "offline" && (
-                                        <div class="relative w-5 h-7 border border-primary/30 rounded bg-primary/5 p-0.5 flex flex-col items-center gap-0.5 group-hover:scale-105 transition-all">
-                                            <div class="w-2.5 h-0.5 bg-primary/30 rounded-full"></div>
-                                            <div class="w-full flex-1 bg-primary/10 rounded-sm flex items-center justify-center">
-                                                <div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
-                                            </div>
-                                        </div>
-                                    )}
-                                    {row.icon === "forms" && (
-                                        <div class="relative w-5 h-6 bg-success/5 border border-success/30 rounded p-1 flex flex-col gap-1 group-hover:-translate-y-0.5 transition-transform">
-                                            <div class="w-3.5 h-1 bg-success/40 rounded-full"></div>
-                                            <div class="w-full h-1 bg-success/20 rounded-full"></div>
-                                            <div class="w-2/3 h-1 bg-success/30 rounded-full"></div>
-                                        </div>
-                                    )}
-                                    {row.icon === "analysis" && (
-                                        <div class="relative w-6 h-6 flex items-end gap-1 pb-0.5">
-                                            <div class="w-1 h-2 bg-warning/30 rounded-t-sm group-hover:h-3 transition-all"></div>
-                                            <div class="w-1 h-3.5 bg-warning/60 rounded-t-sm group-hover:h-4.5 transition-all"></div>
-                                            <div class="w-1 h-5 bg-warning rounded-t-sm group-hover:h-5.5 transition-all shadow-[0_0_8px_rgba(245,158,11,0.4)]"></div>
-                                        </div>
-                                    )}
-                                </div>
-                                <h3
-                                    class="char-title text-base font-semibold text-text-dark-muted transition-colors"
-                                >
+                <!-- Filas comparativas -->
+                <div class="divide-y-2 divide-ink">
+                    {comparativeData.map((row) => (
+                        <div class="grid grid-cols-12 px-8 py-5 items-center hover:bg-border-dark transition-colors duration-150">
+                            <!-- Característica -->
+                            <div class="col-span-4 pr-4">
+                                <span class="font-display font-bold text-white text-base">
                                     {row.feature}
-                                </h3>
+                                </span>
                             </div>
 
-                            <!-- Columna Google Forms -->
-                            <div
-                                class="col-span-4 pl-6 flex items-start gap-3 text-sm font-medium text-text-dark-muted"
-                            >
-                                <div
-                                    class="flex-shrink-0 mt-0.5 text-text-dark-muted/60 bg-bg-dark-surface/60 p-1 rounded-md border border-border-dark flex items-center justify-center group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300"
-                                >
-                                    <FiX className="w-3.5 h-3.5" strokeWidth={3} />
+                            <!-- Google Forms -->
+                            <div class="col-span-4 pl-6 flex items-center gap-3 text-sm font-medium text-text-dark-muted font-sans">
+                                <div class="w-6 h-6 rounded-full border border-ink bg-danger/20 text-danger flex items-center justify-center shrink-0">
+                                    <FiX
+                                        className="w-3.5 h-3.5"
+                                        strokeWidth={3}
+                                    />
                                 </div>
                                 <span>{row.google.text}</span>
                             </div>
 
-                            <!-- Columna DataUMSA -->
-                            <div
-                                class="col-span-4 pl-6 border-l border-success/20 bg-success/5 h-full flex items-center gap-3 text-sm font-semibold text-success rounded-none"
-                            >
-                                <div
-                                    class="flex-shrink-0 text-success bg-success-dark/30 p-1 rounded-md border border-success/30 shadow-[0_0_10px_rgba(16,185,129,0.2)] flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 group-hover:shadow-[0_0_15px_rgba(16,185,129,0.4)] transition-all duration-300"
-                                >
+                            <!-- DATAUMSA -->
+                            <div class="col-span-4 pl-6 border-l-2 border-ink bg-primary/5 py-3 -my-3 flex items-center gap-3 text-sm font-bold text-white font-sans">
+                                <div class="w-6 h-6 rounded-full border border-ink bg-success text-ink flex items-center justify-center shrink-0">
                                     <FiCheck
                                         className="w-3.5 h-3.5"
-                                        strokeWidth={3}
+                                        strokeWidth={3.5}
                                     />
                                 </div>
                                 <span>{row.umsa.text}</span>
@@ -190,49 +122,15 @@ const comparativeData = [
             </div>
         </div>
 
-        <!-- Cita del final -->
-        <div class="mt-12 text-center relative z-10">
-            <p
-                class="text-text-dark-muted text-lg md:text-xl font-medium tracking-tight"
-            >
-                “Elige la herramienta diseñada para <span
-                    class="text-white border-b-2 border-success/60 pb-0.5 font-bold"
-                    >investigación real</span
-                >.”
+        <!-- Cita final -->
+        <div class="mt-12 text-center">
+            <p class="text-text-dark-muted text-base sm:text-lg font-medium font-sans">
+                “Elige la herramienta diseñada para{" "}
+                <span class="text-white font-bold bg-midnight-surface px-2 py-0.5 rounded border border-primary">
+                    investigación científica real
+                </span>
+                .”
             </p>
         </div>
     </div>
 </section>
-
-<style>
-    /* Efecto de transición Awwwards */
-    .matrix-row {
-        transition:
-            background-color var(--transition-fast),
-            transform var(--transition-fast);
-    }
-
-    .matrix-row:hover {
-        background-color: var(--color-bg-dark-surface);
-    }
-
-    .matrix-row:hover .char-title {
-        color: #ffffff;
-    }
-
-    /* Scrollbar minimalista para la tabla */
-    .scrollbar-thin::-webkit-scrollbar {
-        height: 6px;
-    }
-    .scrollbar-thin::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.02);
-        border-radius: 999px;
-    }
-    .scrollbar-thin::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 999px;
-    }
-    .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-        background: rgba(255, 255, 255, 0.25);
-    }
-</style>

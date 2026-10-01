@@ -1,260 +1,580 @@
 ---
-// Componente HitoSection - Estilo Timeline Conectado para DataUMSA
+// Componente HitoSection - Showcase Gráfico Interactivo con GSAP y Poco Texto (Asimétrico e Innovador)
 import Badge from "./Badge.astro";
-import TextReveal from "./TextReveal.astro";
-import { FiFlag, FiTrendingUp, FiCheckCircle, FiShield } from "react-icons/fi";
 ---
 
 <section
-  class="w-full bg-bg-dark rounded-[2.5rem] py-20 px-6 sm:px-12 relative overflow-hidden border border-border-dark shadow-2xl my-16"
+    id="hito-grafico-section"
+    class="w-full bg-midnight py-16 lg:py-24 px-4 sm:px-6 lg:px-8 border-y-[2.5px] border-ink relative overflow-hidden"
 >
-  {/* Fondo ambiental sutil para conectar con el Hero */}
-  <div
-    class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 rounded-full blur-[100px] pointer-events-none -z-10"
-  >
-  </div>
+    <!-- Iluminación ambiental de fondo -->
+    <div
+        class="absolute inset-0 opacity-[0.035] pointer-events-none"
+        style="background-image: radial-gradient(circle at 1.5px 1.5px, var(--color-primary) 1px, transparent 0); background-size: 28px 28px;"
+    ></div>
+    <div class="absolute top-1/4 -left-36 w-96 h-96 bg-primary/10 rounded-full blur-[130px] pointer-events-none"></div>
+    <div class="absolute bottom-10 -right-36 w-96 h-96 bg-primary-dark/15 rounded-full blur-[130px] pointer-events-none"></div>
 
-  <div class="max-w-7xl w-full mx-auto relative z-10">
-    <!-- ========================================== -->
-    <!-- 1. HEADER CENTRAL -->
-    <!-- ========================================== -->
-    <div class="text-center max-w-3xl mx-auto mb-20 relative z-10">
-      <Badge variant="glass" dotColor="bg-emerald-400" class="mb-6 inline-flex">
-        Hito Alcanzado
-      </Badge>
-      <h2
-        class="text-4xl lg:text-5xl lg:text-[3.5rem] font-black text-white leading-[1.1] tracking-tight mb-6"
-      >
-        Nuestro primer <br class="hidden sm:block" />
-        <TextReveal variant="light">gran desafío</TextReveal>
-        superado.
-      </h2>
-      <p class="text-lg text-text-dark-muted font-medium max-w-xl mx-auto">
-        El Censo Universitario demostró la madurez de nuestra infraestructura.
-      </p>
-    </div>
-
-    <!-- ========================================== -->
-    <!-- 2. TIMELINE DE HITOS -->
-    <!-- ========================================== -->
-    <div class="relative z-10 mt-12">
-      {/* Línea conectora horizontal */}
-      <div
-        class="hidden lg:block absolute top-12 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent -z-10"
-      >
-      </div>
-
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 relative"
-      >
-        <!-- HITO 1: PIONERO -->
-        <div class="flex flex-col items-center text-center group">
-          <div
-            class="w-24 h-24 rounded-2xl bg-bg-surface/50 backdrop-blur-sm border border-border-dark flex items-center justify-center mb-6 group-hover:-translate-y-2 group-hover:border-primary/50 group-hover:shadow-[0_0_30px_-10px_rgba(41,185,242,0.3)] transition-all duration-500 relative animate-float-slow"
-          >
-            <div
-              class="absolute inset-0 bg-primary/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"
+    <div class="max-w-310 w-full mx-auto relative z-10">
+        <!-- HEADER COMPACTO Y ELEGANTE (POCO TEXTO) -->
+        <div class="text-center max-w-2xl mx-auto mb-10 lg:mb-14">
+            <Badge
+                variant="success"
+                dotColor="bg-success"
+                class="mb-3.5 inline-flex shadow-sm"
             >
-            </div>
-
-            <FiFlag className="w-8 h-8 text-text-dark-muted group-hover:text-primary transition-colors z-10" />
-          </div>
-          <h3 class="text-xl font-black text-white mb-2">Censo UMSA</h3>
-          <p class="text-sm text-text-dark-muted leading-relaxed">
-            Primer operativo censal digital integral de la universidad
-          </p>
+                Censo UMSA · Operativo Digital
+            </Badge>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight tracking-tight mb-3 font-display">
+                Nuestro primer <span class="text-primary">gran desafío</span>{" "}
+                superado.
+            </h2>
+            <p class="text-sm sm:text-base text-text-dark-muted font-sans">
+                La plataforma gestionó el empadronamiento digital de más de
+                65.000 estudiantes con más del 95% de participación directa y
+                soberanía institucional.
+            </p>
         </div>
 
-        <!-- HITO 2: ESCALABLE -->
-        <div class="flex flex-col items-center text-center group lg:mt-8">
-          <div
-            class="w-24 h-24 rounded-2xl bg-bg-surface/50 backdrop-blur-sm border border-border-dark flex items-center justify-center mb-6 group-hover:-translate-y-2 group-hover:border-primary/50 group-hover:shadow-[0_0_30px_-10px_rgba(41,185,242,0.3)] transition-all duration-500 relative animate-float-slow animation-delay-200"
-          >
-            <div
-              class="absolute inset-0 bg-primary/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"
-            >
-            </div>
-
-            <div
-              class="flex items-end gap-1.5 h-8 relative z-10 chart-container"
-            >
-              <div
-                class="w-2 bg-text-dark-muted/40 group-hover:bg-primary/40 rounded-t-sm transition-all duration-300 bar-step-1"
-              >
-              </div>
-              <div
-                class="w-2 bg-text-dark-muted/70 group-hover:bg-primary/70 rounded-t-sm transition-all duration-300 bar-step-2"
-              >
-              </div>
-              <div
-                class="w-2 bg-text-dark-muted group-hover:bg-primary rounded-t-sm transition-all duration-300 shadow-[0_0_10px_rgba(41,185,242,0)] group-hover:shadow-[0_0_10px_rgba(41,185,242,0.5)] bar-step-3"
-              >
-              </div>
-            </div>
-          </div>
-          <h3 class="text-xl font-black text-white mb-2">80,000+ Registros</h3>
-          <p class="text-sm text-text-dark-muted leading-relaxed">
-            Capacidad probada para miles de respuestas simultáneas
-          </p>
-        </div>
-
-        <!-- HITO 3: CONFIABLE -->
-        <div class="flex flex-col items-center text-center group">
-          <div
-            class="w-24 h-24 rounded-2xl bg-bg-surface/50 backdrop-blur-sm border border-border-dark flex items-center justify-center mb-6 group-hover:-translate-y-2 group-hover:border-success/50 group-hover:shadow-[0_0_30px_-10px_rgba(16,185,129,0.3)] transition-all duration-500 relative animate-float-slow animation-delay-400"
-          >
-            <div
-              class="absolute inset-0 bg-success/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"
-            >
-            </div>
-
-            <div
-              class="relative w-8 h-8 rounded-full border-[2.5px] border-text-dark-muted group-hover:border-success flex items-center justify-center transition-colors z-10 animate-pulse-border"
-            >
-              <div
-                class="w-2.5 h-4 border-b-[2.5px] border-r-[2.5px] border-text-dark-muted group-hover:border-success transform rotate-45 -mt-1 transition-colors"
-              >
-              </div>
-              <div
-                class="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-success opacity-0 group-hover:opacity-100 animate-ping"
-              >
-              </div>
-            </div>
-          </div>
-          <h3 class="text-xl font-black text-white mb-2">13 Facultades</h3>
-          <p class="text-sm text-text-dark-muted leading-relaxed">
-            Despliegue transversal en todas las áreas de conocimiento
-          </p>
-        </div>
-
-        <!-- HITO 4: SOBERANO (Destacado) -->
-        <div class="flex flex-col items-center text-center group lg:mt-8">
-          <div
-            class="w-24 h-24 rounded-2xl bg-primary-dark/20 backdrop-blur-sm border border-primary/30 flex items-center justify-center mb-6 group-hover:-translate-y-2 group-hover:border-primary group-hover:bg-primary-dark/40 group-hover:shadow-[0_0_40px_-5px_rgba(41,185,242,0.4)] transition-all duration-500 relative overflow-hidden animate-float-slow animation-delay-600"
-          >
-            <div
-              class="absolute inset-0 opacity-20 pointer-events-none"
-              style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 8px 8px;"
-            >
-            </div>
-
-            <div
-              class="relative w-7 h-9 flex flex-col items-center justify-end z-10"
-            >
-              <div
-                class="w-4 h-4 border-[2.5px] border-white/70 rounded-t-full mb-[-2px] group-hover:translate-y-[-2px] transition-transform"
-              >
-              </div>
-              <div
-                class="w-full h-5 bg-white/90 rounded-[4px] shadow-[0_0_15px_rgba(255,255,255,0.3)] flex items-center justify-center"
-              >
-                <div
-                  class="w-1.5 h-1.5 bg-primary-dark rounded-full animate-pulse"
-                >
+        <!-- BENTO GRÁFICO ASIMÉTRICO (ALTO IMPACTO VISUAL) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 lg:gap-6">
+            <!-- ======================================================== -->
+            <!-- ASSET 1 (8 COLS): FLUJO DE DATOS VIVO Y CONCURRENCIA    -->
+            <!-- ======================================================== -->
+            <div class="lg:col-span-8 bg-ink rounded-card p-6 sm:p-8 border-2 border-border-dark flex flex-col justify-between group hover:border-primary/60 transition-all duration-300 relative overflow-hidden shadow-xl min-h-85">
+                <!-- Cabecera mínima -->
+                <div class="flex items-center justify-between relative z-10">
+                    <div class="flex items-center gap-3">
+                        <span class="w-3 h-3 rounded-full bg-success animate-pulse"></span>
+                        <span class="text-xs font-mono font-bold tracking-wider uppercase text-white">
+                            Flujo de Empadronamiento
+                        </span>
+                    </div>
+                    <span class="px-3 py-1 rounded-full text-xs font-mono font-bold text-success bg-success/10 border border-success/30">
+                        0 Interrupciones
+                    </span>
                 </div>
-              </div>
+
+                <!-- Gráfico de Flujo SVG Vivo con Onda y Partículas GSAP -->
+                <div class="relative my-4 z-10 flex items-center justify-center">
+                    <svg
+                        class="w-full h-36 sm:h-44 overflow-visible"
+                        viewBox="0 0 600 160"
+                        fill="none"
+                        preserveAspectRatio="none"
+                    >
+                        <defs>
+                            <linearGradient
+                                id="waveGrad"
+                                x1="0%"
+                                y1="0%"
+                                x2="100%"
+                                y2="0%"
+                            >
+                                <stop
+                                    offset="0%"
+                                    stop-color="var(--color-primary-dark)"
+                                    stop-opacity="0.3"
+                                />
+                                <stop
+                                    offset="50%"
+                                    stop-color="var(--color-primary)"
+                                    stop-opacity="1"
+                                />
+                                <stop
+                                    offset="100%"
+                                    stop-color="var(--color-success)"
+                                    stop-opacity="0.9"
+                                />
+                            </linearGradient>
+                            <linearGradient
+                                id="areaGrad"
+                                x1="0%"
+                                y1="0%"
+                                x2="0%"
+                                y2="100%"
+                            >
+                                <stop
+                                    offset="0%"
+                                    stop-color="var(--color-primary)"
+                                    stop-opacity="0.25"
+                                />
+                                <stop
+                                    offset="100%"
+                                    stop-color="var(--color-primary)"
+                                    stop-opacity="0.0"
+                                />
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Área bajo la curva -->
+                        <path
+                            id="wave-area"
+                            d="M 0 130 Q 150 40 300 80 T 600 40 L 600 160 L 0 160 Z"
+                            fill="url(#areaGrad)"
+                        />
+
+                        <!-- Curva principal -->
+                        <path
+                            id="wave-line"
+                            d="M 0 130 Q 150 40 300 80 T 600 40"
+                            stroke="url(#waveGrad)"
+                            stroke-width="3.5"
+                            stroke-linecap="round"
+                            fill="none"
+                        />
+
+                        <!-- Partículas de datos viajando a lo largo del flujo -->
+                        <circle
+                            class="flow-particle"
+                            id="p1"
+                            cx="60"
+                            cy="110"
+                            r="4.5"
+                            fill="var(--color-primary)"
+                        />
+                        <circle
+                            class="flow-particle"
+                            id="p2"
+                            cx="220"
+                            cy="55"
+                            r="5"
+                            fill="var(--color-white-plate)"
+                        />
+                        <circle
+                            class="flow-particle"
+                            id="p3"
+                            cx="420"
+                            cy="70"
+                            r="5"
+                            fill="var(--color-success)"
+                        />
+                        <circle
+                            class="flow-particle"
+                            id="p4"
+                            cx="540"
+                            cy="45"
+                            r="4"
+                            fill="var(--color-primary)"
+                        />
+
+                        <!-- Marcador cumbre -->
+                        <circle
+                            cx="580"
+                            cy="40"
+                            r="7"
+                            fill="var(--color-success)"
+                        />
+                        <circle
+                            cx="580"
+                            cy="40"
+                            r="14"
+                            fill="var(--color-success)"
+                            opacity="0.25"
+                            class="animate-ping"
+                        />
+                    </svg>
+
+                    <!-- Etiqueta flotante del cénit -->
+                    <div class="absolute right-4 top-2 px-3 py-1 rounded-xl bg-midnight-surface border border-success/50 text-right shadow-lg">
+                        <div class="text-[10px] font-mono text-text-dark-muted">
+                            Población Estudiantil
+                        </div>
+                        <div class="text-sm font-bold text-white font-mono">
+                            >95% Autocenso Directo
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Métrica Principal en Footer -->
+                <div class="flex items-baseline justify-between pt-4 border-t border-border-dark relative z-10">
+                    <div class="flex items-baseline gap-2">
+                        <span
+                            id="counter-flow-num"
+                            class="text-3xl sm:text-5xl font-black text-white font-display"
+                        >
+                            65.000
+                        </span>
+                        <span class="text-2xl sm:text-3xl font-black text-primary">
+                            +
+                        </span>
+                        <span class="text-xs sm:text-sm text-text-dark-muted font-sans font-medium ml-1">
+                            Estudiantes Empadronados
+                        </span>
+                    </div>
+                    <span class="text-xs font-mono text-primary font-semibold hidden sm:inline">
+                        100% Operativo Digital
+                    </span>
+                </div>
             </div>
-          </div>
-          <h3 class="text-xl font-black text-white mb-2">100% Soberano</h3>
-          <p class="text-sm text-text-dark-muted leading-relaxed">
-            Custodia local en servidores del Datacenter DTIC UMSA
-          </p>
+
+            <!-- ======================================================== -->
+            <!-- ASSET 2 (4 COLS): BÓVEDA Y DATACENTER SOBERANO UMSA     -->
+            <!-- ======================================================== -->
+            <div class="lg:col-span-4 bg-ink rounded-card p-6 sm:p-7 border-2 border-border-dark flex flex-col justify-between group hover:border-primary/60 transition-all duration-300 relative overflow-hidden shadow-xl min-h-85">
+                <div class="flex items-center justify-between relative z-10">
+                    <span class="text-xs font-mono font-bold tracking-wider uppercase text-white">
+                        Soberanía DTIC
+                    </span>
+                    <span class="w-2 h-2 rounded-full bg-primary"></span>
+                </div>
+
+                <!-- Bóveda Gráfica Central con Anillos Giratorios GSAP -->
+                <div class="relative w-44 h-44 mx-auto my-auto flex items-center justify-center">
+                    <!-- Anillo exterior punteado (Gira en sentido horario) -->
+                    <svg
+                        class="absolute inset-0 w-full h-full"
+                        id="vault-outer-ring"
+                        viewBox="0 0 100 100"
+                    >
+                        <circle
+                            cx="50"
+                            cy="50"
+                            r="46"
+                            stroke="var(--color-primary)"
+                            stroke-width="1.5"
+                            stroke-dasharray="6 4"
+                            fill="none"
+                            opacity="0.6"
+                        />
+                    </svg>
+
+                    <!-- Anillo medio con marcadores (Gira en sentido antihorario) -->
+                    <svg
+                        class="absolute inset-0 w-full h-full scale-75"
+                        id="vault-inner-ring"
+                        viewBox="0 0 100 100"
+                    >
+                        <circle
+                            cx="50"
+                            cy="50"
+                            r="46"
+                            stroke="var(--color-success)"
+                            stroke-width="2"
+                            stroke-dasharray="14 10"
+                            fill="none"
+                            opacity="0.75"
+                        />
+                    </svg>
+
+                    <!-- Núcleo de blindaje y candado -->
+                    <div class="w-20 h-20 rounded-2xl bg-midnight-surface border-2 border-primary flex flex-col items-center justify-center relative shadow-[0_0_25px_rgba(41,185,242,0.3)] z-10 group-hover:scale-105 transition-transform">
+                        <svg
+                            class="w-8 h-8 text-primary"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                        >
+                            <rect
+                                x="3"
+                                y="11"
+                                width="18"
+                                height="11"
+                                rx="2"
+                                ry="2"
+                            ></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        <span class="text-[9px] font-mono font-bold text-success mt-1">
+                            UMSA
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Footer mínimo -->
+                <div class="pt-4 border-t border-border-dark text-center relative z-10">
+                    <div class="text-base font-bold text-white font-display">
+                        100% Servidores Locales
+                    </div>
+                    <div class="text-xs font-mono text-text-dark-muted mt-0.5">
+                        Datacenter Monoblock Central
+                    </div>
+                </div>
+            </div>
+
+            <!-- ======================================================== -->
+            <!-- ASSET 3 (5 COLS): BOLETA INTERACTIVA CON CHECKLIST VIVO -->
+            <!-- ======================================================== -->
+            <div class="lg:col-span-5 bg-ink rounded-card p-6 sm:p-7 border-2 border-border-dark flex flex-col justify-between group hover:border-success/60 transition-all duration-300 relative overflow-hidden shadow-xl min-h-80">
+                <div class="flex items-center justify-between mb-4">
+                    <span class="text-xs font-mono font-bold tracking-wider uppercase text-white">
+                        Boleta Digital
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-bold bg-success/15 text-success">
+                        Validación Instantánea
+                    </span>
+                </div>
+
+                <!-- Micro-interfaz con validaciones automáticas animadas -->
+                <div class="space-y-2.5 my-auto">
+                    <!-- Paso 1 -->
+                    <div class="p-3 rounded-xl bg-midnight-surface border border-border-dark flex items-center justify-between">
+                        <div class="flex items-center gap-2.5">
+                            <span class="check-icon w-5 h-5 rounded-full bg-success text-midnight flex items-center justify-center font-bold text-xs">
+                                ✓
+                            </span>
+                            <span class="text-xs font-sans text-white font-medium">
+                                Validación de Matrícula
+                            </span>
+                        </div>
+                        <span class="text-[10px] font-mono text-text-dark-muted">
+                            Inmediato
+                        </span>
+                    </div>
+
+                    <!-- Paso 2 -->
+                    <div class="p-3 rounded-xl bg-midnight-surface border border-border-dark flex items-center justify-between">
+                        <div class="flex items-center gap-2.5">
+                            <span class="check-icon w-5 h-5 rounded-full bg-success text-midnight flex items-center justify-center font-bold text-xs">
+                                ✓
+                            </span>
+                            <span class="text-xs font-sans text-white font-medium">
+                                Asignación de Carrera
+                            </span>
+                        </div>
+                        <span class="text-[10px] font-mono text-text-dark-muted">
+                            Sincronizado
+                        </span>
+                    </div>
+
+                    <!-- Paso 3 -->
+                    <div class="p-3 rounded-xl bg-midnight-surface border border-border-dark flex items-center justify-between">
+                        <div class="flex items-center gap-2.5">
+                            <span class="check-icon w-5 h-5 rounded-full bg-success text-midnight flex items-center justify-center font-bold text-xs">
+                                ✓
+                            </span>
+                            <span class="text-xs font-sans text-white font-medium">
+                                Certificado Digital
+                            </span>
+                        </div>
+                        <span class="text-[10px] font-mono text-primary font-bold">
+                            Emitido
+                        </span>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-border-dark flex items-center justify-between text-xs font-sans text-text-dark-muted">
+                    <span>Modalidad</span>
+                    <span class="text-white font-bold">
+                        Cero Papel · 100% Digital
+                    </span>
+                </div>
+            </div>
+
+            <!-- ======================================================== -->
+            <!-- ASSET 4 (7 COLS): CONSTELACIÓN DE LAS 13 FACULTADES    -->
+            <!-- ======================================================== -->
+            <div class="lg:col-span-7 bg-ink rounded-card p-6 sm:p-7 border-2 border-border-dark flex flex-col justify-between group hover:border-primary/60 transition-all duration-300 relative overflow-hidden shadow-xl min-h-80">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-mono font-bold tracking-wider uppercase text-white">
+                        Red Universitaria Integrada
+                    </span>
+                    <span class="text-xs font-mono font-bold text-success">
+                        13 / 13 Unidades
+                    </span>
+                </div>
+
+                <!-- Gráfico de Nodos de Facultades Conectadas -->
+                <div class="relative py-4 my-auto">
+                    <div class="grid grid-cols-4 sm:grid-cols-7 gap-2.5">
+                        <div class="fac-pill p-2 rounded-xl bg-midnight-surface border border-border-dark text-center hover:border-primary transition-colors">
+                            <div class="text-[11px] font-bold text-white font-mono">
+                                ING
+                            </div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-success mx-auto mt-1"></div>
+                        </div>
+                        <div class="fac-pill p-2 rounded-xl bg-midnight-surface border border-border-dark text-center hover:border-primary transition-colors">
+                            <div class="text-[11px] font-bold text-white font-mono">
+                                MED
+                            </div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-success mx-auto mt-1"></div>
+                        </div>
+                        <div class="fac-pill p-2 rounded-xl bg-midnight-surface border border-border-dark text-center hover:border-primary transition-colors">
+                            <div class="text-[11px] font-bold text-white font-mono">
+                                DER
+                            </div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-success mx-auto mt-1"></div>
+                        </div>
+                        <div class="fac-pill p-2 rounded-xl bg-midnight-surface border border-border-dark text-center hover:border-primary transition-colors">
+                            <div class="text-[11px] font-bold text-white font-mono">
+                                FCPN
+                            </div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-success mx-auto mt-1"></div>
+                        </div>
+                        <div class="fac-pill p-2 rounded-xl bg-midnight-surface border border-border-dark text-center hover:border-primary transition-colors">
+                            <div class="text-[11px] font-bold text-white font-mono">
+                                ECO
+                            </div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-success mx-auto mt-1"></div>
+                        </div>
+                        <div class="fac-pill p-2 rounded-xl bg-midnight-surface border border-border-dark text-center hover:border-primary transition-colors">
+                            <div class="text-[11px] font-bold text-white font-mono">
+                                HUM
+                            </div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-success mx-auto mt-1"></div>
+                        </div>
+                        <div class="fac-pill p-2 rounded-xl bg-midnight-surface border border-border-dark text-center hover:border-primary transition-colors">
+                            <div class="text-[11px] font-bold text-white font-mono">
+                                SOC
+                            </div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-success mx-auto mt-1"></div>
+                        </div>
+                        <div class="fac-pill p-2 rounded-xl bg-midnight-surface border border-border-dark text-center hover:border-primary transition-colors">
+                            <div class="text-[11px] font-bold text-white font-mono">
+                                ARQ
+                            </div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-success mx-auto mt-1"></div>
+                        </div>
+                        <div class="fac-pill p-2 rounded-xl bg-midnight-surface border border-border-dark text-center hover:border-primary transition-colors">
+                            <div class="text-[11px] font-bold text-white font-mono">
+                                FARM
+                            </div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-success mx-auto mt-1"></div>
+                        </div>
+                        <div class="fac-pill p-2 rounded-xl bg-midnight-surface border border-border-dark text-center hover:border-primary transition-colors">
+                            <div class="text-[11px] font-bold text-white font-mono">
+                                ODON
+                            </div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-success mx-auto mt-1"></div>
+                        </div>
+                        <div class="fac-pill p-2 rounded-xl bg-midnight-surface border border-border-dark text-center hover:border-primary transition-colors">
+                            <div class="text-[11px] font-bold text-white font-mono">
+                                AGRO
+                            </div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-success mx-auto mt-1"></div>
+                        </div>
+                        <div class="fac-pill p-2 rounded-xl bg-midnight-surface border border-border-dark text-center hover:border-primary transition-colors">
+                            <div class="text-[11px] font-bold text-white font-mono">
+                                GEO
+                            </div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-success mx-auto mt-1"></div>
+                        </div>
+                        <div class="fac-pill p-2 rounded-xl bg-midnight-surface border border-border-dark text-center hover:border-primary transition-colors">
+                            <div class="text-[11px] font-bold text-white font-mono">
+                                TEC
+                            </div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-success mx-auto mt-1"></div>
+                        </div>
+                        <div class="fac-pill p-2 rounded-xl bg-primary/15 border border-primary/40 text-center">
+                            <div class="text-[11px] font-bold text-primary font-mono">
+                                SEDES
+                            </div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-primary mx-auto mt-1"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-4 border-t border-border-dark flex items-center justify-between text-xs font-sans text-text-dark-muted">
+                    <span>Campus Central y Provincias</span>
+                    <span class="text-primary font-semibold">
+                        100% Cobertura Transversal
+                    </span>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
 
-<style>
-  /* Animaciones escalonadas para el gráfico de barras al HOVER y al INICIO */
-  .bar-step-1 {
-    height: 20%;
-  }
-  .bar-step-2 {
-    height: 30%;
-  }
-  .bar-step-3 {
-    height: 40%;
-  }
+<!-- Animaciones GSAP Visuales en Tiempo Real -->
+<script>
+    import { gsap } from "gsap";
 
-  /* La clase trigger-chart-anim se añadirá con JS al hacer scroll */
-  .group:hover .bar-step-1,
-  .trigger-chart-anim .bar-step-1 {
-    animation: grow-bar-1 0.4s ease-out forwards;
-  }
-  .group:hover .bar-step-2,
-  .trigger-chart-anim .bar-step-2 {
-    animation: grow-bar-2 0.5s ease-out forwards;
-  }
-  .group:hover .bar-step-3,
-  .trigger-chart-anim .bar-step-3 {
-    animation: grow-bar-3 0.6s ease-out forwards;
-  }
+    function initGraphicShowcase() {
+        const section = document.getElementById("hito-grafico-section");
+        if (!section) return;
 
-  @keyframes grow-bar-1 {
-    0% {
-      height: 20%;
-    }
-    100% {
-      height: 40%;
-    }
-  }
-  @keyframes grow-bar-2 {
-    0% {
-      height: 30%;
-    }
-    100% {
-      height: 70%;
-    }
-  }
-  @keyframes grow-bar-3 {
-    0% {
-      height: 40%;
-    }
-    100% {
-      height: 100%;
-    }
-  }
+        const prefersReducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)",
+        ).matches;
 
-  /* Animaciones continuas (Vida en los assets) */
-  .animate-float-slow {
-    animation: float 6s ease-in-out infinite;
-  }
-  .animation-delay-200 {
-    animation-delay: 200ms;
-  }
-  .animation-delay-400 {
-    animation-delay: 400ms;
-  }
-  .animation-delay-600 {
-    animation-delay: 600ms;
-  }
+        if (!prefersReducedMotion) {
+            // 1. Animación continua de la onda de flujo de datos
+            const particles = ["#p1", "#p2", "#p3", "#p4"];
+            particles.forEach((p, idx) => {
+                const el = document.querySelector(p);
+                if (el) {
+                    gsap.to(el, {
+                        y: idx % 2 === 0 ? -12 : 12,
+                        duration: 1.8 + idx * 0.3,
+                        repeat: -1,
+                        yoyo: true,
+                        ease: "sine.inOut",
+                    });
+                }
+            });
 
-  @keyframes float {
-    0% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-5px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }
+            // 2. Rotación continua de los anillos de la bóveda soberana
+            const outerRing = document.getElementById("vault-outer-ring");
+            if (outerRing) {
+                gsap.to(outerRing, {
+                    rotation: 360,
+                    transformOrigin: "center center",
+                    duration: 22,
+                    repeat: -1,
+                    ease: "none",
+                });
+            }
 
-  .animate-pulse-border {
-    animation: pulseBorder 3s infinite;
-  }
+            const innerRing = document.getElementById("vault-inner-ring");
+            if (innerRing) {
+                gsap.to(innerRing, {
+                    rotation: -360,
+                    transformOrigin: "center center",
+                    duration: 16,
+                    repeat: -1,
+                    ease: "none",
+                });
+            }
 
-  @keyframes pulseBorder {
-    0% {
-      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.05);
+            // 3. Destello secuencial sutil de los nodos de las facultades
+            gsap.to(".fac-pill", {
+                borderColor: "rgba(41, 185, 242, 0.4)",
+                stagger: {
+                    each: 0.25,
+                    repeat: -1,
+                    yoyo: true,
+                },
+                duration: 0.8,
+                ease: "power1.inOut",
+            });
+        }
+
+        // 4. Contador Numérico de Flujo activado por scroll
+        let animated = false;
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting && !animated) {
+                        animated = true;
+                        const target =
+                            document.getElementById("counter-flow-num");
+                        if (target) {
+                            const obj = { val: 0 };
+                            gsap.to(obj, {
+                                val: 65000,
+                                duration: 2.2,
+                                ease: "power2.out",
+                                onUpdate: () => {
+                                    target.textContent = Math.floor(
+                                        obj.val,
+                                    ).toLocaleString("es-BO");
+                                },
+                            });
+                        }
+                    }
+                });
+            },
+            { threshold: 0.3 },
+        );
+
+        observer.observe(section);
     }
-    70% {
-      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+
+    document.addEventListener("astro:page-load", initGraphicShowcase);
+    if (document.readyState === "complete") {
+        initGraphicShowcase();
+    } else {
+        window.addEventListener("DOMContentLoaded", initGraphicShowcase);
     }
-    100% {
-      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-    }
-  }
-</style>
+</script>

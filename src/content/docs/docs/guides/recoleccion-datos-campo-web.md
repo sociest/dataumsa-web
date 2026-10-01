@@ -1,9 +1,9 @@
 ---
 title: Recolección en Terreno y Web
-description: Métodos de recolección de respuestas mediante formularios web interactivos y la aplicación móvil DataUMSA Collect para operativos offline en campo.
+description: Métodos de recolección de respuestas mediante formularios web interactivos y la aplicación móvil DATAUMSA Collect para operativos offline en campo.
 ---
 
-Una vez que un proyecto ha sido diseñado e implementado en **DataUMSA**, está listo para comenzar a registrar respuestas. Dependiendo del perfil de la población objetivo y de las condiciones de conectividad en el área de estudio, puedes elegir entre dos modalidades de recolección complementarias.
+Una vez que un proyecto ha sido diseñado e implementado en **DATAUMSA**, está listo para comenzar a registrar respuestas. Dependiendo del perfil de la población objetivo y de las condiciones de conectividad en el área de estudio, puedes elegir entre dos modalidades de recolección complementarias.
 
 ---
 
@@ -11,7 +11,7 @@ Una vez que un proyecto ha sido diseñado e implementado en **DataUMSA**, está 
 
 Esta modalidad es ideal para encuestas institucionales autoadministradas, evaluaciones académicas o cuestionarios donde los informantes responden directamente desde sus computadoras personales o dispositivos móviles con conexión a internet.
 
-1. Ingresa a tu proyecto en **DataUMSA**.
+1. Ingresa a tu proyecto en **DATAUMSA**.
 2. Ve a la pestaña **Formulario**.
 3. En la sección **Recopilar datos**, asegúrate de que esté seleccionada la opción *"En línea-fuera de línea (varios envíos)"*.
 4. Haz clic en el botón **Copiar enlace**.
@@ -21,9 +21,9 @@ El informante interactuará con el motor web **Enketo**, el cual procesa las reg
 
 ---
 
-## Método 2: Aplicación Móvil DataUMSA Collect (Operativos Offline)
+## Método 2: Aplicación Móvil DATAUMSA Collect (Operativos Offline)
 
-Para brigadistas y equipos de campo que deben recolectar información en comunidades rurales, zonas periurbanas, valles o cordillera donde la señal celular es inestable o inexistente, la aplicación móvil **DataUMSA Collect** (disponible para dispositivos Android) es la solución estándar.
+Para brigadistas y equipos de campo que deben recolectar información en comunidades rurales, zonas periurbanas, valles o cordillera donde la señal celular es inestable o inexistente, la aplicación móvil **DATAUMSA Collect** (disponible para dispositivos Android) es la solución estándar.
 
 ### Flujo Operativo en Terreno
 
@@ -35,12 +35,12 @@ Descarga de boletas en blanco ───> Llenado de boletas en campo ───> 
 
 ---
 
-### Configuración Paso a Paso de DataUMSA Collect
+### Configuración Paso a Paso de DATAUMSA Collect
 
 > [!IMPORTANT]
 > Los pasos de configuración inicial y descarga de boletas deben realizarse mientras el teléfono móvil cuenta con acceso a internet.
 
-1. **Instalación:** Accede al [Centro de Descargas](/app-movil/descargas) desde tu dispositivo Android e instala el archivo APK oficial de **DataUMSA Collect**.
+1. **Instalación:** Accede al [Centro de Descargas](/app-movil/descargas) desde tu dispositivo Android e instala el archivo APK oficial de **DATAUMSA Collect**.
 2. **Ajustes de Servidor:**
    - Abre la aplicación en tu celular.
    - Presiona el botón de menú (o el ícono de perfil) y accede a **Ajustes del Servidor**.
@@ -66,8 +66,8 @@ Descarga de boletas en blanco ───> Llenado de boletas en campo ───> 
 
 ### Sincronización y Envío de Boletas
 
-1. Al regresar al campamento base, facultad o zona con cobertura de red (Wi-Fi institucional o datos), abre **DataUMSA Collect**.
+1. Al regresar al campamento base, facultad o zona con cobertura de red (Wi-Fi institucional o datos), abre **DATAUMSA Collect**.
 2. Toca la opción **Enviar formulario finalizado**.
 3. La aplicación mostrará el listado con el número de encuestas acumuladas durante la jornada.
 4. Presiona **Seleccionar todo** y luego **Enviar seleccionados**.
-5. Las respuestas se transferirán al servidor central de DataUMSA y se marcarán como enviadas en el dispositivo, evitando cualquier duplicación involuntaria.
+5. Las respuestas se transferirán al servidor central de DATAUMSA y se marcarán como enviadas en el dispositivo, evitando cualquier duplicación involuntaria.

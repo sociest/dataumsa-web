@@ -1,9 +1,9 @@
 ---
 title: Referencia de XLSForm
-description: Tipos de preguntas, lógicas y especificaciones del estándar XLSForm en la plataforma DataUMSA.
+description: Tipos de preguntas, lógicas y especificaciones del estándar XLSForm en la plataforma DATAUMSA.
 ---
 
-La plataforma **DataUMSA** es compatible con el estándar **XLSForm** (usado por ODK, KoboToolbox y Enketo) para la definición de cuestionarios complejos utilizando archivos de hoja de cálculo de Excel.
+La plataforma **DATAUMSA** es compatible con el estándar **XLSForm** (usado por ODK, KoboToolbox y Enketo) para la definición de cuestionarios complejos utilizando archivos de hoja de cálculo de Excel.
 
 ---
 

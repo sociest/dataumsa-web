@@ -1,169 +1,300 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Badge from "../components/components-astro/Badge.astro";
+import Button from "../components/components-astro/Button.astro";
+import TextReveal from "../components/components-astro/TextReveal.astro";
+import {
+    FiLock,
+    FiShield,
+    FiServer,
+    FiArrowRight,
+    FiAlertTriangle,
+} from "react-icons/fi";
 ---
 
 <Layout
-  title="Políticas de Privacidad"
-  description="Políticas de privacidad, anonimato técnico absoluto y protección de datos de la plataforma DataUMSA."
+    title="Políticas de Privacidad | DATAUMSA"
+    description="Políticas de privacidad, anonimato técnico absoluto y protección de datos de la plataforma DATAUMSA."
 >
-  <div
-    class="w-full relative py-20 px-6 md:px-8 overflow-hidden bg-glow-container min-h-screen"
-  >
-    {/* Fondo decorativo sutil con los tokens de acento */}
-    <div
-      class="absolute -left-40 top-20 w-[500px] h-[500px] bg-primary/5 rounded-full filter blur-3xl opacity-60 pointer-events-none"
-    >
+    <div class="w-full bg-canvas py-16 md:py-24 px-4 sm:px-6 lg:px-8 min-h-screen flex flex-col items-center">
+        <div class="max-w-4xl w-full mx-auto">
+            <!-- Cabecera de la página -->
+            <div class="mb-12 text-center md:text-left flex flex-col items-center md:items-start">
+                <Badge variant="primary" class="mb-4">
+                    Privacidad & Datos
+                </Badge>
+                <h1 class="text-ink font-display text-4xl sm:text-5xl font-extrabold tracking-[-0.035em] leading-tight mb-4">
+                    Políticas de Privacidad y{" "}
+                    <TextReveal variant="light">
+                        Tratamiento de Información
+                    </TextReveal>
+                </h1>
+                <div class="flex flex-wrap items-center gap-3 mt-2">
+                    <span class="inline-block bg-primary-light border border-ink text-ink font-mono text-xs font-bold px-3 py-1 rounded-full">
+                        Última actualización: 12 de julio de 2026
+                    </span>
+                    <span class="text-sm font-sans font-medium text-text-muted">
+                        Anonimato técnico absoluto y soberanía académica
+                    </span>
+                </div>
+            </div>
+
+            <!-- Contenedor Bento Principal (White Plate) -->
+            <div class="bg-white border-[2.5px] border-ink rounded-[2.5rem] p-7 sm:p-10 md:p-12 space-y-10">
+                <!-- Sección 1 -->
+                <section class="space-y-4">
+                    <h2 class="text-ink font-display text-xl sm:text-2xl font-bold tracking-tight flex items-center gap-3.5">
+                        <span class="w-9 h-9 rounded-xl bg-primary-light border-2 border-ink text-ink font-mono font-bold text-sm flex items-center justify-center shrink-0">
+                            1
+                        </span>
+                        Anonimato Técnico Absoluto y Cero Telemetría
+                    </h2>
+                    <p class="text-text-muted font-sans text-base leading-relaxed font-medium">
+                        <strong class="text-ink font-bold">DATAUMSA</strong> ha
+                        sido diseñada bajo el principio de{" "}
+                        <strong class="text-ink font-bold">
+                            privacidad por defecto
+                        </strong>
+                        . A diferencia de herramientas comerciales o
+                        recolectores masivos de datos corporativos:
+                    </p>
+                    <ul class="space-y-2.5 text-text-muted font-sans text-sm sm:text-base leading-relaxed font-medium pl-2">
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-2 h-2 rounded-full bg-success border border-ink mt-2 shrink-0"></span>
+                            <span>
+                                <strong class="text-ink font-bold">
+                                    Sin recolección centralizada de identidad:
+                                </strong>{" "}
+                                No solicitamos correos institucionales,
+                                contraseñas ni roles organizacionales para el
+                                uso genérico de la herramienta.
+                            </span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-2 h-2 rounded-full bg-success border border-ink mt-2 shrink-0"></span>
+                            <span>
+                                <strong class="text-ink font-bold">
+                                    Cero telemetría de plataforma:
+                                </strong>{" "}
+                                No recopilamos en segundo plano registros de
+                                direcciones IP, identificadores únicos del
+                                dispositivo móvil (IMEI/UUID) ni
+                                especificaciones de hardware. Tu anonimato
+                                técnico frente al sistema es absoluto.
+                            </span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-2 h-2 rounded-full bg-success border border-ink mt-2 shrink-0"></span>
+                            <span>
+                                <strong class="text-ink font-bold">
+                                    Control exclusivo del metadato:
+                                </strong>{" "}
+                                La captura de variables técnicas avanzadas (como
+                                la geolocalización o marcas de tiempo) depende
+                                estrictamente del diseño de cada cuestionario.{" "}
+                                <strong class="text-ink font-bold">
+                                    DATAUMSA
+                                </strong>{" "}
+                                está imposibilitada para activar rastreos
+                                ocultos de forma independiente.
+                            </span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Sección 2 -->
+                <section class="space-y-4 border-t-2 border-ink/10 pt-8">
+                    <h2 class="text-ink font-display text-xl sm:text-2xl font-bold tracking-tight flex items-center gap-3.5">
+                        <span class="w-9 h-9 rounded-xl bg-primary-light border-2 border-ink text-ink font-mono font-bold text-sm flex items-center justify-center shrink-0">
+                            2
+                        </span>
+                        Plataforma Abierta y Democrática
+                    </h2>
+                    <p class="text-text-muted font-sans text-base leading-relaxed font-medium">
+                        Si bien la infraestructura es impulsada y resguardada
+                        por la universidad,{" "}
+                        <strong class="text-ink font-bold">DATAUMSA</strong> es
+                        un bien tecnológico de{" "}
+                        <strong class="text-ink font-bold">
+                            uso libre y abierto
+                        </strong>{" "}
+                        destinado a optimizar la recolección segura de
+                        información para múltiples actores:
+                    </p>
+                    <ul class="space-y-2.5 text-text-muted font-sans text-sm sm:text-base leading-relaxed font-medium pl-2">
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-2 h-2 rounded-full bg-primary border border-ink mt-2 shrink-0"></span>
+                            <span>
+                                <strong class="text-ink font-bold">
+                                    Comunidad Universitaria:
+                                </strong>{" "}
+                                Investigadores senior, institutos científicos,
+                                carreras que requieran trabajo de campo
+                                constante y estudiantes de pregrado/posgrado
+                                desarrollando sus tesis de grado.
+                            </span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="w-2 h-2 rounded-full bg-primary border border-ink mt-2 shrink-0"></span>
+                            <span>
+                                <strong class="text-ink font-bold">
+                                    Usuarios Externos:
+                                </strong>{" "}
+                                Personas, profesionales u organizaciones ajenas
+                                a la UMSA que requieran un entorno robusto,
+                                ético y soberano para levantar sus datos sin ser
+                                rastreados por corporaciones multinacionales.
+                            </span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Sección 3 -->
+                <section class="space-y-4 border-t-2 border-ink/10 pt-8">
+                    <h2 class="text-ink font-display text-xl sm:text-2xl font-bold tracking-tight flex items-center gap-3.5">
+                        <span class="w-9 h-9 rounded-xl bg-primary-light border-2 border-ink text-ink font-mono font-bold text-sm flex items-center justify-center shrink-0">
+                            3
+                        </span>
+                        Propiedad Exclusiva de los Datos Recolectados
+                    </h2>
+                    <p class="text-text-muted font-sans text-base leading-relaxed font-medium">
+                        <strong class="text-ink font-bold">DATAUMSA</strong>{" "}
+                        actúa únicamente como el{" "}
+                        <strong class="text-ink font-bold">
+                            proveedor de la infraestructura y la bóveda de
+                            seguridad digital
+                        </strong>
+                        . Toda información recolectada mediante los formularios
+                        pertenece en su totalidad y de forma exclusiva al autor
+                        del proyecto. No realizamos minería de datos, venta,
+                        manipulación ni monetización de ninguna de las
+                        respuestas almacenadas.
+                    </p>
+                </section>
+
+                <!-- Sección 4 -->
+                <section class="space-y-4 border-t-2 border-ink/10 pt-8">
+                    <h2 class="text-ink font-display text-xl sm:text-2xl font-bold tracking-tight flex items-center gap-3.5">
+                        <span class="w-9 h-9 rounded-xl bg-primary-light border-2 border-ink text-ink font-mono font-bold text-sm flex items-center justify-center shrink-0">
+                            4
+                        </span>
+                        Seguridad Física, Canales de Transmisión y Soberanía de
+                        Servidores
+                    </h2>
+                    <p class="text-text-muted font-sans text-base leading-relaxed font-medium">
+                        La aplicación móvil almacena localmente los
+                        cuestionarios completados utilizando los mecanismos de
+                        encriptación interna provistos por el propio
+                        dispositivo. Al momento de sincronizar, los formularios
+                        viajan mediante canales altamente seguros (
+                        <strong class="text-ink font-bold">
+                            encriptación SSL/TLS
+                        </strong>
+                        ) directamente a la infraestructura física de la
+                        universidad. Esto evita por completo el uso de nubes
+                        comerciales de terceros y asegura la soberanía absoluta
+                        de tu información sensible frente a intercepciones.
+                    </p>
+
+                    <!-- Bento Server Badge -->
+                    <div class="mt-4 p-5 rounded-2xl bg-primary-light border-2 border-ink flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-primary border-2 border-ink flex items-center justify-center text-ink shrink-0">
+                            <FiServer className="w-5 h-5" />
+                        </div>
+                        <div>
+                            <h4 class="font-display font-bold text-ink text-sm">
+                                Servidores Propios en la Universidad Mayor de
+                                San Andrés
+                            </h4>
+                            <p class="text-xs font-sans text-text-muted font-medium mt-0.5">
+                                Datos alojados bajo legislación nacional y
+                                autonomía universitaria boliviana.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección 5 -->
+                <section class="space-y-4 border-t-2 border-ink/10 pt-8">
+                    <h2 class="text-ink font-display text-xl sm:text-2xl font-bold tracking-tight flex items-center gap-3.5">
+                        <span class="w-9 h-9 rounded-xl bg-primary-light border-2 border-ink text-ink font-mono font-bold text-sm flex items-center justify-center shrink-0">
+                            5
+                        </span>
+                        Actualizaciones de la Política y Deber de Consulta
+                    </h2>
+                    <p class="text-text-muted font-sans text-base leading-relaxed font-medium">
+                        A medida que{" "}
+                        <strong class="text-ink font-bold">DATAUMSA</strong>{" "}
+                        expanda sus capacidades técnicas y desarrolle nuevas
+                        herramientas de recolección y análisis para la
+                        investigación universitaria,{" "}
+                        <strong class="text-ink font-bold">
+                            estas Políticas de Privacidad podrán ser modificadas
+                            o actualizadas
+                        </strong>{" "}
+                        para reflejar con transparencia tales avances técnicos,
+                        nuevos estándares de cifrado y medidas de seguridad
+                        institucional, preservando siempre intactos los
+                        principios de anonimato técnico por defecto y propiedad
+                        exclusiva de los datos.
+                    </p>
+
+                    <!-- Bento Callout Rojo / Aviso Importante -->
+                    <div class="p-5 sm:p-6 rounded-2xl bg-danger/10 border-2 border-danger text-text-muted space-y-2.5">
+                        <div class="flex items-center gap-2 text-sm font-bold text-danger">
+                            <FiAlertTriangle className="w-5 h-5 shrink-0" />
+                            <span class="font-mono uppercase tracking-wider text-xs sm:text-sm">
+                                Aviso Importante: Deber de Consulta y
+                                Consentimiento Informado
+                            </span>
+                        </div>
+                        <p class="text-xs sm:text-sm font-sans leading-relaxed text-ink font-medium">
+                            <strong class="text-danger font-bold">
+                                Es deber y responsabilidad directa del usuario
+                                consultar periódicamente este documento.
+                            </strong>{" "}
+                            <strong class="text-danger font-bold">
+                                DATAUMSA no asumirá responsabilidad alguna por
+                                la falta de lectura, omisión o desconocimiento
+                                de las versiones actualizadas de esta política.
+                            </strong>
+                        </p>
+                        <p class="text-xs sm:text-sm font-sans leading-relaxed text-text-muted font-medium">
+                            La continuidad en el acceso y uso de los servicios
+                            de la plataforma posterior a la fecha de última
+                            actualización publicada confirma el pleno
+                            conocimiento, aceptación y conformidad del usuario
+                            con las condiciones y resguardos aquí descritos.
+                        </p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Quick Navigation Bento Pill Footer -->
+            <div class="mt-10 flex flex-wrap items-center justify-between gap-4 bg-white border-2 border-ink rounded-2xl p-5">
+                <div class="flex items-center gap-2">
+                    <FiLock className="w-5 h-5 text-primary" />
+                    <span class="text-xs font-mono font-bold text-ink">
+                        Garantías de Seguridad DATAUMSA
+                    </span>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <Button
+                        href="/terminos"
+                        variant="bento-secondary"
+                        class="text-xs py-2 px-4"
+                    >
+                        <span>Términos de Servicio</span>
+                    </Button>
+                    <Button
+                        href="/sobre-dataumsa/equipo-institucional"
+                        variant="bento-secondary"
+                        class="text-xs py-2 px-4"
+                    >
+                        <span>Equipo e Institucional</span>
+                    </Button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div
-      class="absolute -right-40 bottom-20 w-[400px] h-[400px] bg-accent/5 rounded-full filter blur-3xl opacity-40 pointer-events-none"
-    >
-    </div>
-
-    <div class="max-w-4xl mx-auto relative z-10">
-      {/* Cabecera de la página */}
-      <div class="mb-12 text-center md:text-left">
-        <h1
-          class="text-4xl md:text-5xl font-black tracking-tight text-text-main leading-tight mb-4"
-        >
-          Políticas de Privacidad y Tratamiento de Información
-        </h1>
-        <p class="text-text-muted dark:text-text-dark-muted text-lg">
-          Última actualización: 12 de julio de 2026. Esta política describe
-          nuestro compromiso con el anonimato absoluto, la seguridad de la
-          infraestructura y la apertura de la plataforma DataUMSA.
-        </p>
-      </div>
-
-      {/* Contenedor con fondo adaptativo sólido y alto contraste */}
-      <div
-        class="bg-white dark:bg-bg-dark-surface rounded-[2.5rem] p-8 md:p-12 border border-border/60 dark:border-border-dark shadow-xl space-y-10"
-      >
-        <section class="space-y-4">
-          <h2
-            class="text-2xl font-bold text-text-main dark:text-white flex items-center gap-3"
-          >
-            <span
-              class="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary-dark dark:text-primary-light text-sm font-bold"
-              >1</span
-            >
-            Anonimato Técnico Absoluto y Cero Telemetría
-          </h2>
-          <p class="text-text-muted dark:text-text-dark-muted leading-relaxed">
-            DataUMSA ha sido diseñada bajo el principio de <strong
-              class="text-text-main dark:text-white"
-              >privacidad por defecto</strong
-            >. A diferencia de herramientas comerciales o recolectores masivos
-            de datos corporativos:
-          </p>
-          <ul
-            class="list-disc pl-6 space-y-2 text-text-muted dark:text-text-dark-muted leading-relaxed"
-          >
-            <li>
-              <strong class="text-text-main dark:text-white"
-                >Sin recolección centralizada de identidad:</strong
-              > No solicitamos correos institucionales, contraseñas ni roles organizacionales
-              para el uso genérico de la herramienta.
-            </li>
-            <li>
-              <strong class="text-text-main dark:text-white"
-                >Cero telemetría de plataforma:</strong
-              > No recopilamos en segundo plano registros de direcciones IP, identificadores
-              únicos del dispositivo móvil (IMEI/UUID) ni especificaciones de hardware.
-              Tu anonimato técnico frente al sistema es absoluto.
-            </li>
-            <li>
-              <strong class="text-text-main dark:text-white"
-                >Control exclusivo del metadato:</strong
-              > La captura de variables técnicas avanzadas (como la geolocalización
-              o marcas de tiempo) depende estrictamente del diseño de cada cuestionario.
-              DataUMSA está imposibilitada para activar rastreos ocultos de forma
-              independiente.
-            </li>
-          </ul>
-        </section>
-
-        <section class="space-y-4">
-          <h2
-            class="text-2xl font-bold text-text-main dark:text-white flex items-center gap-3"
-          >
-            <span
-              class="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary-dark dark:text-primary-light text-sm font-bold"
-              >2</span
-            >
-            Plataforma Abierta y Democrática
-          </h2>
-          <p class="text-text-muted dark:text-text-dark-muted leading-relaxed">
-            Si bien la infraestructura es impulsada y resguardada por la
-            universidad, DataUMSA es un bien tecnológico de <strong
-              class="text-text-main dark:text-white">uso libre y abierto</strong
-            > destinado a optimizar la recolección segura de información para múltiples
-            actores:
-          </p>
-          <ul
-            class="list-disc pl-6 space-y-2 text-text-muted dark:text-text-dark-muted leading-relaxed"
-          >
-            <li>
-              <strong class="text-text-main dark:text-white"
-                >Comunidad Universitaria:</strong
-              > Investigadores senior, institutos científicos, carreras que requieran
-              trabajo de campo constante y estudiantes de pregrado/posgrado desarrollando
-              sus tesis de grado.
-            </li>
-            <li>
-              <strong class="text-text-main dark:text-white"
-                >Usuarios Externos:</strong
-              > Personas, profesionales u organizaciones ajenas a la UMSA que requieran
-              un entorno robusto, ético y soberano para levantar sus datos sin ser
-              rastreados por corporaciones multinacionales.
-            </li>
-          </ul>
-        </section>
-
-        <section class="space-y-4">
-          <h2
-            class="text-2xl font-bold text-text-main dark:text-white flex items-center gap-3"
-          >
-            <span
-              class="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary-dark dark:text-primary-light text-sm font-bold"
-              >3</span
-            >
-            Propiedad Exclusiva de los Datos Recolectados
-          </h2>
-          <p class="text-text-muted dark:text-text-dark-muted leading-relaxed">
-            DataUMSA actúa únicamente como el <strong
-              class="text-text-main dark:text-white"
-              >proveedor de la infraestructura y la bóveda de seguridad digital</strong
-            >. Toda información recolectada mediante los formularios pertenece
-            en su totalidad y de forma exclusiva al autor del proyecto. No
-            realizamos minería de datos, venta, manipulación ni monetización de
-            ninguna de las respuestas almacenadas.
-          </p>
-        </section>
-
-        <section class="space-y-4">
-          <h2
-            class="text-2xl font-bold text-text-main dark:text-white flex items-center gap-3"
-          >
-            <span
-              class="flex items-center justify-center w-8 h-8 rounded-lg bg-primary/10 dark:bg-primary/20 text-primary-dark dark:text-primary-light text-sm font-bold"
-              >4</span
-            >
-            Seguridad Física, Canales de Transmisión y Soberanía de Servidores
-          </h2>
-          <p class="text-text-muted dark:text-text-dark-muted leading-relaxed">
-            La aplicación móvil almacena localmente los cuestionarios
-            completados utilizando los mecanismos de encriptación interna
-            provistos por el propio dispositivo. Al momento de sincronizar, los
-            formularios viajan mediante canales altamente seguros (<strong
-              class="text-text-main dark:text-white"
-              >encriptación SSL/TLS</strong
-            >) directamente a la infraestructura física de la universidad. Esto
-            evita por completo el uso de nubes comerciales de terceros y asegura
-            la soberanía absoluta de tu información sensible frente a
-            intercepciones.
-          </p>
-        </section>
-      </div>
-    </div>
-  </div>
 </Layout>

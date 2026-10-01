@@ -1,273 +1,94 @@
 ---
-// Componente WhySection (¿Por qué elegir DataUMSA?)
-// Rediseñado como banda inmersiva Full-Width (Edge-to-Edge)
-import TextReveal from "./TextReveal.astro";
-import { FiShield } from "react-icons/fi";
+// Componente WhySection (¿Por qué elegir DATAUMSA?) - Adaptado a Bento DESIGN2.md (Cyan Light Band)
+import Badge from "./Badge.astro";
+import { FiShield, FiSliders, FiWifiOff, FiBarChart2 } from "react-icons/fi";
 ---
 
-<section
-    class="w-full bg-slate-50/80 py-24 lg:py-32 px-6 sm:px-12 relative overflow-hidden border-y border-border mt-12"
->
-    <!-- Fondo Inmersivo: Data Waves (Ahora a pantalla completa) -->
-    <div
-        class="absolute inset-0 bg-data-waves opacity-50 pointer-events-none z-0"
-    >
-    </div>
-
-    <!-- Elementos de luz de fondo (Glow) ajustados para ancho completo -->
-    <div
-        class="absolute top-0 left-0 md:left-1/4 w-full md:w-[800px] h-[600px] bg-primary/10 rounded-full blur-[150px] pointer-events-none z-0 animate-pulse-slow"
-    >
-    </div>
-    <div
-        class="absolute bottom-0 right-0 md:right-[-10%] w-[600px] h-[600px] bg-accent/10 rounded-full blur-[150px] pointer-events-none z-0"
-    >
-    </div>
-
-    <div class="max-w-7xl w-full mx-auto relative z-10">
+<section class="w-full bg-primary-light py-16 lg:py-24 px-4 sm:px-6 border-y-[2.5px] border-ink">
+    <div class="max-w-300 w-full mx-auto">
         <!-- Encabezado de la sección -->
-        <div class="text-center max-w-2xl mx-auto mb-20 md:mb-28">
-            <h2
-                class="text-4xl md:text-5xl lg:text-6xl font-black text-text-main tracking-tight inline-flex flex-col"
-            >
-                ¿Por qué elegir <TextReveal variant="light"
-                    >DataUMSA?</TextReveal
-                >
-                <span
-                    class="w-32 h-1.5 bg-gradient-to-r from-primary to-accent rounded-full mt-6 mx-auto"
-                ></span>
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <Badge variant="white" class="mb-4 inline-flex">
+                Ventajas Clave
+            </Badge>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink tracking-[-0.035em] font-display leading-tight">
+                ¿Por qué elegir{" "}
+                <span class="bg-primary px-2 py-0.5 rounded-lg border-2 border-ink">
+                    DATAUMSA?
+                </span>
             </h2>
+            <p class="text-base sm:text-lg text-text-muted font-medium mt-4 font-sans max-w-xl mx-auto">
+                Tecnología académica de estándar global adaptada a las
+                necesidades reales de investigación.
+            </p>
         </div>
 
-        <!-- Staggered Grid con más respiro -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 relative">
-            <!-- ================= COLUMNA IZQUIERDA ================= -->
-            <div class="flex flex-col gap-8 lg:gap-12">
-                <!-- CARD 1: SOBERANÍA -->
-                <div
-                    class="group relative bg-white/70 backdrop-blur-md border border-border hover:border-primary/40 hover:shadow-[0_20px_50px_-15px_rgba(6,136,186,0.15)] rounded-[2rem] p-8 lg:p-12 overflow-hidden transition-all duration-500 hover:-translate-y-2"
-                >
-                    <div
-                        class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                    >
+        <!-- Bento Grid 2x2 de White Plates con bordes de tinta -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            <!-- CARD 1: SOBERANÍA -->
+            <div class="bg-white border-[2.5px] border-ink rounded-card p-7 sm:p-9 flex flex-col justify-between group hover:-translate-y-1 transition-transform duration-200">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-primary-light border-2 border-ink flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-200">
+                        <FiShield className="w-7 h-7 text-ink" />
                     </div>
-
-                    <div class="relative z-10">
-                        <div
-                            class="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-8 group-hover:shadow-[0_0_30px_-5px_rgba(41,185,242,0.2)] transition-all duration-500 relative"
-                        >
-                            <div
-                                class="absolute inset-0 bg-primary/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"
-                            >
-                            </div>
-                            <FiShield className="w-8 h-8 text-primary-dark relative z-10 transition-transform duration-300 group-hover:scale-110" />
-                        </div>
-
-                        <h3
-                            class="text-2xl lg:text-3xl font-bold text-text-main mb-4"
-                        >
-                            Soberanía de datos
-                        </h3>
-                        <p
-                            class="text-text-muted font-medium leading-relaxed text-lg"
-                        >
-                            Tus datos se quedan en servidores de la UMSA. Nunca
-                            se venden ni se comparten con terceros.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- CARD 3: OFFLINE -->
-                <div
-                    class="group relative bg-white/70 backdrop-blur-md border border-border hover:border-primary/40 hover:shadow-[0_20px_50px_-15px_rgba(6,136,186,0.15)] rounded-[2rem] p-8 lg:p-12 overflow-hidden transition-all duration-500 hover:-translate-y-2"
-                >
-                    <div
-                        class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                    >
-                    </div>
-
-                    <div class="relative z-10">
-                        <div
-                            class="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-8 group-hover:shadow-[0_0_30px_-5px_rgba(41,185,242,0.2)] transition-all duration-500 relative"
-                        >
-                            <div
-                                class="relative w-7 h-10 border-2 border-primary-dark rounded-lg flex flex-col items-center justify-between py-1 bg-white group-hover:rotate-6 group-hover:scale-105 transition-transform duration-300 z-10"
-                            >
-                                <div
-                                    class="w-2 h-0.5 bg-primary-dark/60 rounded-full"
-                                >
-                                </div>
-                                <div
-                                    class="w-3 h-3 rounded-full border-2 border-dashed border-primary/40 group-hover:border-solid group-hover:border-primary-dark animate-[spin_4s_linear_infinite] group-hover:animate-ping transition-all"
-                                >
-                                </div>
-                                <div class="w-3 h-0.5 bg-primary-dark rounded-full">
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3
-                            class="text-2xl lg:text-3xl font-bold text-text-main mb-4"
-                        >
-                            Trabajo 100% offline
-                        </h3>
-                        <p
-                            class="text-text-muted font-medium leading-relaxed text-lg"
-                        >
-                            Recolecta datos en cualquier lugar. Nuestra app
-                            Android funciona sin conexión de red garantizado.
-                        </p>
-                    </div>
+                    <h3 class="text-2xl font-bold text-ink mb-3 font-display tracking-tight">
+                        Soberanía de datos
+                    </h3>
+                    <p class="text-text-muted font-medium leading-relaxed font-sans text-base">
+                        Tus datos se quedan en servidores de la UMSA. Nunca se
+                        venden ni se comparten con terceros corporativos.
+                    </p>
                 </div>
             </div>
 
-            <!-- ================= COLUMNA DERECHA ================= -->
-            <div class="flex flex-col gap-8 lg:gap-12 md:mt-24">
-                <!-- CARD 2: HERRAMIENTAS -->
-                <div
-                    class="group relative bg-white/70 backdrop-blur-md border border-border hover:border-primary/40 hover:shadow-[0_20px_50px_-15px_rgba(41,185,242,0.15)] rounded-[2rem] p-8 lg:p-12 overflow-hidden transition-all duration-500 hover:-translate-y-2"
-                >
-                    <div
-                        class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                    >
+            <!-- CARD 2: HERRAMIENTAS -->
+            <div class="bg-white border-[2.5px] border-ink rounded-card p-7 sm:p-9 flex flex-col justify-between group hover:-translate-y-1 transition-transform duration-200">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-primary-light border-2 border-ink flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-200">
+                        <FiSliders className="w-7 h-7 text-ink" />
                     </div>
-
-                    <div class="relative z-10">
-                        <div
-                            class="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-8 group-hover:shadow-[0_0_30px_-5px_rgba(41,185,242,0.2)] transition-all duration-500 relative"
-                        >
-                            <div
-                                class="relative w-8 h-9 border-2 border-primary rounded-md p-1.5 flex flex-col gap-1.5 bg-white group-hover:-translate-y-1 transition-transform duration-300 z-10"
-                            >
-                                <div
-                                    class="w-full h-1 bg-primary/40 rounded-full group-hover:w-3/4 transition-all duration-300"
-                                >
-                                </div>
-                                <div class="flex gap-1 items-center">
-                                    <div
-                                        class="w-2 h-2 rounded-[2px] bg-primary group-hover:scale-110 transition-transform"
-                                    >
-                                    </div>
-                                    <div
-                                        class="w-3 h-1 bg-primary/70 rounded-full group-hover:w-full transition-all duration-300 delay-75"
-                                    >
-                                    </div>
-                                </div>
-                                <div
-                                    class="w-3/4 h-1 bg-primary/40 rounded-full group-hover:w-1/2 transition-all duration-300 delay-150"
-                                >
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3
-                            class="text-2xl lg:text-3xl font-bold text-text-main mb-4"
-                        >
-                            Herramientas profesionales
-                        </h3>
-                        <p
-                            class="text-text-muted font-medium leading-relaxed text-lg"
-                        >
-                            Lógica condicional, grupos repetibles, cálculos,
-                            GPS, soporte multimedia y formularios complejos.
-                        </p>
-                    </div>
+                    <h3 class="text-2xl font-bold text-ink mb-3 font-display tracking-tight">
+                        Herramientas profesionales
+                    </h3>
+                    <p class="text-text-muted font-medium leading-relaxed font-sans text-base">
+                        Lógica condicional compleja, grupos repetibles, cálculos
+                        matemáticos, GPS y soporte multimedia completo.
+                    </p>
                 </div>
+            </div>
 
-                <!-- CARD 4: ANÁLISIS -->
-                <div
-                    class="group relative bg-white/70 backdrop-blur-md border border-border hover:border-primary/40 hover:shadow-[0_20px_50px_-15px_rgba(6,136,186,0.15)] rounded-[2rem] p-8 lg:p-12 overflow-hidden transition-all duration-500 hover:-translate-y-2"
-                >
-                    <div
-                        class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                    >
+            <!-- CARD 3: OFFLINE -->
+            <div class="bg-white border-[2.5px] border-ink rounded-card p-7 sm:p-9 flex flex-col justify-between group hover:-translate-y-1 transition-transform duration-200">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-primary-light border-2 border-ink flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-200">
+                        <FiWifiOff className="w-7 h-7 text-ink" />
                     </div>
+                    <h3 class="text-2xl font-bold text-ink mb-3 font-display tracking-tight">
+                        Trabajo 100% offline
+                    </h3>
+                    <p class="text-text-muted font-medium leading-relaxed font-sans text-base">
+                        Recolecta datos en cualquier lugar del país sin
+                        necesidad de señal celular gracias a la app Android
+                        dedicada.
+                    </p>
+                </div>
+            </div>
 
-                    <div class="relative z-10">
-                        <div
-                            class="w-16 h-16 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mb-8 group-hover:shadow-[0_0_30px_-5px_rgba(41,185,242,0.2)] transition-all duration-500 relative"
-                        >
-                            <div
-                                class="relative w-9 h-8 flex items-end gap-1 z-10 group-hover:scale-105 transition-transform duration-300"
-                            >
-                                <div
-                                    class="absolute -left-1 -bottom-1 w-10 h-0.5 bg-primary/30 rounded-full"
-                                >
-                                </div>
-                                <div
-                                    class="absolute -left-1 -bottom-1 w-0.5 h-9 bg-primary/30 rounded-full"
-                                >
-                                </div>
-                                <div
-                                    class="w-2 bg-primary/40 rounded-t-[2px] h-3 group-hover:h-5 transition-all duration-300"
-                                >
-                                </div>
-                                <div
-                                    class="w-2 bg-primary/70 rounded-t-[2px] h-5 group-hover:h-7 transition-all duration-300 delay-75"
-                                >
-                                </div>
-                                <div
-                                    class="w-2 bg-primary-dark rounded-t-[2px] h-7 group-hover:h-9 transition-all duration-300 delay-150"
-                                >
-                                </div>
-                            </div>
-                        </div>
-
-                        <h3
-                            class="text-2xl lg:text-3xl font-bold text-text-main mb-4"
-                        >
-                            Análisis y exportación
-                        </h3>
-                        <p
-                            class="text-text-muted font-medium leading-relaxed text-lg"
-                        >
-                            Exporta tus datos en formatos estándar como Excel,
-                            SPSS, Stata, KML y más, con visualizaciones fluidas.
-                        </p>
+            <!-- CARD 4: ANÁLISIS -->
+            <div class="bg-white border-[2.5px] border-ink rounded-card p-7 sm:p-9 flex flex-col justify-between group hover:-translate-y-1 transition-transform duration-200">
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-primary-light border-2 border-ink flex items-center justify-center mb-6 group-hover:bg-primary transition-colors duration-200">
+                        <FiBarChart2 className="w-7 h-7 text-ink" />
                     </div>
+                    <h3 class="text-2xl font-bold text-ink mb-3 font-display tracking-tight">
+                        Análisis y exportación
+                    </h3>
+                    <p class="text-text-muted font-medium leading-relaxed font-sans text-base">
+                        Exporta tus bases limpias en formatos estándar como
+                        Excel, CSV, SPSS (.sav) y Stata (.dta) con un solo clic.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<style>
-    /* ==========================================================
-       FONDO INMERSIVO "DATA WAVES" PANTALLA COMPLETA
-       ========================================================== */
-    .bg-data-waves {
-        background-image: repeating-radial-gradient(
-            circle at 50% 30%,
-            transparent 0,
-            transparent 40px,
-            rgba(15, 23, 42, 0.02) 41px,
-            rgba(15, 23, 42, 0.005) 42px
-        );
-        /* Degradado más suave para anchos grandes */
-        mask-image: radial-gradient(
-            ellipse 80% 100% at 50% 50%,
-            rgba(0, 0, 0, 1) 20%,
-            transparent 100%
-        );
-        -webkit-mask-image: radial-gradient(
-            ellipse 80% 100% at 50% 50%,
-            rgba(0, 0, 0, 1) 20%,
-            transparent 100%
-        );
-    }
-
-    .animate-pulse-slow {
-        animation: pulse-glow 10s ease-in-out infinite alternate;
-    }
-
-    @keyframes pulse-glow {
-        0% {
-            opacity: 0.4;
-            transform: scale(0.9);
-        }
-        100% {
-            opacity: 0.8;
-            transform: scale(1.1);
-        }
-    }
-</style>

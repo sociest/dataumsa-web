@@ -1,80 +1,47 @@
 ---
+// Componente CTA Final para DATAUMSA (Adaptado a Bento DESIGN2.md)
 import Button from "./Button.astro";
-import TextReveal from "./TextReveal.astro";
 ---
 
-<div class="max-w-7xl w-full mx-auto py-16 px-4 md:px-0 animate-fade-in">
-    <div
-        class="bg-bg-dark-surface rounded-[2.5rem] p-8 md:p-16 relative overflow-hidden flex flex-col items-center text-center group bento-card shadow-lg border border-border-dark hover:border-primary/30 hover:shadow-[0_30px_60px_-15px_rgba(41,185,242,0.25)] transition-all duration-500"
-    >
+<div class="max-w-300 w-full mx-auto py-12 px-4 sm:px-6">
+    <div class="bg-midnight-surface rounded-[2.5rem] p-8 md:p-14 relative overflow-hidden flex flex-col items-center text-center border-3 border-ink">
+        {/* Grilla geométrica sutil en lugar de blobs borrosos */}
         <div
-            class="absolute -right-32 -bottom-32 w-96 h-96 bg-primary rounded-full mix-blend-screen filter blur-[100px] opacity-20 group-hover:opacity-30 group-hover:scale-110 transition-all duration-700 animate-float"
-        >
-        </div>
-        <div
-            class="absolute -left-32 -top-32 w-96 h-96 bg-success rounded-full mix-blend-screen filter blur-[100px] opacity-10 group-hover:opacity-20 group-hover:scale-110 transition-all duration-700 animate-float"
-            style="animation-delay: 2s;"
-        >
-        </div>
+            class="absolute inset-0 opacity-[0.03] pointer-events-none"
+            style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"
+        ></div>
 
-        <div class="relative z-10 max-w-2xl space-y-6">
-            <h2
-                class="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-white leading-none"
-            >
-                ¿Listo para empezar con <TextReveal variant="light">DataUMSA?</TextReveal>
+        <div class="relative z-10 max-w-2xl space-y-5">
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.035em] text-white leading-tight font-display">
+                ¿Listo para empezar con{" "}
+                <span class="text-primary">DATAUMSA?</span>
             </h2>
 
-            <p
-                class="text-lg md:text-xl text-text-dark-muted leading-relaxed max-w-xl mx-auto"
-            >
+            <p class="text-base sm:text-lg text-text-dark-muted leading-relaxed max-w-xl mx-auto font-sans font-medium">
                 Únete a la plataforma oficial diseñada por y para la comunidad
                 universitaria. Potencia tu recolección de datos e investigación
                 de forma soberana y profesional.
             </p>
         </div>
 
-        <div
-            class="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 w-full sm:w-auto"
-        >
-            <Button href="https://app-dataumsa.sociest.org/accounts/login/" variant="bento-primary">
+        <div class="relative z-10 flex flex-col sm:flex-row items-center justify-center gap-3.5 mt-8 w-full sm:w-auto">
+            <Button
+                href="https://app-dataumsa.sociest.org/accounts/login/"
+                variant="bento-primary"
+                target="_blank"
+            >
                 Acceso Institucional UMSA
             </Button>
             <Button href="/app-movil/descargas" variant="bento-secondary">
-                Descargar DataUMSA Collect APK
+                Descargar App APK
             </Button>
-            <Button href="/docs" variant="bento-secondary">
-                Guías y Documentación
+            <Button
+                href="/docs"
+                variant="ghost"
+                class="text-white hover:bg-white/10 border-white/40 hover:border-white"
+            >
+                Guías y Docs
             </Button>
         </div>
     </div>
 </div>
-
-<style>
-    @keyframes float {
-        0%,
-        100% {
-            transform: translateY(0px) scale(1);
-        }
-        50% {
-            transform: translateY(-15px) scale(1.05);
-        }
-    }
-
-    .animate-float {
-        animation: float 6s ease-in-out infinite;
-    }
-
-    .bento-card {
-        transition:
-            transform
-                var(--transition-smooth, 0.4s cubic-bezier(0.16, 1, 0.3, 1)),
-            box-shadow
-                var(--transition-smooth, 0.4s cubic-bezier(0.16, 1, 0.3, 1)),
-            border-color var(--transition-smooth, 0.4s ease);
-    }
-
-    .bento-card:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-glass);
-    }
-</style>

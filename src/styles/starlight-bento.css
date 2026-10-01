@@ -1,0 +1,704 @@
+/* ==========================================================================
+   BENTO DESIGN SYSTEM — STARLIGHT DOCUMENTATION ADAPTATION (DESIGN2.md)
+   Plataforma Oficial DATAUMSA — Universidad Mayor de San Andrés
+   ========================================================================== */
+
+/* 0. FUENTES BENTO */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('/fonts/Montserrat,Plus_Jakarta_Sans/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('/fonts/Montserrat,Plus_Jakarta_Sans/Plus_Jakarta_Sans/PlusJakartaSans-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* 1. TOKENS Y VARIABLES DE TEMA BENTO */
+:root,
+[data-theme="light"],
+[data-theme="dark"] {
+    /* Paleta Bento mapeada a variables del sistema */
+    --color-bento-cyan: var(--color-primary, #29b9f2);
+    --color-bento-cyan-dark: var(--color-primary-dark, #0688ba);
+    --color-bento-cyan-light: var(--color-primary-light, #e0f6ff);
+    --color-bento-canvas: var(--color-canvas, #f8fafc);
+    --color-bento-white: var(--color-white-plate, #ffffff);
+    --color-bento-ink: var(--color-ink, #0f172a);
+    --color-bento-slate: var(--color-text-muted, #475569);
+    --color-bento-dark-slate: var(--color-text-dark-muted, #94a3b8);
+    --color-bento-midnight: var(--color-midnight, #090f1e);
+    --color-bento-midnight-surface: var(--color-midnight-surface, #131b2e);
+    --color-bento-violet: var(--color-accent, #8b5cf6);
+    --color-bento-emerald: var(--color-success, #10b981);
+    --color-bento-amber: var(--color-warning, #f59e0b);
+    --color-bento-red: var(--color-danger, #ef4444);
+
+    /* Starlight Mappings */
+    --sl-color-accent: var(--color-bento-cyan) !important;
+    --sl-color-accent-high: var(--color-bento-cyan-dark) !important;
+    --sl-color-accent-low: var(--color-bento-cyan-light) !important;
+    
+    --sl-color-bg: var(--color-bento-canvas) !important;
+    --sl-color-bg-nav: var(--color-bento-white) !important;
+    --sl-color-bg-sidebar: var(--color-bento-white) !important;
+    --sl-color-bg-inline-code: var(--color-bento-cyan-light) !important;
+    --sl-color-hairline: var(--color-bento-ink) !important;
+    --sl-color-hairline-light: var(--color-bento-ink) !important;
+
+    --sl-color-text: var(--color-bento-ink) !important;
+    --sl-color-text-accent: var(--color-bento-cyan-dark) !important;
+    --sl-color-white: var(--color-bento-ink) !important;
+    --sl-color-gray-1: var(--color-bento-ink) !important;
+    --sl-color-gray-2: #334155 !important;
+    --sl-color-gray-3: var(--color-bento-slate) !important;
+    --sl-color-gray-4: #64748b !important;
+    --sl-color-gray-5: #cbd5e1 !important;
+    --sl-color-gray-6: #f1f5f9 !important;
+
+    /* Tipografía Bento */
+    --sl-font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
+    --sl-font-mono: 'JetBrains Mono', ui-monospace, monospace !important;
+    --sl-font-display: 'Montserrat', 'Plus Jakarta Sans', sans-serif !important;
+
+    /* Pelagornis Page variables */
+    --page-bg: var(--color-bento-canvas) !important;
+    --page-bg-secondary: var(--color-bento-white) !important;
+    --page-bg-elevated: var(--color-bento-white) !important;
+    --page-border: var(--color-bento-ink) !important;
+    --page-border-subtle: var(--color-bento-ink) !important;
+    --page-text: var(--color-bento-ink) !important;
+    --page-text-secondary: var(--color-bento-slate) !important;
+    --page-accent: var(--color-bento-cyan) !important;
+    --page-radius: 12px !important;
+    --page-radius-lg: 20px !important;
+    --page-sidebar-width: 280px !important;
+}
+
+/* Modo oscuro Bento: Midnight Band & Midnight Surface */
+[data-theme="dark"] {
+    --sl-color-bg: var(--color-bento-midnight) !important;
+    --sl-color-bg-nav: var(--color-bento-midnight-surface) !important;
+    --sl-color-bg-sidebar: var(--color-bento-midnight-surface) !important;
+    --sl-color-bg-inline-code: #1e293b !important;
+    --sl-color-text: var(--color-bento-canvas) !important;
+    --sl-color-text-accent: var(--color-bento-cyan) !important;
+    --sl-color-white: #ffffff !important;
+    --sl-color-gray-1: var(--color-bento-canvas) !important;
+    --sl-color-gray-2: #e2e8f0 !important;
+    --sl-color-gray-3: var(--color-bento-dark-slate) !important;
+    --sl-color-gray-4: #64748b !important;
+    --sl-color-gray-5: #334155 !important;
+    --sl-color-gray-6: #1e293b !important;
+
+    --page-bg: var(--color-bento-midnight) !important;
+    --page-bg-secondary: var(--color-bento-midnight-surface) !important;
+    --page-bg-elevated: var(--color-bento-midnight-surface) !important;
+    --page-border: var(--color-bento-cyan) !important;
+    --page-text: var(--color-bento-canvas) !important;
+    --page-text-secondary: var(--color-bento-dark-slate) !important;
+}
+
+/* 2. BASE, CANVAS Y SOMBRAS (Se prohíben sombras difuminadas, todo con tinta sólida) */
+html, body {
+    background-color: var(--sl-color-bg) !important;
+    color: var(--sl-color-text) !important;
+    font-family: var(--sl-font) !important;
+    -webkit-font-smoothing: antialiased;
+}
+
+* {
+    box-shadow: none !important;
+}
+
+/* 3. ENCABEZADOS MONTSERRAT BENTO (700-800 weight con tracking negativo) */
+h1, h2, h3, h4, h5, h6,
+.page-hero-title,
+.sl-heading-wrapper h2,
+.sl-heading-wrapper h3,
+.title,
+.page-sidebar-group-title,
+.starlight-aside__title {
+    font-family: var(--sl-font-display) !important;
+    letter-spacing: -0.025em !important;
+    color: var(--sl-color-text) !important;
+}
+
+h1, .page-hero-title {
+    font-weight: 800 !important;
+}
+
+h2, h3, h4 {
+    font-weight: 700 !important;
+}
+
+/* 4. HEADER Y BARRA SUPERIOR (Línea divisoria única horizontal, sin duplicaciones) */
+header.header {
+    background-color: var(--color-bento-white) !important;
+    border-bottom: 2.5px solid var(--color-bento-ink) !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+}
+
+[data-theme="dark"] header.header {
+    background-color: var(--color-bento-midnight-surface) !important;
+    border-bottom: 2.5px solid var(--color-bento-cyan) !important;
+}
+
+.page-header {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.page-title-text {
+    font-family: var(--sl-font-display) !important;
+    font-weight: 800 !important;
+    font-size: 1.25rem !important;
+    letter-spacing: -0.02em !important;
+    color: var(--color-bento-ink) !important;
+}
+
+[data-theme="dark"] .page-title-text {
+    color: #ffffff !important;
+}
+
+/* Botones de búsqueda y tema tipo Sticker */
+.page-search-button,
+.page-theme-toggle-button,
+.page-mobile-menu-toggle {
+    border: 2px solid var(--color-bento-ink) !important;
+    background-color: var(--color-bento-canvas) !important;
+    border-radius: 9999px !important;
+    transition: transform 0.15s ease, background-color 0.15s ease !important;
+}
+
+.page-search-button:hover,
+.page-theme-toggle-button:hover,
+.page-mobile-menu-toggle:hover {
+    background-color: var(--color-bento-cyan-light) !important;
+    transform: translateY(-1px) !important;
+}
+
+.page-search-button:active,
+.page-theme-toggle-button:active,
+.page-mobile-menu-toggle:active {
+    transform: translateY(1px) !important;
+}
+
+/* 5. CONTENEDOR PRINCIPAL, SIDEBAR Y WRAPPER DE CONTENIDO (Sticky respetando el Footer) */
+.page-main-container {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    position: relative !important;
+    width: 100% !important;
+    min-height: calc(100vh - var(--page-header-height, 64px)) !important;
+    gap: 0 !important;
+}
+
+@media (min-width: 769px) {
+    .page-sidebar-nav {
+        position: sticky !important;
+        top: 0 !important;
+        left: auto !important;
+        width: 280px !important;
+        min-width: 280px !important;
+        max-width: 280px !important;
+        height: calc(100vh - var(--page-header-height, 64px)) !important;
+        max-height: calc(100vh - var(--page-header-height, 64px)) !important;
+        align-self: flex-start !important;
+        z-index: 10 !important;
+        background-color: var(--color-bento-white) !important;
+        border-right: 2.5px solid var(--color-bento-ink) !important;
+        box-sizing: border-box !important;
+        overflow-y: auto !important;
+        padding: 1.5rem !important;
+        flex-shrink: 0 !important;
+    }
+
+    .page-content-wrapper {
+        flex: 1 1 auto !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: auto !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        box-sizing: border-box !important;
+        padding: 2.5rem 3.5rem !important;
+    }
+}
+
+[data-theme="dark"] .page-sidebar-nav {
+    background-color: var(--color-bento-midnight-surface) !important;
+    border-right: 2.5px solid var(--color-bento-cyan) !important;
+}
+
+/* Anular absolutamente cualquier borde en los elementos hijos del sidebar para evitar líneas dobles */
+.page-sidebar,
+.page-sidebar-container,
+.sl-sidebar,
+.sidebar,
+.sidebar-pane {
+    border: none !important;
+    border-right: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.page-sidebar-group-title {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.75rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: var(--color-bento-slate) !important;
+    margin-top: 1.25rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* Enlaces del sidebar */
+.page-sidebar-link,
+.sl-sidebar a {
+    font-family: var(--sl-font) !important;
+    font-size: 0.875rem !important;
+    font-weight: 600 !important;
+    padding: 6px 12px !important;
+    border-radius: 9999px !important;
+    border: 1.5px solid transparent !important;
+    color: var(--color-bento-ink) !important;
+    transition: all 0.15s ease !important;
+    text-decoration: none !important;
+    margin-bottom: 3px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.page-sidebar-link:hover,
+.sl-sidebar a:hover {
+    background-color: var(--color-bento-cyan-light) !important;
+    color: var(--color-bento-cyan-dark) !important;
+    border-color: var(--color-bento-ink) !important;
+    transform: translateX(2px) !important;
+}
+
+/* Enlace activo (Pill Sticker Cyan) */
+.page-sidebar-link[aria-current="true"],
+.page-sidebar-link[aria-current="page"],
+.page-sidebar-link.active,
+.sl-sidebar a[aria-current="page"] {
+    background-color: var(--color-bento-cyan-light) !important;
+    color: var(--color-bento-cyan-dark) !important;
+    border: 2px solid var(--color-bento-ink) !important;
+    font-weight: 700 !important;
+}
+
+[data-theme="dark"] .page-sidebar-link,
+[data-theme="dark"] .sl-sidebar a {
+    color: var(--color-bento-dark-slate) !important;
+}
+
+[data-theme="dark"] .page-sidebar-link[aria-current="page"],
+[data-theme="dark"] .sl-sidebar a[aria-current="page"] {
+    background-color: #1e293b !important;
+    color: var(--color-bento-cyan) !important;
+    border-color: var(--color-bento-cyan) !important;
+}
+
+/* 6. HERO SECTION DE DOCUMENTACIÓN (Splash Page) */
+.page-hero {
+    padding: 2.5rem 0 !important;
+    margin-bottom: 2rem !important;
+}
+
+.page-hero-title {
+    font-size: clamp(2.25rem, 5vw, 3.5rem) !important;
+    line-height: 1.1 !important;
+    margin-bottom: 1rem !important;
+    color: var(--color-bento-ink) !important;
+}
+
+.page-hero-tagline {
+    font-size: 1.125rem !important;
+    line-height: 1.6 !important;
+    color: var(--color-bento-slate) !important;
+    max-width: 720px !important;
+    margin-bottom: 2rem !important;
+    font-weight: 500 !important;
+}
+
+/* Botones de acción Hero estilo Bento Pill */
+.page-button,
+.page-hero-actions a {
+    border-radius: 9999px !important;
+    padding: 12px 24px !important;
+    font-weight: 700 !important;
+    font-family: var(--sl-font) !important;
+    font-size: 0.9375rem !important;
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    transition: transform 0.15s ease, background-color 0.15s ease !important;
+    border: 2.5px solid var(--color-bento-ink) !important;
+}
+
+/* Primario: Cyan Sticker */
+.page-button-primary,
+.page-hero-actions a[href*="/empezando/"] {
+    background-color: var(--color-bento-cyan) !important;
+    color: var(--color-bento-ink) !important;
+    border: 2.5px solid var(--color-bento-ink) !important;
+}
+
+.page-button-primary:hover,
+.page-hero-actions a[href*="/empezando/"]:hover {
+    background-color: var(--color-bento-cyan-dark) !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Secundario: White Plate */
+.page-button-default,
+.page-hero-actions a[href*="/inicio-rapido/"] {
+    background-color: var(--color-bento-white) !important;
+    color: var(--color-bento-ink) !important;
+}
+
+.page-button-default:hover,
+.page-hero-actions a[href*="/inicio-rapido/"]:hover {
+    background-color: var(--color-bento-cyan-light) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Ghost Pill */
+.page-button-ghost,
+.page-hero-actions a[href*="/xlsform/"] {
+    background-color: transparent !important;
+    color: var(--color-bento-ink) !important;
+}
+
+.page-button-ghost:hover,
+.page-hero-actions a[href*="/xlsform/"]:hover {
+    background-color: var(--color-bento-cyan-light) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* 7. TARJETAS BENTO (<CardGrid> y <Card>) */
+.card-grid,
+.sl-card-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 1.5rem !important;
+    margin-top: 2rem !important;
+}
+
+.card,
+.sl-card {
+    background-color: var(--color-bento-white) !important;
+    border: 2.5px solid var(--color-bento-ink) !important;
+    border-radius: 24px !important;
+    padding: 24px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    transition: transform 0.2s ease, border-color 0.2s ease !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.card:hover,
+.sl-card:hover {
+    transform: translateY(-3px) !important;
+    border-color: var(--color-bento-ink) !important;
+}
+
+/* Variaciones cromáticas sutiles Bento para tarjetas */
+.card:nth-child(4n+1) {
+    border-top: 6px solid var(--color-bento-cyan) !important;
+}
+
+.card:nth-child(4n+2) {
+    border-top: 6px solid var(--color-bento-violet) !important;
+}
+
+.card:nth-child(4n+3) {
+    border-top: 6px solid var(--color-bento-emerald) !important;
+}
+
+.card:nth-child(4n+4) {
+    border-top: 6px solid var(--color-bento-amber) !important;
+}
+
+/* Título de tarjeta */
+.card .title,
+.sl-card-title {
+    font-family: var(--sl-font-display) !important;
+    font-weight: 700 !important;
+    font-size: 1.15rem !important;
+    color: var(--color-bento-ink) !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin: 0 !important;
+}
+
+/* Icono sticker dentro de la tarjeta */
+.card .icon,
+.sl-card-icon {
+    width: 38px !important;
+    height: 38px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: var(--color-bento-cyan-light) !important;
+    border: 1.5px solid var(--color-bento-ink) !important;
+    border-radius: 12px !important;
+    color: var(--color-bento-ink) !important;
+    padding: 7px !important;
+    flex-shrink: 0 !important;
+}
+
+/* Cuerpo de texto de la tarjeta */
+.card .body,
+.sl-card-body {
+    font-size: 0.9375rem !important;
+    line-height: 1.6 !important;
+    color: var(--color-bento-slate) !important;
+    margin: 0 !important;
+}
+
+.card .body a,
+.sl-card-body a {
+    color: var(--color-bento-cyan-dark) !important;
+    font-weight: 700 !important;
+    text-decoration: underline !important;
+}
+
+.card .body a:hover,
+.sl-card-body a:hover {
+    color: var(--color-bento-cyan) !important;
+}
+
+/* 8. CONTENIDO MARKDOWN, CALLOUTS Y ASIDES */
+.sl-markdown-content {
+    font-size: 1.0625rem !important;
+    line-height: 1.7 !important;
+    color: var(--color-bento-ink) !important;
+}
+
+/* Callouts / Asides estilo Bento */
+aside.starlight-aside,
+.starlight-aside {
+    border: 2.5px solid var(--color-bento-ink) !important;
+    border-radius: 16px !important;
+    padding: 16px 20px !important;
+    margin: 1.75rem 0 !important;
+    background-color: var(--color-bento-white) !important;
+}
+
+.starlight-aside--note,
+.starlight-aside--tip {
+    background-color: var(--color-bento-cyan-light) !important;
+    border-left: 8px solid var(--color-bento-cyan) !important;
+}
+
+.starlight-aside--caution {
+    background-color: #fef3c7 !important;
+    border-left: 8px solid var(--color-bento-amber) !important;
+}
+
+.starlight-aside--danger {
+    background-color: #fee2e2 !important;
+    border-left: 8px solid var(--color-bento-red) !important;
+}
+
+.starlight-aside .starlight-aside__title {
+    font-family: var(--sl-font-display) !important;
+    font-weight: 700 !important;
+    font-size: 0.9375rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    color: var(--color-bento-ink) !important;
+}
+
+/* 9. TABLAS ESTILO BENTO */
+.sl-markdown-content table {
+    width: 100% !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    border: 2.5px solid var(--color-bento-ink) !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    margin: 1.75rem 0 !important;
+    background-color: var(--color-bento-white) !important;
+}
+
+.sl-markdown-content th {
+    background-color: var(--color-bento-cyan-light) !important;
+    color: var(--color-bento-ink) !important;
+    font-family: var(--sl-font-display) !important;
+    font-weight: 700 !important;
+    font-size: 0.875rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+    border-bottom: 2px solid var(--color-bento-ink) !important;
+    padding: 12px 16px !important;
+}
+
+.sl-markdown-content td {
+    padding: 12px 16px !important;
+    border-bottom: 1.5px solid #e2e8f0 !important;
+    color: var(--color-bento-ink) !important;
+}
+
+.sl-markdown-content tr:last-child td {
+    border-bottom: none !important;
+}
+
+/* 10. BLOQUES DE CÓDIGO BENTO (Midnight Band) */
+.sl-markdown-content pre,
+pre.astro-code,
+.expressive-code pre {
+    background-color: var(--color-bento-midnight) !important;
+    border: 2.5px solid var(--color-bento-ink) !important;
+    border-radius: 16px !important;
+    padding: 16px 20px !important;
+    margin: 1.75rem 0 !important;
+}
+
+/* Código en línea */
+:not(pre) > code {
+    background-color: var(--color-bento-cyan-light) !important;
+    color: var(--color-bento-cyan-dark) !important;
+    border: 1.5px solid var(--color-bento-ink) !important;
+    border-radius: 6px !important;
+    padding: 2px 6px !important;
+    font-weight: 600 !important;
+    font-size: 0.875em !important;
+}
+
+/* 11. TABLA DE CONTENIDOS DERECHA (Sticky dentro de page-main-container, sin solaparse con el footer) */
+@media (min-width: 1280px) {
+    .page-toc-sidebar {
+        display: block !important;
+        position: sticky !important;
+        top: 0 !important;
+        right: auto !important;
+        width: 260px !important;
+        min-width: 260px !important;
+        max-width: 260px !important;
+        height: calc(100vh - var(--page-header-height, 64px)) !important;
+        max-height: calc(100vh - var(--page-header-height, 64px)) !important;
+        align-self: flex-start !important;
+        z-index: 10 !important;
+        border-left: 1.5px solid #e2e8f0 !important;
+        padding: 1.5rem 1rem 1.5rem 1.5rem !important;
+        box-sizing: border-box !important;
+        overflow-y: auto !important;
+        flex-shrink: 0 !important;
+    }
+
+    .page-toc-sticky {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        max-height: none !important;
+        width: 100% !important;
+        overflow-y: visible !important;
+        padding: 0 !important;
+        background: transparent !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+
+    [data-theme="dark"] .page-toc-sidebar {
+        border-left: 1.5px solid #1e293b !important;
+    }
+
+    [data-theme="dark"] .page-toc-sticky {
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+}
+
+.starlight-toc h2,
+#starlight__on-this-page {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.75rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: var(--color-bento-slate) !important;
+}
+
+.starlight-toc a {
+    font-family: var(--sl-font) !important;
+    font-size: 0.875rem !important;
+    color: var(--color-bento-slate) !important;
+    transition: color 0.15s ease !important;
+}
+
+.starlight-toc a:hover,
+.starlight-toc a[aria-current="true"] {
+    color: var(--color-bento-cyan-dark) !important;
+    font-weight: 700 !important;
+}
+
+/* 12. BOTONES DE PAGINACIÓN ANTERIOR / SIGUIENTE (Bento Cards) */
+.pagination-links a,
+.sl-pagination a {
+    border: 2px solid var(--color-bento-ink) !important;
+    border-radius: 16px !important;
+    background-color: var(--color-bento-white) !important;
+    padding: 14px 20px !important;
+    transition: transform 0.15s ease, background-color 0.15s ease !important;
+}
+
+.pagination-links a:hover,
+.sl-pagination a:hover {
+    background-color: var(--color-bento-cyan-light) !important;
+    transform: translateY(-2px) !important;
+    border-color: var(--color-bento-ink) !important;
+}
+
+/* 13. FOOTER BENTO OFICIAL (Aislamiento visual garantizado sin elementos solapados) */
+.bento-docs-footer {
+    position: relative !important;
+    z-index: 30 !important;
+    width: 100% !important;
+    clear: both !important;
+}

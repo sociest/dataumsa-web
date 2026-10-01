@@ -1,9 +1,9 @@
 ---
 title: Gestión de Proyectos y Datos
-description: Cómo visualizar, editar y descargar las respuestas recolectadas en DataUMSA.
+description: Cómo visualizar, editar y descargar las respuestas recolectadas en DATAUMSA.
 ---
 
-A medida que las personas responden tus enlaces web, o tus encuestadores envían su trabajo desde la aplicación móvil **DataUMSA Collect**, los datos comenzarán a llegar en tiempo real a la plataforma **DataUMSA**.
+A medida que las personas responden tus enlaces web, o tus encuestadores envían su trabajo desde la aplicación móvil **DATAUMSA Collect**, los datos comenzarán a llegar en tiempo real a la plataforma **DATAUMSA**.
 
 Para ver estos resultados, simplemente entra a tu proyecto y haz clic en la pestaña superior llamada **Datos**.
 
@@ -35,7 +35,7 @@ Durante el trabajo de campo, pueden ocurrir errores tipográficos o respuestas q
 ![Vista de la encuesta enviada](./assets/open_submission.png)
 
 ### Validar las Encuestas (Control de Calidad)
-DataUMSA te permite llevar un estricto control de calidad del levantamiento. Junto a cada respuesta hay un indicador de estado. Al hacer clic en él, puedes actualizar la encuesta a:
+DATAUMSA te permite llevar un estricto control de calidad del levantamiento. Junto a cada respuesta hay un indicador de estado. Al hacer clic en él, puedes actualizar la encuesta a:
 * **Aprobado** (Verde): Has revisado la encuesta y la información es íntegra y fidedigna.
 * **En Revisión** (Amarillo): Existen inconsistencias o dudas que requieren contrastación posterior.
 * **Rechazado** (Rojo): La encuesta no cumple los criterios metodológicos o está incompleta.
@@ -59,4 +59,4 @@ Cuando hayas finalizado tu recolección de datos o requieras respaldar la inform
 ![Botón de exportar](./assets/export.png)
 
 > [!NOTE]
-> **Generación bajo demanda:** Si recibes nuevas encuestas posteriormente, recuerda hacer clic en **Exportar** nuevamente para que DataUMSA genere un nuevo archivo actualizado con los últimos envíos.
+> **Generación bajo demanda:** Si recibes nuevas encuestas posteriormente, recuerda hacer clic en **Exportar** nuevamente para que DATAUMSA genere un nuevo archivo actualizado con los últimos envíos.

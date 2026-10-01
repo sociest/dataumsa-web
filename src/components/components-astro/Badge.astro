@@ -1,34 +1,37 @@
 ---
-// Componente de Badge / Etiqueta Reutilizable para DataUMSA
+// Componente de Badge / Etiqueta Reutilizable para DATAUMSA (Adaptado a Bento)
 interface Props {
-  variant?: 'glass' | 'dark' | 'mono' | 'primary';
-  dotColor?: string;
-  class?: string;
+    variant?: "glass" | "dark" | "mono" | "primary" | "white" | "success";
+    dotColor?: string;
+    class?: string;
 }
 
-const {
-  variant = 'glass',
-  dotColor,
-  class: className = ''
-} = Astro.props;
+const { variant = "white", dotColor, class: className = "" } = Astro.props;
 
-// Clases base para alineación y comportamiento flex
-const baseClasses = "inline-flex items-center gap-2 select-none transition-all duration-300";
+// Clases base para alineación y comportamiento flex con estética sticker (borde tinta de 2px, sin sombras difusas)
+const baseClasses =
+    "inline-flex items-center gap-2 select-none border-2 border-ink rounded-full transition-transform duration-150";
 
-// Estilos de variantes basados en los mocks del proyecto
+// Estilos de variantes basados en DESIGN2.md
 const variantStyles = {
-  glass: "px-3 py-1.5 rounded-xl bg-white/10 border border-white/10 text-white backdrop-blur-sm text-xs font-bold tracking-widest uppercase",
-  dark: "px-4 py-2 rounded-2xl bg-bg-dark-surface border border-border-dark text-primary-light text-xs font-bold tracking-widest uppercase",
-  mono: "px-3 py-1 rounded-full bg-bg-dark border border-border-dark text-text-dark-muted text-xs font-mono uppercase tracking-widest",
-  primary: "px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary-dark text-xs font-bold tracking-wider uppercase"
+    glass: "px-3.5 py-1 bg-white text-ink text-xs font-bold tracking-wider uppercase",
+    white: "px-3.5 py-1 bg-white text-ink text-xs font-bold tracking-wider uppercase",
+    dark: "px-3.5 py-1 bg-midnight-surface text-primary-light text-xs font-bold tracking-wider uppercase",
+    mono: "px-3.5 py-1 bg-midnight-surface text-text-dark-muted text-xs font-mono tracking-wider uppercase",
+    primary:
+        "px-3.5 py-1 bg-primary-light text-ink text-xs font-bold tracking-wider uppercase",
+    success:
+        "px-3.5 py-1 bg-success text-ink text-xs font-bold tracking-wider uppercase",
 };
 
-const variantClasses = variantStyles[variant] || variantStyles.glass;
+const variantClasses = variantStyles[variant] || variantStyles.white;
 ---
 
 <div class:list={[baseClasses, variantClasses, className]}>
-  {dotColor && (
-    <span class:list={["w-2 h-2 rounded-full animate-pulse flex-shrink-0", dotColor]}></span>
-  )}
-  <slot />
+    {dotColor && (
+        <span
+            class:list={["w-2 h-2 rounded-full shrink-0", dotColor]}
+        ></span>
+    )}
+    <slot />
 </div>

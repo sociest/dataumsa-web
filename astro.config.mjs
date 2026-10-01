@@ -10,11 +10,20 @@ import pagePlugin from '@pelagornis/page';
 export default defineConfig({
     site: 'https://data.umsa.bo',
     redirects: {
-        '/app': '/descargas',
+        '/app': '/app-movil/descargas',
     },
     integrations: [starlight({
-        title: 'Documentación DataUMSA',
-        plugins: [pagePlugin()],
+        title: 'Documentación DATAUMSA',
+        components: {
+            PageFrame: './src/components/starlight/BentoPageFrame.astro',
+        },
+        customCss: [
+            './src/styles/starlight-bento.css',
+        ],
+        plugins: [pagePlugin({
+            siteTitle: 'Documentación DATAUMSA',
+            footerText: `© ${new Date().getFullYear()} DATAUMSA — Universidad Mayor de San Andrés. Todos los derechos reservados.`,
+        })],
         head: [
             {
                 tag: 'script',
@@ -23,11 +32,11 @@ export default defineConfig({
         ],
         sidebar: [
             { label: '🏠 Volver a la Web Principal', link: '/' },
-            { label: '🚀 Ir a la Plataforma', link: 'https://app.data.umsa.bo/' },
+            { label: '🚀 Ir a la Plataforma', link: 'https://app-dataumsa.sociest.org/accounts/login/' },
             {
                 label: 'Primeros Pasos',
                 items: [
-                    { label: 'Empezando con DataUMSA', slug: 'docs/guides/empezando' },
+                    { label: 'Empezando con DATAUMSA', slug: 'docs/guides/empezando' },
                     { label: 'Inicio Rápido en 5 Pasos', slug: 'docs/guides/inicio-rapido' },
                 ],
             },
@@ -49,23 +58,20 @@ export default defineConfig({
             {
                 label: 'Análisis e Integraciones',
                 items: [
-                    { label: 'Análisis Rápido, Gráficos y Mapas', slug: 'docs/guides/analisis-datos-reportes' },
-                    { label: 'Integración con Power BI y Excel', slug: 'docs/guides/integracion-powerbi-excel' },
-                ],
-            },
-            {
-                label: 'Soberanía y Seguridad',
-                items: [
+                    { label: 'Exportación y Análisis de Datos', slug: 'docs/guides/analisis-datos-reportes' },
+                    { label: 'Integración Power BI y Excel en Vivo', slug: 'docs/guides/integracion-powerbi-excel' },
                     { label: 'Seguridad y Protección de Datos', slug: 'docs/guides/seguridad-proteccion-datos' },
                 ],
             },
             {
                 label: 'Referencia Técnica',
-                items: [{ autogenerate: { directory: 'docs/reference' } }],
+                items: [
+                    { label: 'Guía Rápida XLSForm', slug: 'docs/reference/xlsform' },
+                ],
             },
         ],
-		}), react(), sitemap()],
+    }), react(), sitemap()],
     vite: {
-    plugins: [tailwindcss()],
-  },
+        plugins: [tailwindcss()],
+    },
 });

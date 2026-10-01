@@ -1,15 +1,15 @@
 ---
 title: Uso del Constructor de Formularios
-description: Guía paso a paso sobre cómo crear cuestionarios visualmente desde la interfaz web de DataUMSA.
+description: Guía paso a paso sobre cómo crear cuestionarios visualmente desde la interfaz web de DATAUMSA.
 ---
 
-El **Constructor de Formularios** es la herramienta visual más rápida para comenzar a diseñar encuestas en **DataUMSA**. Funciona directamente desde el navegador de internet, sin necesidad de instalar software adicional en tu computadora.
+El **Constructor de Formularios** es la herramienta visual más rápida para comenzar a diseñar encuestas en **DATAUMSA**. Funciona directamente desde el navegador de internet, sin necesidad de instalar software adicional en tu computadora.
 
 ---
 
 ## Paso 1: Crear un Nuevo Proyecto
 
-1. Inicia sesión en tu cuenta en la [Plataforma DataUMSA](https://app.data.umsa.bo).
+1. Inicia sesión en tu cuenta en la [Plataforma DATAUMSA](https://app.data.umsa.bo).
 2. En la pantalla principal del panel de control, haz clic en el botón **NUEVO**.
 3. Selecciona la opción **Construir desde cero**.
 4. Completa la ficha básica del proyecto:
@@ -87,4 +87,4 @@ Para configurar una lógica condicional:
 3. Haz clic en el botón verde **Implementar**.
 
 > [!NOTE]
-> **¿Qué significa implementar?** Al implementar, el sistema compila la estructura de tu cuestionario y genera las versiones optimizadas para la web y para la sincronización con **DataUMSA Collect**. Cada vez que realices modificaciones posteriores, deberás presionar **Re-implementar** para que los cambios se reflejen en los dispositivos móviles de los encuestadores.
+> **¿Qué significa implementar?** Al implementar, el sistema compila la estructura de tu cuestionario y genera las versiones optimizadas para la web y para la sincronización con **DATAUMSA Collect**. Cada vez que realices modificaciones posteriores, deberás presionar **Re-implementar** para que los cambios se reflejen en los dispositivos móviles de los encuestadores.

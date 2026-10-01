@@ -23,431 +23,279 @@ import {
 ---
 
 <Layout
-    title="DataUMSA Collect | Aplicación Móvil"
-    description="Conoce DataUMSA Collect, la aplicación oficial para la recolección de datos en campo de manera offline, rápida y de alta fidelidad."
+    title="DATAUMSA Collect | Aplicación Móvil"
+    description="Conoce DATAUMSA Collect, la aplicación oficial para la recolección de datos en campo de manera offline, rápida y de alta fidelidad."
 >
-    <!-- Hero Section Split -->
-    <section
-        class="w-full py-20 md:py-32 relative overflow-hidden flex items-center justify-center"
-    >
-        <!-- Luces de fondo -->
-        <div
-            class="absolute top-1/4 left-1/4 w-[600px] h-[300px] bg-primary/10 rounded-full blur-[120px] pointer-events-none -z-10"
-        >
-        </div>
-        <div
-            class="absolute bottom-1/4 right-1/4 w-[500px] h-[250px] bg-accent/5 rounded-full blur-[100px] pointer-events-none -z-10"
-        >
-        </div>
-
-        <div
-            class="max-w-7xl w-full mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center relative z-10"
-        >
+    <!-- 1. Hero Section Split (Main Canvas) -->
+    <section class="w-full py-16 md:py-24 bg-canvas flex flex-col items-center">
+        <div class="max-w-300 w-full mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <!-- Texto de Presentación -->
             <div class="lg:col-span-7 flex flex-col justify-center">
-                <Badge variant="primary" class="mb-6 self-start">
+                <Badge variant="primary" class="mb-5 self-start">
                     Aplicación Oficial Android
                 </Badge>
-                <h1
-                    class="text-text-main font-display text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-6"
-                >
-                    DataUMSA <TextReveal variant="light">Collect</TextReveal>
+                <h1 class="text-ink font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-[-0.035em] leading-[1.08] mb-5">
+                    DATAUMSA <TextReveal variant="light">Collect</TextReveal>
                 </h1>
-                <p
-                    class="text-text-main font-display text-xl md:text-2xl font-bold mb-4"
-                >
+                <p class="text-ink font-display text-xl sm:text-2xl font-bold mb-4 tracking-tight">
                     La potencia del XLSForm en la palma de tu mano.
                 </p>
-                <p
-                    class="text-text-muted font-sans text-lg leading-relaxed mb-8 max-w-xl"
-                >
+                <p class="text-text-muted font-sans text-base sm:text-lg leading-relaxed mb-8 max-w-xl font-medium">
                     La herramienta definitiva para la recolección de información
                     en campo. Registra cuestionarios estructurados con total
                     validez científica, georreferenciación y soporte multimedia,
                     operando al 100% sin conexión a internet.
                 </p>
-                <div class="flex flex-col sm:flex-row gap-4">
+                <div class="flex flex-wrap gap-4">
                     <Button
                         href="/app-movil/descargas"
                         variant="bento-primary"
-                        class="group text-sm"
+                        class="text-sm py-3 px-6"
                     >
-                        <FiDownload className="w-4 h-4 mr-1" />
+                        <FiDownload className="w-4 h-4 mr-1.5" />
                         <span>Descargar Aplicación</span>
                     </Button>
                     <Button
                         href="#caracteristicas"
                         variant="bento-secondary"
-                        class="text-sm"
+                        class="text-sm py-3 px-6"
                     >
                         <span>Explorar Características</span>
                     </Button>
                 </div>
             </div>
 
-            <!-- Smartphone Mockup en CSS -->
-            <div
-                class="lg:col-span-5 flex items-center justify-center relative"
-            >
-                <div
-                    class="w-[290px] h-[580px] rounded-[2.5rem] border-[10px] border-slate-900 bg-slate-950 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.35)] p-4 relative overflow-hidden flex flex-col justify-between"
-                >
+            <!-- Smartphone Mockup con Estilo Bento Pop-Art -->
+            <div class="lg:col-span-5 flex items-center justify-center relative">
+                <div class="w-75 rounded-[2.5rem] border-[3.5px] border-ink bg-midnight-surface p-5 relative overflow-hidden flex flex-col justify-between text-white">
                     <!-- Notch del Teléfono -->
-                    <div
-                        class="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-5 bg-slate-900 rounded-b-xl z-20 flex items-center justify-center"
-                    >
-                        <div class="w-10 h-1 bg-white/20 rounded-full mb-1">
-                        </div>
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-5 bg-midnight border-b-2 border-x-2 border-ink rounded-b-xl z-20 flex items-center justify-center">
+                        <div class="w-10 h-1 bg-white/40 rounded-full mb-0.5"></div>
                     </div>
 
                     <!-- App Header -->
-                    <div
-                        class="pt-4 flex justify-between items-center border-b border-white/5 pb-3"
-                    >
+                    <div class="pt-4 flex justify-between items-center border-b-2 border-ink pb-3 mb-3">
                         <div class="flex flex-col">
-                            <span
-                                class="text-xs font-bold text-white font-display"
-                                >DataUMSA Collect</span
-                            >
-                            <span class="text-xs text-slate-500"
-                                >ID Dispositivo: #4829</span
-                            >
+                            <span class="text-xs font-bold text-white font-display">
+                                DATAUMSA Collect
+                            </span>
+                            <span class="text-[11px] text-text-dark-muted font-mono">
+                                ID: #4829
+                            </span>
                         </div>
-                        <div
-                            class="flex items-center gap-1 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full text-xs font-bold"
-                        >
-                            <span
-                                class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"
-                            ></span> Activa
+                        <div class="flex items-center gap-1.5 bg-success border border-ink text-ink px-2.5 py-0.5 rounded-full text-xs font-bold">
+                            <span class="w-1.5 h-1.5 rounded-full bg-ink"></span>{" "}
+                            Activa
                         </div>
                     </div>
 
-                    <!-- App Screen Content (Mock Formulario en modo oscuro) -->
-                    <div
-                        class="flex-grow py-4 flex flex-col gap-4 overflow-y-auto max-h-[350px] scrollbar-none"
-                    >
-                        <div
-                            class="bg-slate-900 border border-white/5 p-3 rounded-xl flex flex-col gap-1"
-                        >
-                            <span
-                                class="text-xs font-bold uppercase tracking-wider text-slate-500"
-                                >Proyecto Activo</span
-                            >
-                            <span class="text-xs font-bold text-white"
-                                >Censo de Infraestructura Facultad de Ciencias</span
-                            >
+                    <!-- App Screen Content (Mock Formulario Bento) -->
+                    <div class="py-2 flex flex-col gap-3.5">
+                        <div class="bg-midnight border-2 border-ink p-3 rounded-2xl flex flex-col gap-1">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-text-dark-muted font-mono">
+                                Proyecto Activo
+                            </span>
+                            <span class="text-xs font-bold text-white font-display leading-tight">
+                                Censo de Infraestructura Facultad de Ciencias
+                            </span>
                         </div>
 
-                        <!-- Input 1 -->
+                        <!-- Input 1: Opciones Bento -->
                         <div class="flex flex-col gap-1.5">
-                            <label
-                                class="text-xs font-bold uppercase tracking-wider text-slate-500"
-                                >1. Nivel de Mantenimiento</label
-                            >
+                            <label class="text-[11px] font-bold uppercase tracking-wider text-text-dark-muted font-mono">
+                                1. Nivel de Mantenimiento
+                            </label>
                             <div class="grid grid-cols-3 gap-1.5">
-                                <span
-                                    class="border border-primary bg-primary/20 text-primary-light text-xs font-bold py-2 rounded-md text-center shadow-sm"
-                                    >Bueno</span
-                                >
-                                <span
-                                    class="border border-white/5 bg-slate-900 text-slate-400 text-xs font-medium py-2 rounded-md text-center"
-                                    >Regular</span
-                                >
-                                <span
-                                    class="border border-white/5 bg-slate-900 text-slate-400 text-xs font-medium py-2 rounded-md text-center"
-                                    >Crítico</span
-                                >
+                                <span class="border-2 border-ink bg-primary text-ink text-xs font-bold py-1.5 rounded-xl text-center">
+                                    Bueno
+                                </span>
+                                <span class="border border-ink bg-midnight text-text-dark-muted text-xs font-medium py-1.5 rounded-xl text-center">
+                                    Regular
+                                </span>
+                                <span class="border border-ink bg-midnight text-text-dark-muted text-xs font-medium py-1.5 rounded-xl text-center">
+                                    Crítico
+                                </span>
                             </div>
                         </div>
 
-                        <!-- Input 2 (GPS) -->
+                        <!-- Input 2: GPS con sticker -->
                         <div class="flex flex-col gap-1.5">
-                            <label
-                                class="text-xs font-bold uppercase tracking-wider text-slate-500"
-                                >2. Ubicación GPS</label
-                            >
-                            <div
-                                class="flex gap-2 items-center px-3 py-2 bg-primary/10 border border-primary/20 rounded-lg text-primary-light"
-                            >
-                                <FiMapPin
-                                    className="w-3.5 h-3.5 text-primary shrink-0 transition-transform duration-300"
-                                />
-                                <span
-                                    class="text-xs font-mono font-semibold"
-                                    >16.5029º S, 68.1205º W</span
-                                >
+                            <label class="text-[11px] font-bold uppercase tracking-wider text-text-dark-muted font-mono">
+                                2. Ubicación GPS
+                            </label>
+                            <div class="flex gap-2 items-center px-3 py-2 bg-midnight border-2 border-ink rounded-xl text-white">
+                                <FiMapPin className="w-3.5 h-3.5 text-primary shrink-0" />
+                                <span class="text-xs font-mono font-bold text-white">
+                                    16.5029º S, 68.1205º W
+                                </span>
                             </div>
                         </div>
 
-                        <!-- Input 3 (Checklist) -->
+                        <!-- Input 3: Checklist -->
                         <div class="flex flex-col gap-1.5">
-                            <label
-                                class="text-xs font-bold uppercase tracking-wider text-slate-500"
-                                >3. Inventario verificado</label
-                            >
-                            <div class="flex flex-col gap-2">
-                                <label
-                                    class="flex items-center gap-2 text-xs text-slate-300 font-medium"
-                                >
-                                    <input
-                                        type="checkbox"
-                                        checked
-                                        disabled
-                                        class="accent-primary w-3.5 h-3.5 rounded"
-                                    /> Equipos de Computación
+                            <label class="text-[11px] font-bold uppercase tracking-wider text-text-dark-muted font-mono">
+                                3. Inventario verificado
+                            </label>
+                            <div class="flex flex-col gap-1.5 bg-midnight border-2 border-ink p-2.5 rounded-xl">
+                                <label class="flex items-center gap-2 text-xs text-white font-medium">
+                                    <div class="w-4 h-4 rounded bg-success border border-ink flex items-center justify-center text-ink">
+                                        <FiCheck
+                                            className="w-3.5 h-3.5"
+                                            strokeWidth={3}
+                                        />
+                                    </div>
+                                    Equipos de Computación
                                 </label>
-                                <label
-                                    class="flex items-center gap-2 text-xs text-slate-300 font-medium"
-                                >
-                                    <input
-                                        type="checkbox"
-                                        checked
-                                        disabled
-                                        class="accent-primary w-3.5 h-3.5 rounded"
-                                    /> Conexión de Red
-                                </label>
-                                <label
-                                    class="flex items-center gap-2 text-xs text-slate-300 font-medium"
-                                >
-                                    <input
-                                        type="checkbox"
-                                        disabled
-                                        class="accent-primary w-3.5 h-3.5 rounded"
-                                    /> Proyector de Aulas
+                                <label class="flex items-center gap-2 text-xs text-white font-medium">
+                                    <div class="w-4 h-4 rounded bg-success border border-ink flex items-center justify-center text-ink">
+                                        <FiCheck
+                                            className="w-3.5 h-3.5"
+                                            strokeWidth={3}
+                                        />
+                                    </div>
+                                    Conexión de Red
                                 </label>
                             </div>
                         </div>
                     </div>
 
                     <!-- App Footer Sincronizar -->
-                    <div
-                        class="pt-3 border-t border-white/5 flex flex-col gap-2"
-                    >
-                        <div
-                            class="w-full bg-gradient-to-r from-primary to-primary-dark text-white rounded-xl py-2.5 px-4 flex items-center justify-between shadow-lg shadow-primary/20"
-                        >
-                            <span
-                                class="text-xs font-bold uppercase tracking-wider"
-                                >Sincronizado</span
-                            >
-                            <FiCheckCircle className="w-3.5 h-3.5 text-white" />
+                    <div class="pt-3 border-t-2 border-ink flex flex-col gap-1.5 mt-2">
+                        <div class="w-full bg-primary border-2 border-ink text-ink rounded-full py-2 px-4 flex items-center justify-between font-bold text-xs uppercase tracking-wider">
+                            <span>Sincronizado</span>
+                            <FiCheckCircle
+                                className="w-4 h-4 text-ink"
+                                strokeWidth={2.5}
+                            />
                         </div>
-                        <span
-                            class="text-xs text-center text-slate-500 font-medium"
-                            >Todos los registros guardados en la nube</span
-                        >
+                        <span class="text-[10px] text-center text-text-dark-muted font-medium font-mono">
+                            100% de datos en la nube UMSA
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Características Principales (Bento Grid Rediseñado con Gráficos CSS) -->
+    <!-- 2. Características Principales (Cyan Light Band) -->
     <section
         id="caracteristicas"
-        class="w-full py-24 bg-slate-50/75 border-y border-border relative overflow-hidden flex flex-col items-center"
+        class="w-full py-16 lg:py-24 bg-primary-light border-y-[2.5px] border-ink flex flex-col items-center"
     >
-        <div class="max-w-7xl w-full mx-auto px-6 relative z-10">
+        <div class="max-w-300 w-full mx-auto px-4 sm:px-6">
             <!-- Encabezado de la sección -->
-            <div class="text-center max-w-2xl mx-auto mb-24">
-                <Badge variant="primary" class="mb-4"> Características </Badge>
-                <h2
-                    class="text-text-main font-display text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight"
-                >
-                    Diseñada para las condiciones <TextReveal variant="light"
-                        >más exigentes</TextReveal
-                    >
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <Badge variant="primary" class="mb-4">
+                    Características Clave
+                </Badge>
+                <h2 class="text-ink font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.035em] leading-tight">
+                    Diseñada para las condiciones{" "}
+                    <TextReveal variant="light">más exigentes</TextReveal>
                 </h2>
-                <p class="text-text-muted font-sans text-base md:text-lg mt-4">
-                    Lejos de ser una aplicación común de formularios, DataUMSA
+                <p class="text-text-muted font-sans text-base sm:text-lg mt-4 font-medium leading-relaxed">
+                    Lejos de ser una aplicación común de encuestas, DATAUMSA
                     Collect es una herramienta de ingeniería de datos optimizada
                     para el rigor científico.
                 </p>
             </div>
 
-            <!-- Bento Grid de Características -->
-            <div
-                class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto"
-            >
+            <!-- Bento Grid 2x2 de Características -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
                 <!-- CARD 1: Trabajo sin internet (Offline) -->
-                <div
-                    class="glass-panel group p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center h-full border border-border hover:shadow-xl hover:shadow-amber-500/5 transition-all duration-300"
-                >
-                    <!-- Ilustración CSS: Servidor con señal caída -->
-                    <div
-                        class="w-36 h-36 rounded-2xl bg-bg-main border border-border flex-shrink-0 flex flex-col items-center justify-center relative overflow-hidden shadow-sm"
-                    >
-                        <div class="flex flex-col gap-1.5 items-center">
-                            <div
-                                class="w-10 h-3 rounded bg-amber-500/20 border border-amber-500/40 relative flex items-center justify-end px-1.5"
-                            >
-                                <span
-                                    class="w-1 h-1 rounded-full bg-amber-500 animate-pulse"
-                                ></span>
-                            </div>
-                            <div
-                                class="w-10 h-3 rounded bg-slate-200 border border-slate-300"
-                            >
-                            </div>
-                            <div
-                                class="w-10 h-3 rounded bg-slate-200 border border-slate-300"
-                            >
-                            </div>
-                        </div>
-                        <div
-                            class="absolute -top-1 -right-1 w-10 h-10 rounded-full bg-white border border-border flex items-center justify-center shadow-sm"
-                        >
-                            <FiWifiOff className="w-5 h-5 text-amber-500" />
-                        </div>
+                <div class="bg-white border-[2.5px] border-ink rounded-card p-7 sm:p-8 flex flex-col sm:flex-row gap-6 items-start sm:items-center hover:-translate-y-1 transition-transform duration-200">
+                    <div class="w-24 h-24 rounded-2xl bg-primary-light border-2 border-ink shrink-0 flex items-center justify-center relative">
+                        <FiWifiOff
+                            className="w-10 h-10 text-ink"
+                            strokeWidth={2}
+                        />
+                        <span class="absolute -bottom-2 -right-2 px-2 py-0.5 rounded-full bg-warning border border-ink text-[10px] font-mono font-bold text-ink">
+                            OFFLINE
+                        </span>
                     </div>
 
-                    <div class="flex flex-col gap-3">
-                        <h3
-                            class="text-text-main font-display text-xl md:text-2xl font-bold"
-                        >
+                    <div class="flex flex-col gap-2">
+                        <h3 class="text-ink font-display text-xl sm:text-2xl font-bold tracking-tight">
                             Trabajo sin internet
                         </h3>
-                        <p
-                            class="text-text-muted font-sans text-sm md:text-base leading-relaxed"
-                        >
-                            Funciona completamente offline. Los datos y recursos
-                            multimedia se guardan de forma encriptada en la base
-                            de datos local del dispositivo, garantizando cero
+                        <p class="text-text-muted font-sans text-sm sm:text-base leading-relaxed font-medium">
+                            Funciona completamente fuera de línea. Los datos y
+                            recursos multimedia se guardan de forma encriptada
+                            en la base local del dispositivo, garantizando cero
                             pérdida de información.
                         </p>
                     </div>
                 </div>
 
                 <!-- CARD 2: Conexión automática -->
-                <div
-                    class="glass-panel group p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center h-full border border-border hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
-                >
-                    <!-- Ilustración CSS: Conexión Cifrada -->
-                    <div
-                        class="w-36 h-36 rounded-2xl bg-bg-main border border-border flex-shrink-0 flex items-center justify-center relative overflow-hidden shadow-sm"
-                    >
-                        <div class="flex items-center gap-4 relative z-10">
-                            <FiSmartphone
-                                className="w-7 h-7 text-primary-dark"
-                            />
-                            <div
-                                class="w-10 h-0.5 border-t-2 border-dashed border-primary animate-[pulse_1.5s_infinite]"
-                            >
-                            </div>
-                            <FiServer className="w-7 h-7 text-primary-dark" />
-                        </div>
-                        <div
-                            class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
-                        >
-                            <FiLock
-                                className="w-6 h-6 text-primary transition-transform duration-300 group-hover:scale-110"
-                            />
-                        </div>
+                <div class="bg-white border-[2.5px] border-ink rounded-card p-7 sm:p-8 flex flex-col sm:flex-row gap-6 items-start sm:items-center hover:-translate-y-1 transition-transform duration-200">
+                    <div class="w-24 h-24 rounded-2xl bg-primary-light border-2 border-ink shrink-0 flex items-center justify-center relative">
+                        <FiServer
+                            className="w-10 h-10 text-ink"
+                            strokeWidth={2}
+                        />
+                        <span class="absolute -bottom-2 -right-2 px-2 py-0.5 rounded-full bg-success border border-ink text-[10px] font-mono font-bold text-ink">
+                            AUTO
+                        </span>
                     </div>
 
-                    <div class="flex flex-col gap-3">
-                        <h3
-                            class="text-text-main font-display text-xl md:text-2xl font-bold"
-                        >
+                    <div class="flex flex-col gap-2">
+                        <h3 class="text-ink font-display text-xl sm:text-2xl font-bold tracking-tight">
                             Conexión automática
                         </h3>
-                        <p
-                            class="text-text-muted font-sans text-sm md:text-base leading-relaxed"
-                        >
-                            Se conecta de manera automática y exclusiva con los
+                        <p class="text-text-muted font-sans text-sm sm:text-base leading-relaxed font-medium">
+                            Se conecta de manera automática y directa con los
                             servidores centrales de la UMSA. Sin configuraciones
-                            de servidor complejas, solo inicia sesión y
-                            sincroniza de forma segura.
+                            complejas: solo inicia sesión y sincroniza de forma
+                            segura.
                         </p>
                     </div>
                 </div>
 
                 <!-- CARD 3: Formularios avanzados -->
-                <div
-                    class="glass-panel group p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center h-full border border-border hover:shadow-xl hover:shadow-accent/5 transition-all duration-300"
-                >
-                    <!-- Ilustración CSS: Lógica Condicional -->
-                    <div
-                        class="w-36 h-36 rounded-2xl bg-bg-main border border-border flex-shrink-0 flex flex-col items-center justify-center p-3 relative overflow-hidden shadow-sm"
-                    >
-                        <div
-                            class="flex flex-col gap-2 w-full text-xs font-mono"
-                        >
-                            <div
-                                class="bg-white border border-border p-1.5 rounded shadow-xs"
-                            >
-                                ¿Tiene hijos? <span
-                                    class="text-primary font-bold">SÍ</span
-                                >
-                            </div>
-                            <!-- Sub-pregunta que se activa condicionalmente -->
-                            <div
-                                class="bg-accent/5 border border-accent/20 p-1.5 rounded pl-4 animate-[fade-in_1s_ease-out_infinite_alternate]"
-                            >
-                                ↳ ¿Cuántos? <span class="text-accent font-bold"
-                                    >[_]</span
-                                >
-                            </div>
-                        </div>
+                <div class="bg-white border-[2.5px] border-ink rounded-card p-7 sm:p-8 flex flex-col sm:flex-row gap-6 items-start sm:items-center hover:-translate-y-1 transition-transform duration-200">
+                    <div class="w-24 h-24 rounded-2xl bg-primary-light border-2 border-ink shrink-0 flex items-center justify-center relative">
+                        <FiLayers
+                            className="w-10 h-10 text-ink"
+                            strokeWidth={2}
+                        />
+                        <span class="absolute -bottom-2 -right-2 px-2 py-0.5 rounded-full bg-accent border border-ink text-[10px] font-mono font-bold text-white">
+                            XLS
+                        </span>
                     </div>
 
-                    <div class="flex flex-col gap-3">
-                        <h3
-                            class="text-text-main font-display text-xl md:text-2xl font-bold"
-                        >
+                    <div class="flex flex-col gap-2">
+                        <h3 class="text-ink font-display text-xl sm:text-2xl font-bold tracking-tight">
                             Formularios avanzados
                         </h3>
-                        <p
-                            class="text-text-muted font-sans text-sm md:text-base leading-relaxed"
-                        >
+                        <p class="text-text-muted font-sans text-sm sm:text-base leading-relaxed font-medium">
                             Soporta lógica condicional compleja, restricciones
-                            de validación personalizadas, GPS con precisión de
-                            metros, firmas digitales y captura de archivos
+                            de validación personalizadas, GPS con precisión
+                            satelital, firmas digitales y captura de archivos
                             multimedia.
                         </p>
                     </div>
                 </div>
 
                 <!-- CARD 4: Gestión sencilla -->
-                <div
-                    class="glass-panel group p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center h-full border border-border hover:shadow-xl hover:shadow-success/5 transition-all duration-300"
-                >
-                    <!-- Ilustración CSS: Gráfico de Tareas/Progreso -->
-                    <div
-                        class="w-36 h-36 rounded-2xl bg-bg-main border border-border flex-shrink-0 flex items-center justify-center relative overflow-hidden shadow-sm"
-                    >
-                        <!-- Gráfico circular de progreso en CSS -->
-                        <div
-                            class="w-20 h-20 rounded-full flex items-center justify-center relative"
-                            style="background: conic-gradient(var(--color-success) 75%, var(--color-border) 0);"
-                        >
-                            <div
-                                class="w-16 h-16 rounded-full bg-white flex flex-col items-center justify-center shadow-xs"
-                            >
-                                <span
-                                    class="text-xs font-black text-success-dark font-mono"
-                                    >75%</span
-                                >
-                                <span
-                                    class="text-xs font-bold text-text-muted uppercase"
-                                    >Completado</span
-                                >
-                            </div>
-                        </div>
+                <div class="bg-white border-[2.5px] border-ink rounded-card p-7 sm:p-8 flex flex-col sm:flex-row gap-6 items-start sm:items-center hover:-translate-y-1 transition-transform duration-200">
+                    <div class="w-24 h-24 rounded-2xl bg-primary-light border-2 border-ink shrink-0 flex items-center justify-center relative">
+                        <FiClipboard
+                            className="w-10 h-10 text-ink"
+                            strokeWidth={2}
+                        />
+                        <span class="absolute -bottom-2 -right-2 px-2 py-0.5 rounded-full bg-primary border border-ink text-[10px] font-mono font-bold text-ink">
+                            SYNC
+                        </span>
                     </div>
 
-                    <div class="flex flex-col gap-3">
-                        <h3
-                            class="text-text-main font-display text-xl md:text-2xl font-bold"
-                        >
+                    <div class="flex flex-col gap-2">
+                        <h3 class="text-ink font-display text-xl sm:text-2xl font-bold tracking-tight">
                             Gestión sencilla
                         </h3>
-                        <p
-                            class="text-text-muted font-sans text-sm md:text-base leading-relaxed"
-                        >
+                        <p class="text-text-muted font-sans text-sm sm:text-base leading-relaxed font-medium">
                             Descarga múltiples cuestionarios correspondientes a
                             diferentes investigaciones y gestiona el historial
-                            de envíos de forma transparente.
+                            de envíos de forma transparente y sin límites.
                         </p>
                     </div>
                 </div>
@@ -455,362 +303,166 @@ import {
         </div>
     </section>
 
-    <!-- Guía de Uso Rápido (Línea de Tiempo Staggered Premium) -->
-    <section
-        class="w-full py-28 relative overflow-hidden flex flex-col items-center"
-    >
-        <div class="max-w-5xl w-full mx-auto px-6 relative z-10">
+    <!-- 3. Guía de Uso Rápido (Main Canvas) -->
+    <section class="w-full py-16 lg:py-24 bg-canvas flex flex-col items-center">
+        <div class="max-w-250 w-full mx-auto px-4 sm:px-6">
             <!-- Encabezado de la sección -->
-            <div class="text-center max-w-2xl mx-auto mb-28">
-                <Badge variant="primary" class="mb-4"> Guía de Uso </Badge>
-                <h2
-                    class="text-text-main font-display text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight"
-                >
-                    Flujo de Trabajo del <TextReveal variant="light"
-                        >Encuestador</TextReveal
-                    >
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <Badge variant="primary" class="mb-4">
+                    Guía de Campo
+                </Badge>
+                <h2 class="text-ink font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-[-0.035em] leading-tight">
+                    Flujo de Trabajo del{" "}
+                    <TextReveal variant="light">Encuestador</TextReveal>
                 </h2>
+                <p class="text-text-muted font-sans text-base sm:text-lg mt-4 font-medium leading-relaxed">
+                    Un proceso metódico de 5 pasos para garantizar que tus datos
+                    se capturen sin fallas técnicas en terreno.
+                </p>
             </div>
 
-            <!-- Timeline Vertical Escalonada (Staggered Timeline) -->
-            <div class="relative flex flex-col gap-16 md:gap-24">
-                <!-- Línea de Conexión Vertical Central -->
-                <div
-                    class="absolute left-6 md:left-1/2 -translate-x-1/2 top-4 bottom-4 w-[2px] bg-gradient-to-b from-primary/10 via-primary/40 to-primary/10"
-                >
-                </div>
-
-                <!-- PASO 1: INSTALA (Texto Izquierda, Simulación Derecha) -->
-                <div
-                    class="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12 relative w-full md:even:flex-row-reverse"
-                >
-                    <!-- Número de paso flotante -->
-                    <div
-                        class="absolute left-6 md:left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-white border border-border text-primary-dark font-mono font-bold flex items-center justify-center shadow-lg shadow-primary/10 z-20"
-                    >
-                        01
-                    </div>
-
-                    <!-- Lado del Texto -->
-                    <div
-                        class="w-full md:w-1/2 pl-12 md:pl-0 md:pr-12 md:text-right flex flex-col md:items-end"
-                    >
-                        <h3
-                            class="text-text-main font-display text-xl md:text-2xl font-black mb-2"
-                        >
-                            Instala la aplicación
-                        </h3>
-                        <p
-                            class="text-text-muted font-sans text-sm md:text-base max-w-sm"
-                        >
-                            Busca <strong class="text-text-main font-bold">DataUMSA Collect</strong> en la Google Play Store
-                            de tu dispositivo Android e instálala de forma
-                            completamente gratuita.
-                        </p>
-                    </div>
-
-                    <!-- Lado de la Simulación CSS -->
-                    <div
-                        class="w-full md:w-1/2 pl-12 md:pl-12 flex justify-start"
-                    >
-                        <div
-                            class="w-full max-w-[280px] bg-white border border-border p-4 rounded-2xl shadow-sm flex items-center justify-between gap-3"
-                        >
-                            <div
-                                class="w-9 h-9 rounded bg-emerald-500 flex items-center justify-center text-white"
-                            >
-                                <FiPlay className="w-5 h-5 fill-current" />
-                            </div>
-                            <div class="flex-grow flex flex-col gap-1">
-                                <span
-                                    class="text-xs font-bold text-text-main"
-                                    >DataUMSA Collect</span
-                                >
-                                <div
-                                    class="w-full h-1.5 rounded-full bg-slate-100 overflow-hidden relative"
-                                >
-                                    <div
-                                        class="absolute top-0 bottom-0 left-0 w-3/4 bg-emerald-500 rounded-full animate-[pulse_1.5s_infinite]"
-                                    >
-                                    </div>
-                                </div>
-                            </div>
-                            <span
-                                class="text-xs font-bold text-emerald-600 font-mono"
-                                >75%</span
-                            >
+            <!-- Bento Stack de Pasos -->
+            <div class="flex flex-col gap-5">
+                <!-- PASO 1 -->
+                <div class="bg-white border-[2.5px] border-ink rounded-card p-6 sm:p-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 hover:-translate-y-1 transition-transform duration-200">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-primary text-ink border-2 border-ink font-mono font-extrabold text-base flex items-center justify-center shrink-0">
+                            01
                         </div>
+                        <div>
+                            <h3 class="text-ink font-display text-lg sm:text-xl font-bold tracking-tight">
+                                Instala la aplicación
+                            </h3>
+                            <p class="text-text-muted font-sans text-sm font-medium mt-1">
+                                Obtén el paquete oficial de DATAUMSA Collect
+                                (.apk) e instálalo en cualquier teléfono
+                                Android.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-canvas border-2 border-ink rounded-xl px-4 py-2 flex items-center gap-2 text-xs font-mono font-bold text-ink shrink-0">
+                        <FiPlay className="text-success" /> Android 5.0+
                     </div>
                 </div>
 
-                <!-- PASO 2: INICIA SESIÓN (Texto Derecha, Simulación Izquierda) -->
-                <div
-                    class="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12 relative w-full md:flex-row-reverse"
-                >
-                    <!-- Número de paso flotante -->
-                    <div
-                        class="absolute left-6 md:left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-white border border-border text-primary-dark font-mono font-bold flex items-center justify-center shadow-lg shadow-primary/10 z-20"
-                    >
-                        02
-                    </div>
-
-                    <!-- Lado del Texto -->
-                    <div
-                        class="w-full md:w-1/2 pl-12 md:pl-0 md:pl-12 flex flex-col"
-                    >
-                        <h3
-                            class="text-text-main font-display text-xl md:text-2xl font-black mb-2"
-                        >
-                            Inicia sesión con tu cuenta
-                        </h3>
-                        <p
-                            class="text-text-muted font-sans text-sm md:text-base max-w-sm"
-                        >
-                            Abre la aplicación e ingresa tus credenciales
-                            institucionales o de investigador asignadas por el
-                            administrador de la plataforma.
-                        </p>
-                    </div>
-
-                    <!-- Lado de la Simulación CSS -->
-                    <div
-                        class="w-full md:w-1/2 pl-12 md:pr-12 flex justify-start md:justify-end"
-                    >
-                        <div
-                            class="w-full max-w-[280px] bg-slate-900 border border-white/5 p-4 rounded-2xl shadow-sm flex flex-col gap-2.5"
-                        >
-                            <div
-                                class="h-6 w-full bg-white/5 rounded px-2 flex items-center justify-between"
-                            >
-                                <span
-                                    class="text-xs text-slate-400 font-mono"
-                                    >usuario@umsa.bo</span
-                                >
-                                <FiCheck className="w-3 h-3 text-emerald-400" />
-                            </div>
-                            <div
-                                class="h-6 w-full bg-white/5 rounded px-2 flex items-center justify-between"
-                            >
-                                <span
-                                    class="text-xs text-slate-400 font-mono"
-                                    >••••••••••••</span
-                                >
-                                <FiEye className="w-3 h-3 text-slate-500" />
-                            </div>
+                <!-- PASO 2 -->
+                <div class="bg-white border-[2.5px] border-ink rounded-card p-6 sm:p-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 hover:-translate-y-1 transition-transform duration-200">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-primary-light text-ink border-2 border-ink font-mono font-extrabold text-base flex items-center justify-center shrink-0">
+                            02
                         </div>
+                        <div>
+                            <h3 class="text-ink font-display text-lg sm:text-xl font-bold tracking-tight">
+                                Inicia sesión institucional
+                            </h3>
+                            <p class="text-text-muted font-sans text-sm font-medium mt-1">
+                                Ingresa tus credenciales asignadas por el
+                                responsable del proyecto universitario.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-canvas border-2 border-ink rounded-xl px-4 py-2 flex items-center gap-2 text-xs font-mono font-bold text-ink shrink-0">
+                        <FiLock className="text-primary" /> Autenticación DTIC
                     </div>
                 </div>
 
-                <!-- PASO 3: DESCARGA FORMULARIOS (Texto Izquierda, Simulación Derecha) -->
-                <div
-                    class="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12 relative w-full"
-                >
-                    <!-- Número de paso flotante -->
-                    <div
-                        class="absolute left-6 md:left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-white border border-border text-primary-dark font-mono font-bold flex items-center justify-center shadow-lg shadow-primary/10 z-20"
-                    >
-                        03
-                    </div>
-
-                    <!-- Lado del Texto -->
-                    <div
-                        class="w-full md:w-1/2 pl-12 md:pl-0 md:pr-12 md:text-right flex flex-col md:items-end"
-                    >
-                        <h3
-                            class="text-text-main font-display text-xl md:text-2xl font-black mb-2"
-                        >
-                            Descarga tus cuestionarios
-                        </h3>
-                        <p
-                            class="text-text-muted font-sans text-sm md:text-base max-w-sm"
-                        >
-                            Vincúlate al proyecto activo y descarga las
-                            encuestas a tu memoria local para poder rellenarlas
-                            en zonas sin cobertura.
-                        </p>
-                    </div>
-
-                    <!-- Lado de la Simulación CSS -->
-                    <div
-                        class="w-full md:w-1/2 pl-12 md:pl-12 flex justify-start"
-                    >
-                        <div
-                            class="w-full max-w-[280px] bg-white border border-border p-4 rounded-2xl shadow-sm flex items-center gap-3"
-                        >
-                            <div
-                                class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary-dark"
-                            >
-                                <FiDownload
-                                    className="w-5 h-5 animate-[bounce_2s_infinite]"
-                                />
-                            </div>
-                            <div class="flex-grow flex flex-col gap-1">
-                                <span
-                                    class="text-xs font-bold text-text-main"
-                                    >Ficha_Socioeconomica.xml</span
-                                >
-                                <span
-                                    class="text-xs text-text-muted font-mono"
-                                    >Tamaño: 245 KB | v2.4</span
-                                >
-                            </div>
+                <!-- PASO 3 -->
+                <div class="bg-white border-[2.5px] border-ink rounded-card p-6 sm:p-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 hover:-translate-y-1 transition-transform duration-200">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-primary-light text-ink border-2 border-ink font-mono font-extrabold text-base flex items-center justify-center shrink-0">
+                            03
                         </div>
+                        <div>
+                            <h3 class="text-ink font-display text-lg sm:text-xl font-bold tracking-tight">
+                                Descarga tus cuestionarios
+                            </h3>
+                            <p class="text-text-muted font-sans text-sm font-medium mt-1">
+                                Sincroniza los formularios a la memoria del
+                                teléfono mientras tengas conexión Wi-Fi.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-canvas border-2 border-ink rounded-xl px-4 py-2 flex items-center gap-2 text-xs font-mono font-bold text-ink shrink-0">
+                        <FiDownload className="text-accent" /> XLSForm en caché
                     </div>
                 </div>
 
-                <!-- PASO 4: RECOLECTA (Texto Derecha, Simulación Izquierda) -->
-                <div
-                    class="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12 relative w-full md:flex-row-reverse"
-                >
-                    <!-- Número de paso flotante -->
-                    <div
-                        class="absolute left-6 md:left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-white border border-border text-primary-dark font-mono font-bold flex items-center justify-center shadow-lg shadow-primary/10 z-20"
-                    >
-                        04
-                    </div>
-
-                    <!-- Lado del Texto -->
-                    <div
-                        class="w-full md:w-1/2 pl-12 md:pl-0 md:pl-12 flex flex-col"
-                    >
-                        <h3
-                            class="text-text-main font-display text-xl md:text-2xl font-black mb-2"
-                        >
-                            Comienza a recolectar
-                        </h3>
-                        <p
-                            class="text-text-muted font-sans text-sm md:text-base max-w-sm"
-                        >
-                            Realiza el levantamiento de datos en el campo. La
-                            app te guiará pregunta a pregunta impidiendo avanzar
-                            si los datos no son consistentes.
-                        </p>
-                    </div>
-
-                    <!-- Lado de la Simulación CSS -->
-                    <div
-                        class="w-full md:w-1/2 pl-12 md:pr-12 flex justify-start md:justify-end"
-                    >
-                        <div
-                            class="w-full max-w-[280px] bg-white border border-border p-4 rounded-2xl shadow-sm flex flex-col gap-2"
-                        >
-                            <label
-                                class="flex items-center gap-2 text-xs text-text-main font-bold"
-                            >
-                                <span
-                                    class="w-4 h-4 rounded bg-emerald-500 flex items-center justify-center text-white text-xs"
-                                    ><FiCheck /></span
-                                > Muestra de agua tomada
-                            </label>
-                            <label
-                                class="flex items-center gap-2 text-xs text-text-main font-bold"
-                            >
-                                <span
-                                    class="w-4 h-4 rounded bg-emerald-500 flex items-center justify-center text-white text-xs"
-                                    ><FiCheck /></span
-                                > Fotografía de turbidez adjunta
-                            </label>
+                <!-- PASO 4 -->
+                <div class="bg-white border-[2.5px] border-ink rounded-card p-6 sm:p-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 hover:-translate-y-1 transition-transform duration-200">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-primary-light text-ink border-2 border-ink font-mono font-extrabold text-base flex items-center justify-center shrink-0">
+                            04
                         </div>
+                        <div>
+                            <h3 class="text-ink font-display text-lg sm:text-xl font-bold tracking-tight">
+                                Recolecta en campo (Offline)
+                            </h3>
+                            <p class="text-text-muted font-sans text-sm font-medium mt-1">
+                                Realiza las entrevistas en comunidades rurales
+                                sin necesidad de señal o cobertura móvil.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-canvas border-2 border-ink rounded-xl px-4 py-2 flex items-center gap-2 text-xs font-mono font-bold text-ink shrink-0">
+                        <FiWifiOff className="text-warning" /> 100% Sin Internet
                     </div>
                 </div>
 
-                <!-- PASO 5: SINCRONIZA (Texto Izquierda, Simulación Derecha) -->
-                <div
-                    class="flex flex-col md:flex-row items-start md:items-center gap-8 md:gap-12 relative w-full"
-                >
-                    <!-- Número de paso flotante -->
-                    <div
-                        class="absolute left-6 md:left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-white border border-border text-primary-dark font-mono font-bold flex items-center justify-center shadow-lg shadow-primary/10 z-20"
-                    >
-                        05
-                    </div>
-
-                    <!-- Lado del Texto -->
-                    <div
-                        class="w-full md:w-1/2 pl-12 md:pl-0 md:pr-12 md:text-right flex flex-col md:items-end"
-                    >
-                        <h3
-                            class="text-text-main font-display text-xl md:text-2xl font-black mb-2"
-                        >
-                            Sincroniza automáticamente
-                        </h3>
-                        <p
-                            class="text-text-muted font-sans text-sm md:text-base max-w-sm"
-                        >
-                            Al volver a tener conexión de red, la aplicación
-                            detectará los registros pendientes y los enviará de
-                            forma segura al servidor en bloque.
-                        </p>
-                    </div>
-
-                    <!-- Lado de la Simulación CSS -->
-                    <div
-                        class="w-full md:w-1/2 pl-12 md:pl-12 flex justify-start"
-                    >
-                        <div
-                            class="w-full max-w-[280px] bg-white border border-border p-4 rounded-2xl shadow-sm flex items-center justify-between gap-3"
-                        >
-                            <div class="flex items-center gap-2">
-                                <div
-                                    class="w-8 h-8 rounded-full bg-success/10 flex items-center justify-center text-success-dark"
-                                >
-                                    <FiRefreshCw
-                                        className="w-4 h-4 animate-spin"
-                                        style={{ animationDuration: "6s" }}
-                                    />
-                                </div>
-                                <span
-                                    class="text-xs font-bold text-text-main"
-                                    >Subiendo datos...</span
-                                >
-                            </div>
-                            <span
-                                class="text-xs font-bold bg-success-light/30 text-success-dark border border-success/20 px-2 py-0.5 rounded-full font-mono"
-                                >100% OK</span
-                            >
+                <!-- PASO 5 -->
+                <div class="bg-white border-[2.5px] border-ink rounded-card p-6 sm:p-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 hover:-translate-y-1 transition-transform duration-200">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-success text-ink border-2 border-ink font-mono font-extrabold text-base flex items-center justify-center shrink-0">
+                            05
                         </div>
+                        <div>
+                            <h3 class="text-ink font-display text-lg sm:text-xl font-bold tracking-tight">
+                                Sincroniza automáticamente
+                            </h3>
+                            <p class="text-text-muted font-sans text-sm font-medium mt-1">
+                                Al reconectarte a la red, la aplicación envía
+                                los registros cifrados al servidor central UMSA.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="bg-canvas border-2 border-ink rounded-xl px-4 py-2 flex items-center gap-2 text-xs font-mono font-bold text-success shrink-0">
+                        <FiRefreshCw /> Sincronización Lista
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action Final -->
-    <section
-        class="w-full py-16 px-6 relative overflow-hidden flex justify-center"
-    >
-        <div
-            class="max-w-4xl w-full text-center bg-gradient-to-r from-primary/10 via-primary-dark/5 to-transparent border border-primary/25 rounded-[2rem] p-10 md:p-14 relative z-10 flex flex-col items-center gap-6"
-        >
-            <h2
-                class="text-text-main font-display text-3xl md:text-4xl font-black tracking-tight leading-tight"
-            >
+    <!-- 4. Call to Action Final (Midnight Band) -->
+    <section class="w-full py-16 lg:py-24 bg-midnight text-white border-t-[2.5px] border-ink flex justify-center">
+        <div class="max-w-250 w-full mx-4 sm:mx-6 text-center bg-midnight-surface border-3 border-ink rounded-[2.5rem] p-8 md:p-14 relative z-10 flex flex-col items-center">
+            <Badge variant="primary" class="mb-4">
+                Listo Para el Terreno
+            </Badge>
+            <h2 class="text-white font-display text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-[-0.035em] leading-tight mb-4">
                 ¿Listo para llevar tu recolección de datos al campo?
             </h2>
-            <p class="text-text-muted font-sans text-base max-w-xl">
+            <p class="text-text-dark-muted font-sans text-base sm:text-lg max-w-xl font-medium leading-relaxed mb-8">
                 Descarga la aplicación oficial en tu teléfono inteligente
                 Android y comienza a registrar datos validados sin necesidad de
                 señal.
             </p>
-            <Button
-                href="/app-movil/descargas"
-                variant="bento-primary"
-                class="group text-sm"
-            >
-                <FiDownload className="w-4 h-4 mr-1" />
-                <span>Ir al Centro de Descargas</span>
-            </Button>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <Button
+                    href="/app-movil/descargas"
+                    variant="bento-primary"
+                    class="text-sm py-3 px-6"
+                >
+                    <FiDownload className="w-4 h-4 mr-1.5" />
+                    <span>Ir al Centro de Descargas</span>
+                </Button>
+                <Button
+                    href="/la-plataforma/casos-de-uso"
+                    variant="bento-secondary"
+                    class="text-sm py-3 px-6"
+                >
+                    <span>Ver Casos de Uso</span>
+                </Button>
+            </div>
         </div>
     </section>
 </Layout>
-
-<style>
-    /* Estilos extras y reseteo de barra de scroll para el mockup */
-    .scrollbar-none::-webkit-scrollbar {
-        display: none;
-    }
-    .scrollbar-none {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-</style>

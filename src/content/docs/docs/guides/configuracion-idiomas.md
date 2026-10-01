@@ -1,9 +1,9 @@
 ---
 title: Configuración de Idiomas en Formularios
-description: Aprende cómo añadir múltiples idiomas a tus formularios de DataUMSA / KoboToolbox y qué códigos de idiomas utilizar.
+description: Aprende cómo añadir múltiples idiomas a tus formularios de DATAUMSA / KoboToolbox y qué códigos de idiomas utilizar.
 ---
 
-La plataforma **DataUMSA** y la aplicación móvil **DataUMSA Collect** soportan la visualización de encuestas en múltiples idiomas de forma nativa. Esto permite a los encuestadores cambiar el idioma del cuestionario en tiempo real desde el dispositivo de recolección o el navegador web.
+La plataforma **DATAUMSA** y la aplicación móvil **DATAUMSA Collect** soportan la visualización de encuestas en múltiples idiomas de forma nativa. Esto permite a los encuestadores cambiar el idioma del cuestionario en tiempo real desde el dispositivo de recolección o el navegador web.
 
 Por defecto, los formularios suelen configurarse en **Español (es)** e **Inglés (en)**, pero puedes añadir soporte para cualquier otro idioma, incluyendo lenguas originarias como el **Aymara (ay)**, **Quechua (qu)** o **Guaraní (gn)**.
 
@@ -69,4 +69,4 @@ Puedes usar cualquier código de idioma estándar de dos letras (ISO 639-1). A c
 
 Una vez subido y publicado el formulario:
 *   **En la Web (Enketo webforms):** Aparecerá un menú desplegable en la esquina superior derecha del formulario que permitirá al encuestado cambiar el idioma.
-*   **En DataUMSA Collect / KoboCollect:** Al abrir el formulario para llenar, el encuestador puede presionar el menú de opciones (tres puntos) y seleccionar **Cambiar idioma** para alternar entre las traducciones disponibles.
+*   **En DATAUMSA Collect / KoboCollect:** Al abrir el formulario para llenar, el encuestador puede presionar el menú de opciones (tres puntos) y seleccionar **Cambiar idioma** para alternar entre las traducciones disponibles.

@@ -1,14 +1,14 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Badge from '../../components/components-astro/Badge.astro';
-import TextReveal from '../../components/components-astro/TextReveal.astro';
-import { 
-    FiShield, 
-    FiWifiOff, 
-    FiLayers, 
-    FiPieChart, 
-    FiDollarSign, 
-    FiAward,
+import Layout from "../../layouts/Layout.astro";
+import Badge from "../../components/components-astro/Badge.astro";
+import TextReveal from "../../components/components-astro/TextReveal.astro";
+import Button from "../../components/components-astro/Button.astro";
+import {
+    FiShield,
+    FiWifiOff,
+    FiLayers,
+    FiPieChart,
+    FiDollarSign,
     FiX,
     FiMinus,
     FiCheck,
@@ -17,7 +17,7 @@ import {
     FiMapPin,
     FiCamera,
     FiActivity,
-    FiLock
+    FiLock,
 } from "react-icons/fi";
 
 // Datos de la tabla comparativa
@@ -26,335 +26,506 @@ const features = [
         aspect: "Privacidad y propiedad",
         icon: FiShield,
         google: { text: "Tus datos se monetizan", state: "danger" },
-        umsa: { text: "100% bajo control UMSA", state: "success" }
+        umsa: { text: "100% bajo control UMSA", state: "success" },
     },
     {
         aspect: "Trabajo en campo",
         icon: FiWifiOff,
-        google: { text: "Requiere conexión", state: "danger" },
-        umsa: { text: "App nativa offline", state: "success" }
+        google: { text: "Requiere conexión fija", state: "danger" },
+        umsa: { text: "App nativa 100% offline", state: "success" },
     },
     {
         aspect: "Lógica de formularios",
         icon: FiLayers,
-        google: { text: "Saltos básicos", state: "warning" },
-        umsa: { text: "Avanzado (XLSForm)", state: "success" }
+        google: { text: "Saltos lineales básicos", state: "warning" },
+        umsa: { text: "XLSForm estándar avanzado", state: "success" },
     },
     {
         aspect: "Análisis científico",
         icon: FiPieChart,
-        google: { text: "Solo Google Sheets", state: "danger" },
-        umsa: { text: "R, Python, SPSS, Stata", state: "success" }
+        google: { text: "Limitado a Google Sheets", state: "danger" },
+        umsa: { text: "R, Python, SPSS, Stata", state: "success" },
     },
     {
         aspect: "Funciones avanzadas",
         icon: FiDollarSign,
-        google: { text: "Limitadas o de pago", state: "warning" },
-        umsa: { text: "Completamente gratis", state: "success" }
-    }
+        google: { text: "Planes de pago restrictivos", state: "warning" },
+        umsa: { text: "100% libre institucional", state: "success" },
+    },
 ];
-
-const stateClasses: Record<string, string> = {
-  danger: "text-danger-dark",
-  warning: "text-warning-dark",
-  success: "text-success-dark"
-};
 ---
 
-<Layout title="Comparativa" description="Descubre por qué DataUMSA es la alternativa superior a Google Forms y otras herramientas comerciales para la investigación académica.">
+<Layout
+    title="Comparativa"
+    description="Descubre por qué DATAUMSA es la alternativa superior a Google Forms y herramientas comerciales para la investigación académica."
+>
+    <!-- 1. Hero & Tabla Comparativa (Main Canvas) -->
+    <section class="w-full py-16 md:py-24 bg-canvas flex flex-col items-center">
+        <div class="w-full max-w-300 mx-auto px-4 sm:px-6">
+            <div class="flex flex-col items-center text-center mb-14">
+                <Badge variant="primary" class="mb-5">
+                    Análisis de Herramientas
+                </Badge>
+                <h1 class="text-ink font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-[-0.035em] leading-[1.08] mb-5">
+                    Más allá de las{" "}
+                    <TextReveal variant="light">encuestas básicas</TextReveal>
+                </h1>
+                <p class="text-text-muted font-sans text-base sm:text-lg max-w-2xl font-medium leading-relaxed">
+                    Por costumbre se han usado plataformas comerciales genéricas
+                    para proyectos serios. Descubre por qué el rigor científico
+                    exige una infraestructura universitaria especializada.
+                </p>
+            </div>
 
-<!-- 1. Hero & Tabla Comparativa -->
-<section class="w-full py-20 md:py-28 relative overflow-hidden flex flex-col items-center bg-glow-container">
-    <div class="w-full max-w-5xl mx-auto px-6 relative z-10">
-        
-        <div class="flex flex-col items-center text-center mb-16">
-            <Badge variant="primary" class="mb-6">
-                Análisis de Herramientas
-            </Badge>
-            <h1 class="text-text-main font-display text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] mb-6">
-                Más allá de las <span class="text-reveal-light">encuestas básicas</span>
-            </h1>
-            <p class="text-text-muted font-sans text-lg md:text-xl max-w-2xl font-medium leading-relaxed">
-                Por costumbre, la universidad ha utilizado herramientas comerciales para proyectos serios. Descubre por qué el rigor científico exige una infraestructura especializada.
-            </p>
-        </div>
-
-        <!-- Panel Contenedor de la Tabla -->
-        <div class="glass-panel w-full p-4 md:p-8 overflow-hidden relative mb-12">
-            
-            <div class="grid grid-cols-12 gap-4 items-end px-2 md:px-4 mb-6 border-b border-border pb-6">
-                <div class="col-span-4 text-xs font-bold uppercase tracking-widest text-text-muted">
-                    Característica
-                </div>
-                <div class="col-span-4 text-center font-bold text-sm md:text-base opacity-60 text-text-main font-display">
-                    Alternativas Comerciales
-                </div>
-                <div class="col-span-4 flex flex-col items-center justify-center">
-                    <div class="relative flex items-center justify-center w-8 h-8 mb-2">
-                        <div class="absolute inset-0 rounded-full bg-primary/20 animate-ping" style="animation-duration: 3s;"></div>
-                        <div class="relative w-3 h-3 rounded-full bg-primary-dark shadow-[0_0_10px_rgba(41,185,242,0.6)]"></div>
+            <!-- Panel Contenedor Bento de la Tabla -->
+            <div class="w-full overflow-x-auto rounded-card border-[2.5px] border-ink bg-white">
+                <div class="min-w-190 w-full">
+                    <!-- Header de la tabla -->
+                    <div class="grid grid-cols-12 border-b-2 border-ink px-6 sm:px-8 py-5 items-center bg-canvas font-mono text-xs uppercase tracking-wider">
+                        <div class="col-span-4 text-ink font-bold">
+                            Característica Clave
+                        </div>
+                        <div class="col-span-4 pl-6 text-text-muted flex items-center justify-center gap-2 font-bold">
+                            <span class="w-2.5 h-2.5 rounded-full bg-danger border border-ink"></span>{" "}
+                            Alternativas Comerciales
+                        </div>
+                        <div class="col-span-4 pl-6 border-l-2 border-ink bg-primary-light py-3 -my-3 text-ink flex items-center justify-center gap-2 font-bold">
+                            <span class="w-2.5 h-2.5 rounded-full bg-primary border border-ink"></span>{" "}
+                            DATAUMSA
+                        </div>
                     </div>
-                    <span class="text-lg md:text-2xl font-black text-primary-dark font-display">
-                        DataUMSA
+
+                    <!-- Filas de la tabla -->
+                    <div class="divide-y-2 divide-ink/15">
+                        {features.map((item) => {
+                            const Icon = item.icon;
+                            return (
+                                <div class="grid grid-cols-12 px-6 sm:px-8 py-5 items-center hover:bg-slate-50 transition-colors">
+                                    <!-- Aspecto -->
+                                    <div class="col-span-4 flex items-center gap-3">
+                                        <div class="w-9 h-9 rounded-xl border border-ink bg-canvas flex items-center justify-center text-ink shrink-0">
+                                            <Icon className="w-4 h-4" />
+                                        </div>
+                                        <span class="text-ink font-display font-bold text-sm sm:text-base leading-tight">
+                                            {item.aspect}
+                                        </span>
+                                    </div>
+
+                                    <!-- Alternativas Comerciales -->
+                                    <div class="col-span-4 pl-6 flex justify-center">
+                                        <div class="flex items-center gap-2 text-xs sm:text-sm font-medium text-text-muted font-sans">
+                                            {item.google.state === "danger" && (
+                                                <div class="w-5 h-5 rounded-full border border-ink bg-danger text-white flex items-center justify-center shrink-0">
+                                                    <FiX
+                                                        className="w-3.5 h-3.5"
+                                                        strokeWidth={3}
+                                                    />
+                                                </div>
+                                            )}
+                                            {item.google.state ===
+                                                "warning" && (
+                                                <div class="w-5 h-5 rounded-full border border-ink bg-warning text-ink flex items-center justify-center shrink-0 font-bold">
+                                                    <FiMinus
+                                                        className="w-3.5 h-3.5"
+                                                        strokeWidth={3}
+                                                    />
+                                                </div>
+                                            )}
+                                            <span>{item.google.text}</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- DATAUMSA -->
+                                    <div class="col-span-4 pl-6 border-l-2 border-ink bg-primary-light/30 py-3 -my-3 flex items-center justify-center gap-2 text-xs sm:text-sm font-bold text-ink font-sans">
+                                        <div class="w-5 h-5 rounded-full border border-ink bg-success text-ink flex items-center justify-center shrink-0">
+                                            <FiCheck
+                                                className="w-3.5 h-3.5"
+                                                strokeWidth={3.5}
+                                            />
+                                        </div>
+                                        <span>{item.umsa.text}</span>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Soberanía y Privacidad (Cyan Light Band) -->
+    <section class="w-full py-16 lg:py-24 bg-primary-light border-y-[2.5px] border-ink">
+        <div class="max-w-300 mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div>
+                <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white border-2 border-ink text-ink mb-6">
+                    <FiLock className="w-7 h-7" />
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-ink mb-6 leading-tight tracking-tight">
+                    Tus datos no son moneda de cambio
+                </h2>
+                <p class="text-text-muted font-sans text-base sm:text-lg mb-6 leading-relaxed font-medium">
+                    Las plataformas comerciales gratuitas se financian
+                    recopilando, analizando y utilizando información para fines
+                    publicitarios. Utilizar infraestructura de terceros para
+                    investigaciones universitarias pone en riesgo la
+                    confidencialidad y propiedad del estudio.
+                </p>
+                <p class="text-text-muted font-sans text-base sm:text-lg leading-relaxed font-medium">
+                    <strong class="text-ink font-bold">
+                        DATAUMSA opera bajo el principio de soberanía
+                        tecnológica.
+                    </strong>{" "}
+                    Toda la información recolectada se almacena en servidores
+                    gestionados y asegurados localmente por la universidad.
+                    Nadie fuera de tu equipo tiene acceso a tu base de datos.
+                </p>
+            </div>
+
+            <!-- Bento Card Servidor Protegido -->
+            <div class="w-full bg-midnight-surface rounded-card border-[2.5px] border-ink p-8 flex flex-col justify-between text-white relative overflow-hidden">
+                <!-- Header status terminal -->
+                <div class="relative z-10 flex items-center justify-between border-b-2 border-ink pb-4 mb-6">
+                    <span class="font-mono text-xs font-bold text-text-dark-muted uppercase tracking-wider">
+                        ESTADO: PROTEGIDO DTIC UMSA
+                    </span>
+                    <div class="flex gap-2">
+                        <span class="w-3 h-3 rounded-full bg-success border border-ink"></span>
+                        <span class="w-3 h-3 rounded-full bg-primary border border-ink"></span>
+                        <span class="w-3 h-3 rounded-full bg-accent border border-ink"></span>
+                    </div>
+                </div>
+
+                <div class="relative z-10 text-center flex flex-col items-center justify-center py-8">
+                    <div class="w-20 h-20 rounded-2xl bg-white border-2 border-ink flex items-center justify-center mb-5">
+                        <FiDatabase className="w-10 h-10 text-ink" />
+                    </div>
+                    <h3 class="text-white font-display font-extrabold text-2xl mb-2 tracking-tight">
+                        Servidor UMSA Aislado
+                    </h3>
+                    <p class="text-primary font-mono text-sm font-bold bg-midnight px-4 py-1.5 rounded-full border border-ink">
+                        Cifrado Extremo a Extremo
+                    </p>
+                </div>
+
+                <div class="relative z-10 border-t-2 border-ink pt-4 flex justify-between items-center text-xs font-mono text-text-dark-muted">
+                    <span>Normativa UMSA 2026</span>
+                    <span class="text-success font-bold">100% Soberano</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Lógica Avanzada XLSForm (Main Canvas) -->
+    <section class="w-full py-16 lg:py-24 bg-canvas">
+        <div class="max-w-300 mx-auto px-4 sm:px-6">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-ink mb-5 leading-tight tracking-tight">
+                    El verdadero poder está en la{" "}
+                    <TextReveal variant="light">Lógica</TextReveal>
+                </h2>
+                <p class="text-text-muted font-sans text-base sm:text-lg leading-relaxed font-medium">
+                    Mientras las herramientas comunes se limitan a "ir a la
+                    siguiente sección", DATAUMSA utiliza el estándar{" "}
+                    <strong class="text-ink font-bold">XLSForm</strong>,
+                    permitiendo validaciones, cálculos y matrices complejas para
+                    evitar errores de captura en campo.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Bento 1 -->
+                <div class="bg-white border-[2.5px] border-ink rounded-card p-7 sm:p-8 flex flex-col justify-between hover:-translate-y-1 transition-transform duration-200">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-primary-light border-2 border-ink flex items-center justify-center text-ink mb-5">
+                            <FiCode className="w-7 h-7" />
+                        </div>
+                        <h3 class="text-xl font-bold font-display text-ink mb-3 tracking-tight">
+                            Validación Regex
+                        </h3>
+                        <p class="text-sm font-medium text-text-muted leading-relaxed font-sans">
+                            Fuerza formatos específicos. Verifica
+                            automáticamente que un carnet, correo o código de
+                            matrícula esté escrito correctamente antes de
+                            permitir avanzar.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Bento 2 -->
+                <div class="bg-white border-[2.5px] border-ink rounded-card p-7 sm:p-8 flex flex-col justify-between hover:-translate-y-1 transition-transform duration-200">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-primary-light border-2 border-ink flex items-center justify-center text-ink mb-5">
+                            <FiLayers className="w-7 h-7" />
+                        </div>
+                        <h3 class="text-xl font-bold font-display text-ink mb-3 tracking-tight">
+                            Saltos Condicionales
+                        </h3>
+                        <p class="text-sm font-medium text-text-muted leading-relaxed font-sans">
+                            Crea árboles lógicos complejos. Muestra u oculta
+                            preguntas basándote en la combinación de múltiples
+                            respuestas previas del encuestado.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Bento 3 -->
+                <div class="bg-white border-[2.5px] border-ink rounded-card p-7 sm:p-8 flex flex-col justify-between hover:-translate-y-1 transition-transform duration-200">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-primary-light border-2 border-ink flex items-center justify-center text-ink mb-5">
+                            <FiActivity className="w-7 h-7" />
+                        </div>
+                        <h3 class="text-xl font-bold font-display text-ink mb-3 tracking-tight">
+                            Cálculos en Tiempo Real
+                        </h3>
+                        <p class="text-sm font-medium text-text-muted leading-relaxed font-sans">
+                            Suma valores, calcula edades a partir de fechas de
+                            nacimiento o genera scores automáticos sin que el
+                            encuestador tenga que hacer cuentas en campo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Trabajo de Campo (Midnight Band) -->
+    <section class="w-full py-16 lg:py-24 bg-midnight text-white border-y-[2.5px] border-ink">
+        <div class="max-w-300 mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div class="lg:col-span-5 flex justify-center">
+                <!-- Mockup Celular con estética Bento de bordes sólidos -->
+                <div class="w-full max-w-sm rounded-[2.5rem] border-3 border-ink bg-midnight-surface p-6 relative">
+                    <div class="w-28 h-5 bg-midnight border-b-2 border-x-2 border-ink rounded-b-xl absolute top-0 left-1/2 -translate-x-1/2"></div>
+
+                    <div class="flex flex-col gap-4 mt-6">
+                        <div class="w-full bg-midnight rounded-2xl p-4 border-2 border-ink">
+                            <div class="flex items-center gap-2.5 mb-2">
+                                <FiMapPin className="text-primary" />
+                                <span class="text-sm font-bold text-white">
+                                    Captura GPS (Offline)
+                                </span>
+                            </div>
+                            <div class="w-full h-2.5 bg-midnight-surface rounded-full border border-ink">
+                                <div class="w-full h-full bg-success rounded-full"></div>
+                            </div>
+                        </div>
+
+                        <div class="w-full bg-midnight rounded-2xl p-4 border-2 border-ink">
+                            <div class="flex items-center gap-2.5 mb-2">
+                                <FiCamera className="text-primary" />
+                                <span class="text-sm font-bold text-white">
+                                    Fotografía con Firma
+                                </span>
+                            </div>
+                            <div class="w-full h-2.5 bg-midnight-surface rounded-full border border-ink">
+                                <div class="w-full h-full bg-success rounded-full"></div>
+                            </div>
+                        </div>
+
+                        <div class="w-full bg-primary-light rounded-2xl p-3.5 border-2 border-ink text-ink flex items-center justify-center gap-2 font-bold text-sm">
+                            <FiCheck
+                                className="w-5 h-5 text-ink"
+                                strokeWidth={3}
+                            />
+                            <span>Sin restricciones de pago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7">
+                <Badge variant="primary" class="mb-4">
+                    DATAUMSA Collect
+                </Badge>
+                <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-white mb-6 leading-tight tracking-tight">
+                    El trabajo de campo no tiene internet. <br />{" "}
+                    <span class="text-primary">
+                        Ni debería requerir una suscripción.
+                    </span>
+                </h2>
+                <p class="text-text-dark-muted font-sans text-base sm:text-lg mb-6 leading-relaxed font-medium">
+                    Alternativas comerciales de encuestas móviles como{" "}
+                    <em>SurveyHeart</em> esconden funciones esenciales (como
+                    lógica avanzada, saltos o captura de coordenadas) detrás de
+                    muros de pago.
+                </p>
+                <p class="text-text-dark-muted font-sans text-base sm:text-lg leading-relaxed font-medium">
+                    Nuestra aplicación nativa te permite encuestar en
+                    comunidades rurales totalmente{" "}
+                    <strong class="text-white font-bold">fuera de línea</strong>
+                    . Captura coordenadas satelitales, audios del entorno,
+                    firmas y fotografías. Al recuperar señal, los datos se
+                    sincronizan directamente con la universidad.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Ecosistema Científico (Main Canvas) -->
+    <section class="w-full py-16 lg:py-24 bg-canvas flex flex-col items-center">
+        <div class="max-w-300 mx-auto px-4 sm:px-6 text-center">
+            <h2 class="text-3xl sm:text-4xl font-display font-extrabold text-ink mb-5 leading-tight tracking-tight">
+                Preparado para el análisis de{" "}
+                <TextReveal variant="light">Ciencia de Datos</TextReveal>
+            </h2>
+            <p class="text-text-muted font-sans text-base sm:text-lg leading-relaxed mb-12 max-w-2xl mx-auto font-medium">
+                No te limites a exportar en hojas de cálculo. DATAUMSA genera
+                bases de datos estructuradas y limpias listas para ser ingeridas
+                directamente por el software estadístico que utilizas en tus
+                materias e investigaciones.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
+                <!-- R / RStudio -->
+                <div class="bg-white border-[2.5px] border-ink rounded-[1.75rem] px-6 py-6 flex flex-col items-center justify-center w-40 hover:-translate-y-1 transition-transform duration-200">
+                    <svg
+                        class="w-12 h-12 mb-3"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 32 32"
+                    >
+                        <defs>
+                            <linearGradient
+                                id="SVGKqV9jdVi"
+                                x1="-134.811"
+                                x2="-134.772"
+                                y1="-103.284"
+                                y2="-103.323"
+                                gradientTransform="matrix(721.094 0 0 -482.937 97213.595 -49874.512)"
+                                gradientUnits="userSpaceOnUse"
+                            >
+                                <stop offset="0" stop-color="#cbced0" />
+                                <stop offset="1" stop-color="#84838b" />
+                            </linearGradient>
+                            <linearGradient
+                                id="SVG5aLaoevq"
+                                x1="-135.378"
+                                x2="-135.339"
+                                y1="-102.985"
+                                y2="-103.024"
+                                gradientTransform="matrix(398 0 0 -406.124 53893 -41812.836)"
+                                gradientUnits="userSpaceOnUse"
+                            >
+                                <stop offset="0" stop-color="#276dc3" />
+                                <stop offset="1" stop-color="#165caa" />
+                            </linearGradient>
+                        </defs>
+                        <path
+                            fill="url(#SVGKqV9jdVi)"
+                            d="M16 23.956c-7.732 0-14-4.2-14-9.376S8.268 5.2 16 5.2s14 4.2 14 9.38s-6.268 9.376-14 9.376M18.143 8.87C12.266 8.87 7.5 11.74 7.5 15.28s4.764 6.41 10.641 6.41s10.214-1.962 10.214-6.41s-4.335-6.41-10.212-6.41"
+                        />
+                        <path
+                            fill="url(#SVG5aLaoevq)"
+                            d="M23.321 19.726a11 11 0 0 1 1.34.5a2.6 2.6 0 0 1 .68.485a1.8 1.8 0 0 1 .311.447l3.339 5.63h-5.4l-2.524-4.74a6 6 0 0 0-.835-1.145a.88.88 0 0 0-.641-.291h-1.28v6.173h-4.776V11.026h9.591s4.374.074 4.374 4.235s-4.179 4.465-4.179 4.465m-2.077-5.28h-2.891v2.681h2.893a1.323 1.323 0 0 0 1.34-1.364a1.247 1.247 0 0 0-1.342-1.316Z"
+                        />
+                    </svg>
+                    <span class="text-xs text-ink font-mono font-bold tracking-wider uppercase">
+                        R / RStudio
+                    </span>
+                </div>
+
+                <!-- Python / Pandas -->
+                <div class="bg-white border-[2.5px] border-ink rounded-[1.75rem] px-6 py-6 flex flex-col items-center justify-center w-40 hover:-translate-y-1 transition-transform duration-200">
+                    <svg
+                        class="w-12 h-12 mb-3"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 128 128"
+                    >
+                        <linearGradient
+                            id="SVGtryZab8W"
+                            x1="70.252"
+                            x2="170.659"
+                            y1="1237.476"
+                            y2="1151.089"
+                            gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"
+                            gradientUnits="userSpaceOnUse"
+                        >
+                            <stop offset="0" stop-color="#5a9fd4" />
+                            <stop offset="1" stop-color="#306998" />
+                        </linearGradient>
+                        <linearGradient
+                            id="SVGe9yX9dAA"
+                            x1="209.474"
+                            x2="173.62"
+                            y1="1098.811"
+                            y2="1149.537"
+                            gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)"
+                            gradientUnits="userSpaceOnUse"
+                        >
+                            <stop offset="0" stop-color="#ffd43b" />
+                            <stop offset="1" stop-color="#ffe873" />
+                        </linearGradient>
+                        <path
+                            fill="url(#SVGtryZab8W)"
+                            d="M63.391 1.988c-4.222.02-8.252.379-11.8 1.007c-10.45 1.846-12.346 5.71-12.346 12.837v9.411h24.693v3.137H29.977c-7.176 0-13.46 4.313-15.426 12.521c-2.268 9.405-2.368 15.275 0 25.096c1.755 7.311 5.947 12.519 13.124 12.519h8.491V67.234c0-8.151 7.051-15.34 15.426-15.34h24.665c6.866 0 12.346-5.654 12.346-12.548V15.833c0-6.693-5.646-11.72-12.346-12.837c-4.244-.706-8.645-1.027-12.866-1.008M50.037 9.557c2.55 0 4.634 2.117 4.634 4.721c0 2.593-2.083 4.69-4.634 4.69c-2.56 0-4.633-2.097-4.633-4.69c-.001-2.604 2.073-4.721 4.633-4.721"
+                            transform="translate(0 10.26)"
+                        />
+                        <path
+                            fill="url(#SVGe9yX9dAA)"
+                            d="M91.682 28.38v10.966c0 8.5-7.208 15.655-15.426 15.655H51.591c-6.756 0-12.346 5.783-12.346 12.549v23.515c0 6.691 5.818 10.628 12.346 12.547c7.816 2.297 15.312 2.713 24.665 0c6.216-1.801 12.346-5.423 12.346-12.547v-9.412H63.938v-3.138h37.012c7.176 0 9.852-5.005 12.348-12.519c2.578-7.735 2.467-15.174 0-25.096c-1.774-7.145-5.161-12.521-12.348-12.521h-9.268zM77.809 87.927c2.561 0 4.634 2.097 4.634 4.692c0 2.602-2.074 4.719-4.634 4.719c-2.55 0-4.633-2.117-4.633-4.719c0-2.595 2.083-4.692 4.633-4.692"
+                            transform="translate(0 10.26)"
+                        />
+                    </svg>
+                    <span class="text-xs text-ink font-mono font-bold tracking-wider uppercase">
+                        Python / Pandas
+                    </span>
+                </div>
+
+                <!-- SPSS / IBM -->
+                <div class="bg-white border-[2.5px] border-ink rounded-[1.75rem] px-6 py-6 flex flex-col items-center justify-center w-40 hover:-translate-y-1 transition-transform duration-200">
+                    <svg
+                        class="w-12 h-12 mb-3 text-[#CC1E4A]"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 128 128"
+                    >
+                        <path
+                            fill="currentColor"
+                            d="M125 80.5c-1.7 0-3.1 1.3-3.1 3s1.3 3 3.1 3c1.7 0 3-1.3 3-3s-1.3-3-3-3m-.1.5c1.4 0 2.4 1.1 2.4 2.5s-1 2.5-2.3 2.5c-1.4 0-2.4-1.1-2.4-2.5s.9-2.4 2.3-2.5m-1 .8v3.4h.6v-1.5h.6l.9 1.5h.6l-.9-1.6c.6 0 .8-.4.8-.9q0-.9-1.2-.9zm.5 1.5v-1.1h.7c.5 0 .7.2.7.6s-.3.6-.6.6zM31.3 93.7c-1.6-1.2-3.5-2.2-6.1-3c-3.3-1.1-8.1-2.2-10-2.9c-1.2-.5-1.7-1.2-1.7-2.2c0-1.4 1.7-2.2 3.7-2.3c3.3.1 4.3 2 4.5 3.3h9.6zm12 8.9h7.1c6.2-.1 11.2-3.2 13.7-7.7c.2-.4.4-.7.6-1.1c.4.5.7.7 1.1 1.1c1.7 1.5 3.9 2.6 6.2 3.3c3.7 1.3 6.6 2.2 7.6 2.6c1.9.8 3.1 1.4 3.1 3.1c0 2-2.2 2.8-4.5 2.9c-3.1-.1-6.2-1.6-6.1-4.7H60c.6 8.1 8.6 14.4 18 14.5c5.7-.1 11-1.7 14.4-5.8c3.4 3.5 7.4 5.7 13 5.8c8.9-.1 18.1-4.5 18.2-13.9c0-3-.8-5.6-2.7-7.8c-1.7-2-4.1-3.3-7.4-4.2c-3.3-1.1-8.1-2.2-10-2.9c-1.2-.5-1.7-1.2-1.7-2.2c0-1.4 1.7-2.2 3.7-2.3c3.3.1 4.3 2 4.5 3.3h11.6c.1-8-6.6-13.3-16.1-13.3c-7.1 0-11.9 2.7-14.3 6.6c-2.6-4.1-7.8-6.6-14.3-6.6c-6.8 0-11.5 2.6-14 6.3c-2.8-3.6-7.4-5.9-13-5.9H31.3v6.1c-2.6-4.1-7.8-6.5-14.2-6.5c-9.9 0-15.3 5.5-15.8 11.8c0 3.9 1.9 7.4 4.8 9.9q2.55 2.25 6 3.3c3.7 1.3 6.6 2.2 7.6 2.6c1.9.8 3.1 1.4 3.1 3.1c0 2-2.3 2.8-4.5 2.9c-3.1-.1-6.2-1.6-6.1-4.7H-.1c.6 8.1 8.6 14.4 18 14.5c5.2-.1 10-1.5 13.2-4.5v3.8h12zm0-18.9h6.5c2.4 0 4.5 2 4.5 4.5s-2 4.5-4.5 4.5h-6.5zM92.5 95c-1.7-2-4.1-3.3-7.4-4.2c-3.3-1.1-8.1-2.2-9.9-2.9c-1.3-.5-1.9-1.2-1.9-2.2c0-1.4 1.7-2.2 3.7-2.3c3.4.1 4.3 2 4.5 3.3h8.2c.5 3.2 2.1 6.1 4.7 8.3c1.7 1.5 3.8 2.6 6.1 3.3c3.7 1.3 6.6 2.2 7.5 2.6c2 .8 3.1 1.4 3.1 3.1c0 2-2.3 2.8-4.5 2.9c-3.1-.1-6.2-1.6-6.1-4.7H95c0-2.9-.9-5.3-2.5-7.2M.1 11.2v3.5H25v-3.5zm28.3 0v3.5H64s-3.6-3.5-8.4-3.5zm42.6 0v3.5h21.5l-1.3-3.5zm36.9 0l-1.3 3.5h21.3v-3.5zM.1 18v3.5H25V18zm28.3 0v3.5H68s-.5-2.7-1.3-3.5zM71 18v3.5h23.8L93.6 18zm34.3 0l-1.2 3.5h23.7V18zm-98 6.8v3.5H18v-3.5zm28.3 0v3.5h10.8v-3.5zm21.4 0v3.5h10.8s.7-1.9.7-3.5zm21.2 0v3.5h19.1L96 24.8zm24.8 0l-1.3 3.5h19.2v-3.5zM7.3 31.7v3.5H18v-3.5zm28.3 0v3.5h27.6s2.3-1.8 3-3.5zm42.6 0v3.5H89v-1.9l.7 1.9h19.8l.7-1.9v1.9H121v-3.5h-20.3l-1.1 3l-1.1-3zM7.3 38.5V42H18v-3.5zm28.3 0V42h30.6c-.7-1.7-3-3.5-3-3.5zm42.6 0V42H89v-3.5zm12.7 0l1.3 3.5H107l1.2-3.5zm19.3 0V42H121v-3.5zM7.3 45.3v3.5H18v-3.5zm28.3 0v3.5h10.8v-3.5zm21.4 0v3.5h11.5c0-1.7-.7-3.5-.7-3.5zm21.2 0v3.5H89v-3.5zm15.2 0l1.3 3.5h9.9l1.3-3.5zm16.8 0v3.5H121v-3.5zM.3 52.1v3.5h24.9v-3.5zm28.1 0v3.5h38.4c.8-.8 1.3-3.5 1.3-3.5zm42.8 0v3.5H89v-3.5zm24.6 0l1.3 3.5h5.1l1.2-3.5zm14.4 0v3.5h17.9v-3.5zM.3 58.9v3.5h24.9v-3.5zm28.1 0v3.5h27.1c4.8 0 8.4-3.5 8.4-3.5zm42.8 0v3.5H89v-3.5zm27.1 0l1.3 3.5h.2l1.3-3.5zm11.9 0v3.5h17.9v-3.5z"
+                        />
+                    </svg>
+                    <span class="text-xs text-ink font-mono font-bold tracking-wider uppercase">
+                        SPSS / IBM
+                    </span>
+                </div>
+
+                <!-- Stata / Corp -->
+                <div class="bg-white border-[2.5px] border-ink rounded-[1.75rem] px-6 py-6 flex flex-col items-center justify-center w-40 hover:-translate-y-1 transition-transform duration-200">
+                    <svg
+                        class="w-12 h-12 mb-3"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 32 32"
+                    >
+                        <defs>
+                            <linearGradient
+                                id="SVGDM0jtdZw"
+                                x1="16"
+                                x2="16"
+                                y1="2"
+                                y2="30"
+                                gradientUnits="userSpaceOnUse"
+                            >
+                                <stop offset="0" stop-color="#8aa7c0" />
+                                <stop offset="1" stop-color="#3c6e8f" />
+                            </linearGradient>
+                        </defs>
+                        <rect
+                            width="28"
+                            height="28"
+                            x="2"
+                            y="2"
+                            fill="url(#SVGDM0jtdZw)"
+                            rx="1.556"
+                            ry="1.556"
+                        />
+                        <path
+                            fill="#fff"
+                            d="M13.171 6.015h5.756v5.756h-5.756zm7.155 0h5.756v5.756h-5.756zm0 7.156h5.756v5.756h-5.756zm-7.155 0h5.756v5.756h-5.756zm-7.156 0h5.756v5.756H6.015zm0 7.155h5.756v5.756H6.015zm7.156 0h5.756v5.756h-5.756z"
+                        />
+                    </svg>
+                    <span class="text-xs text-ink font-mono font-bold tracking-wider uppercase">
+                        Stata / Corp
                     </span>
                 </div>
             </div>
-
-            <div class="flex flex-col">
-                {features.map((item, index) => {
-                    const Icon = item.icon;
-                    const isLast = index === features.length - 1;
-                    const googleColor = stateClasses[item.google.state] || "text-text-muted";
-                    return (
-                        <div class={`grid grid-cols-12 gap-4 items-center px-2 md:px-4 py-5 transition-colors hover:bg-slate-50/50 ${!isLast ? 'border-b border-border' : ''} group`}>
-                            
-                            <!-- Aspecto -->
-                            <div class="col-span-4 flex items-center gap-3">
-                                <div class="hidden lg:flex p-2 rounded-[var(--radius-md)] bg-white text-text-muted group-hover:text-primary-dark border border-border transition-colors">
-                                    <Icon className="w-4 h-4" />
-                                </div>
-                                <span class="text-text-main font-bold text-sm md:text-[1.05rem] leading-tight">
-                                    {item.aspect}
-                                </span>
-                            </div>
-
-                            <!-- Celda Google/Otros -->
-                            <div class="col-span-4 flex justify-center">
-                                <div class={`flex flex-col md:flex-row items-center justify-center gap-1.5 text-xs md:text-sm font-medium text-center ${googleColor}`}>
-                                    {item.google.state === 'danger' && <FiX className="w-4 h-4 opacity-70" />}
-                                    {item.google.state === 'warning' && <FiMinus className="w-4 h-4 opacity-70" />}
-                                    <span class="opacity-80">{item.google.text}</span>
-                                </div>
-                            </div>
-
-                            <!-- Celda DataUMSA -->
-                            <div class="col-span-4 flex justify-center relative">
-                                <div class="absolute inset-y-[-1rem] inset-x-0 bg-primary-light/30 rounded-[var(--radius-md)] -z-10 group-hover:bg-primary-light/60 transition-colors"></div>
-                                <div class="flex flex-col md:flex-row items-center justify-center gap-1.5 text-xs md:text-sm font-bold text-center text-success-dark">
-                                    <FiCheck className="w-4 h-4 md:w-5 md:h-5 flex-shrink-0" strokeWidth={3} />
-                                    <span>{item.umsa.text}</span>
-                                </div>
-                            </div>
-
-                        </div>
-                    );
-                })}
-            </div>
         </div>
-    </div>
-</section>
-
-<!-- 2. Soberanía y Privacidad -->
-<section class="w-full py-20 bg-slate-50 border-y border-border">
-    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-        <div>
-            <div class="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-slate-200 text-primary-dark mb-6">
-                <FiLock className="w-6 h-6" />
-            </div>
-            <h2 class="text-3xl md:text-4xl font-display font-black text-text-main mb-6 leading-tight">
-                Tus datos no son moneda de cambio
-            </h2>
-            <p class="text-text-muted font-sans text-lg mb-6 leading-relaxed">
-                Seamos realistas: las plataformas comerciales gratuitas se financian recopilando, analizando y utilizando información para su propio beneficio. Utilizar infraestructura de terceros para investigaciones universitarias pone en riesgo la confidencialidad del estudio.
-            </p>
-            <p class="text-text-muted font-sans text-lg leading-relaxed">
-                <strong class="text-text-main">DataUMSA opera bajo el principio de soberanía informática.</strong> Toda la información recolectada se almacena en servidores gestionados y asegurados localmente. Nadie fuera de tu equipo de investigación tiene acceso a la data.
-            </p>
-        </div>
-        <div class="relative w-full h-[400px] rounded-[var(--radius-lg)] bg-slate-900 border border-slate-800 p-8 flex flex-col justify-between overflow-hidden shadow-2xl">
-            <!-- Patrón de fondo tecnológico CSS -->
-            <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#475569 1px, transparent 1px); background-size: 24px 24px;"></div>
-            
-            <div class="relative z-10 flex items-center justify-between border-b border-slate-800 pb-4">
-                <span class="font-mono text-xs text-slate-400">STATUS: PROTECTED</span>
-                <div class="flex gap-2">
-                    <span class="w-2 h-2 rounded-full bg-success"></span>
-                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
-                    <span class="w-2 h-2 rounded-full bg-slate-700"></span>
-                </div>
-            </div>
-            
-            <div class="relative z-10 text-center flex flex-col items-center justify-center flex-grow">
-                <FiDatabase className="w-16 h-16 text-primary mb-4" />
-                <h3 class="text-white font-display font-bold text-xl mb-2">Servidor UMSA Aislado</h3>
-                <p class="text-slate-400 font-mono text-sm">Cifrado Extremo a Extremo</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 3. Lógica Avanzada XLSForm -->
-<section class="w-full py-24 relative overflow-hidden">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-3xl md:text-4xl font-display font-black text-text-main mb-6 leading-tight">
-                El verdadero poder está en la <span class="text-reveal-light">Lógica</span>
-            </h2>
-            <p class="text-text-muted font-sans text-lg leading-relaxed">
-                Mientras las herramientas comunes se limitan a "ir a la siguiente sección", DataUMSA utiliza el estándar <strong class="text-primary-dark font-bold">XLSForm</strong>, permitiendo validaciones y cálculos a nivel de programación para evitar errores de captura.
-            </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Bento 1 -->
-            <div class="glass-panel p-8">
-                <FiCode className="w-8 h-8 text-primary-dark mb-4" />
-                <h3 class="text-lg font-bold font-display text-text-main mb-3">Validación con Expresiones Regulares</h3>
-                <p class="text-sm text-text-muted leading-relaxed">
-                    Fuerza formatos específicos. Verifica automáticamente que un carnet, correo o código de matrícula esté escrito correctamente antes de permitir avanzar.
-                </p>
-            </div>
-            <!-- Bento 2 -->
-            <div class="glass-panel p-8">
-                <FiLayers className="w-8 h-8 text-primary-dark mb-4" />
-                <h3 class="text-lg font-bold font-display text-text-main mb-3">Saltos Condicionales Anidados</h3>
-                <p class="text-sm text-text-muted leading-relaxed">
-                    Crea árboles lógicos complejos. Muestra u oculta preguntas basándote en la combinación de múltiples respuestas previas del encuestado.
-                </p>
-            </div>
-            <!-- Bento 3 -->
-            <div class="glass-panel p-8">
-                <FiActivity className="w-8 h-8 text-primary-dark mb-4" />
-                <h3 class="text-lg font-bold font-display text-text-main mb-3">Cálculos en Segundo Plano</h3>
-                <p class="text-sm text-text-muted leading-relaxed">
-                    Suma valores, calcula edades a partir de fechas de nacimiento o genera puntajes automáticos (scores) sin que el encuestador tenga que hacer matemáticas en campo.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- 4. Trabajo de Campo (Comparativa con Freemium) -->
-<section class="w-full py-24 bg-slate-900 text-white border-y border-slate-800">
-    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-        
-        <div class="lg:col-span-5 flex justify-center">
-            <!-- Representación UI Móvil -->
-            <div class="w-full max-w-sm rounded-[2rem] border-8 border-slate-800 bg-slate-950 p-6 shadow-2xl relative">
-                <div class="w-32 h-6 bg-slate-800 rounded-b-xl absolute top-0 left-1/2 -translate-x-1/2"></div>
-                
-                <div class="flex flex-col gap-4 mt-6">
-                    <div class="w-full bg-slate-900 rounded-xl p-4 border border-slate-800">
-                        <div class="flex items-center gap-3 mb-2">
-                            <FiMapPin className="text-primary" />
-                            <span class="text-sm font-bold">Captura GPS (Offline)</span>
-                        </div>
-                        <div class="w-full h-2 bg-slate-800 rounded-full mt-3">
-                            <div class="w-full h-full bg-success rounded-full"></div>
-                        </div>
-                    </div>
-
-                    <div class="w-full bg-slate-900 rounded-xl p-4 border border-slate-800">
-                        <div class="flex items-center gap-3 mb-2">
-                            <FiCamera className="text-primary" />
-                            <span class="text-sm font-bold">Fotografía con Firma</span>
-                        </div>
-                        <div class="w-full h-2 bg-slate-800 rounded-full mt-3">
-                            <div class="w-full h-full bg-success rounded-full"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="w-full bg-slate-900 rounded-xl p-4 border border-primary-dark/30 bg-primary-dark/10">
-                        <div class="flex items-center gap-2 justify-center py-2 text-primary">
-                            <FiCheck className="w-5 h-5" />
-                            <span class="text-sm font-bold">Sin restricciones premium</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="lg:col-span-7">
-            <Badge variant="primary" class="mb-4 bg-primary-dark/20 text-primary border-primary-dark/30">
-                DataUMSA Collect
-            </Badge>
-            <h2 class="text-3xl md:text-4xl font-display font-black text-white mb-6 leading-tight">
-                El trabajo de campo no tiene conexión a internet. <br/> <span class="text-slate-400">Ni debería requerir una suscripción.</span>
-            </h2>
-            <p class="text-slate-300 font-sans text-lg mb-6 leading-relaxed">
-                Alternativas de encuestas móviles como <em>SurveyHeart</em> son populares, pero esconden funciones esenciales para la investigación (como lógicas avanzadas o recolección de metadatos) detrás de barreras de pago premium.
-            </p>
-            <p class="text-slate-300 font-sans text-lg leading-relaxed">
-                Nuestra aplicación nativa te permite encuestar en comunidades rurales totalmente <strong class="text-white">fuera de línea</strong>. Captura coordenadas geográficas satelitales, audios del entorno, firmas digitales y escanea códigos de barra. Cuando vuelvas a tener señal, los datos se sincronizan automáticamente con la universidad, sin pagar licencias.
-            </p>
-        </div>
-        
-    </div>
-</section>
-
-<!-- 5. Ecosistema Científico -->
-<section class="w-full py-24 relative overflow-hidden flex flex-col items-center">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="text-3xl md:text-4xl font-display font-black text-text-main mb-6 leading-tight">
-            Preparado para el análisis de <span class="text-reveal-light">Ciencia de Datos</span>
-        </h2>
-        <p class="text-text-muted font-sans text-lg leading-relaxed mb-12">
-            No te limites a exportar en hojas de cálculo. DataUMSA genera bases de datos estructuradas y etiquetadas listas para ser ingeridas directamente por el software estadístico que utilizas en tus materias e investigaciones.
-        </p>
-        
-        <div class="flex flex-wrap justify-center gap-4 md:gap-8">
-            <!-- Badges de Software con Iconos Oficiales SVG -->
-            <div class="glass-panel px-6 py-5 flex flex-col items-center justify-center w-[150px] hover:border-primary/30 transition-colors">
-                <svg class="w-12 h-12 mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                    <defs>
-                        <linearGradient id="SVGKqV9jdVi" x1="-134.811" x2="-134.772" y1="-103.284" y2="-103.323" gradientTransform="matrix(721.094 0 0 -482.937 97213.595 -49874.512)" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#cbced0"/>
-                            <stop offset="1" stop-color="#84838b"/>
-                        </linearGradient>
-                        <linearGradient id="SVG5aLaoevq" x1="-135.378" x2="-135.339" y1="-102.985" y2="-103.024" gradientTransform="matrix(398 0 0 -406.124 53893 -41812.836)" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#276dc3"/>
-                            <stop offset="1" stop-color="#165caa"/>
-                        </linearGradient>
-                    </defs>
-                    <path fill="url(#SVGKqV9jdVi)" d="M16 23.956c-7.732 0-14-4.2-14-9.376S8.268 5.2 16 5.2s14 4.2 14 9.38s-6.268 9.376-14 9.376M18.143 8.87C12.266 8.87 7.5 11.74 7.5 15.28s4.764 6.41 10.641 6.41s10.214-1.962 10.214-6.41s-4.335-6.41-10.212-6.41"/>
-                    <path fill="url(#SVG5aLaoevq)" d="M23.321 19.726a11 11 0 0 1 1.34.5a2.6 2.6 0 0 1 .68.485a1.8 1.8 0 0 1 .311.447l3.339 5.63h-5.4l-2.524-4.74a6 6 0 0 0-.835-1.145a.88.88 0 0 0-.641-.291h-1.28v6.173h-4.776V11.026h9.591s4.374.074 4.374 4.235s-4.179 4.465-4.179 4.465m-2.077-5.28h-2.891v2.681h2.893a1.323 1.323 0 0 0 1.34-1.364a1.247 1.247 0 0 0-1.342-1.316Z"/>
-                </svg>
-                <span class="text-xs text-text-muted font-black tracking-widest uppercase">R / RStudio</span>
-            </div>
-
-            <div class="glass-panel px-6 py-5 flex flex-col items-center justify-center w-[150px] hover:border-primary/30 transition-colors">
-                <svg class="w-12 h-12 mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-                    <linearGradient id="SVGtryZab8W" x1="70.252" x2="170.659" y1="1237.476" y2="1151.089" gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)" gradientUnits="userSpaceOnUse">
-                        <stop offset="0" stop-color="#5a9fd4"/>
-                        <stop offset="1" stop-color="#306998"/>
-                    </linearGradient>
-                    <linearGradient id="SVGe9yX9dAA" x1="209.474" x2="173.62" y1="1098.811" y2="1149.537" gradientTransform="matrix(.563 0 0 -.568 -29.215 707.817)" gradientUnits="userSpaceOnUse">
-                        <stop offset="0" stop-color="#ffd43b"/>
-                        <stop offset="1" stop-color="#ffe873"/>
-                    </linearGradient>
-                    <path fill="url(#SVGtryZab8W)" d="M63.391 1.988c-4.222.02-8.252.379-11.8 1.007c-10.45 1.846-12.346 5.71-12.346 12.837v9.411h24.693v3.137H29.977c-7.176 0-13.46 4.313-15.426 12.521c-2.268 9.405-2.368 15.275 0 25.096c1.755 7.311 5.947 12.519 13.124 12.519h8.491V67.234c0-8.151 7.051-15.34 15.426-15.34h24.665c6.866 0 12.346-5.654 12.346-12.548V15.833c0-6.693-5.646-11.72-12.346-12.837c-4.244-.706-8.645-1.027-12.866-1.008M50.037 9.557c2.55 0 4.634 2.117 4.634 4.721c0 2.593-2.083 4.69-4.634 4.69c-2.56 0-4.633-2.097-4.633-4.69c-.001-2.604 2.073-4.721 4.633-4.721" transform="translate(0 10.26)"/>
-                    <path fill="url(#SVGe9yX9dAA)" d="M91.682 28.38v10.966c0 8.5-7.208 15.655-15.426 15.655H51.591c-6.756 0-12.346 5.783-12.346 12.549v23.515c0 6.691 5.818 10.628 12.346 12.547c7.816 2.297 15.312 2.713 24.665 0c6.216-1.801 12.346-5.423 12.346-12.547v-9.412H63.938v-3.138h37.012c7.176 0 9.852-5.005 12.348-12.519c2.578-7.735 2.467-15.174 0-25.096c-1.774-7.145-5.161-12.521-12.348-12.521h-9.268zM77.809 87.927c2.561 0 4.634 2.097 4.634 4.692c0 2.602-2.074 4.719-4.634 4.719c-2.55 0-4.633-2.117-4.633-4.719c0-2.595 2.083-4.692 4.633-4.692" transform="translate(0 10.26)"/>
-                    <radialGradient id="SVGda693d3X" cx="1825.678" cy="444.45" r="26.743" gradientTransform="matrix(0 -.24 -1.055 0 532.979 557.576)" gradientUnits="userSpaceOnUse">
-                        <stop offset="0" stop-color="#b8b8b8" stop-opacity=".498"/>
-                        <stop offset="1" stop-color="#7f7f7f" stop-opacity="0"/>
-                    </radialGradient>
-                    <path fill="url(#SVGda693d3X)" d="M97.309 119.597c0 3.543-14.816 6.416-33.091 6.416c-18.276 0-33.092-2.873-33.092-6.416s14.815-6.417 33.092-6.417c18.275 0 33.091 2.872 33.091 6.417" opacity=".444"/>
-                </svg>
-                <span class="text-xs text-text-muted font-black tracking-widest uppercase">Python / Pandas</span>
-            </div>
-
-            <div class="glass-panel px-6 py-5 flex flex-col items-center justify-center w-[150px] hover:border-primary/30 transition-colors">
-                <svg class="w-12 h-12 mb-2 text-[#CC1E4A]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-                    <path fill="currentColor" d="M125 80.5c-1.7 0-3.1 1.3-3.1 3s1.3 3 3.1 3c1.7 0 3-1.3 3-3s-1.3-3-3-3m-.1.5c1.4 0 2.4 1.1 2.4 2.5s-1 2.5-2.3 2.5c-1.4 0-2.4-1.1-2.4-2.5s.9-2.4 2.3-2.5m-1 .8v3.4h.6v-1.5h.6l.9 1.5h.6l-.9-1.6c.6 0 .8-.4.8-.9q0-.9-1.2-.9zm.5 1.5v-1.1h.7c.5 0 .7.2.7.6s-.3.6-.6.6zM31.3 93.7c-1.6-1.2-3.5-2.2-6.1-3c-3.3-1.1-8.1-2.2-10-2.9c-1.2-.5-1.7-1.2-1.7-2.2c0-1.4 1.7-2.2 3.7-2.3c3.3.1 4.3 2 4.5 3.3h9.6zm12 8.9h7.1c6.2-.1 11.2-3.2 13.7-7.7c.2-.4.4-.7.6-1.1c.4.5.7.7 1.1 1.1c1.7 1.5 3.9 2.6 6.2 3.3c3.7 1.3 6.6 2.2 7.6 2.6c1.9.8 3.1 1.4 3.1 3.1c0 2-2.2 2.8-4.5 2.9c-3.1-.1-6.2-1.6-6.1-4.7H60c.6 8.1 8.6 14.4 18 14.5c5.7-.1 11-1.7 14.4-5.8c3.4 3.5 7.4 5.7 13 5.8c8.9-.1 18.1-4.5 18.2-13.9c0-3-.8-5.6-2.7-7.8c-1.7-2-4.1-3.3-7.4-4.2c-3.3-1.1-8.1-2.2-10-2.9c-1.2-.5-1.7-1.2-1.7-2.2c0-1.4 1.7-2.2 3.7-2.3c3.3.1 4.3 2 4.5 3.3h11.6c.1-8-6.6-13.3-16.1-13.3c-7.1 0-11.9 2.7-14.3 6.6c-2.6-4.1-7.8-6.6-14.3-6.6c-6.8 0-11.5 2.6-14 6.3c-2.8-3.6-7.4-5.9-13-5.9H31.3v6.1c-2.6-4.1-7.8-6.5-14.2-6.5c-9.9 0-15.3 5.5-15.8 11.8c0 3.9 1.9 7.4 4.8 9.9q2.55 2.25 6 3.3c3.7 1.3 6.6 2.2 7.6 2.6c1.9.8 3.1 1.4 3.1 3.1c0 2-2.3 2.8-4.5 2.9c-3.1-.1-6.2-1.6-6.1-4.7H-.1c.6 8.1 8.6 14.4 18 14.5c5.2-.1 10-1.5 13.2-4.5v3.8h12zm0-18.9h6.5c2.4 0 4.5 2 4.5 4.5s-2 4.5-4.5 4.5h-6.5zM92.5 95c-1.7-2-4.1-3.3-7.4-4.2c-3.3-1.1-8.1-2.2-9.9-2.9c-1.3-.5-1.9-1.2-1.9-2.2c0-1.4 1.7-2.2 3.7-2.3c3.4.1 4.3 2 4.5 3.3h8.2c.5 3.2 2.1 6.1 4.7 8.3c1.7 1.5 3.8 2.6 6.1 3.3c3.7 1.3 6.6 2.2 7.5 2.6c2 .8 3.1 1.4 3.1 3.1c0 2-2.3 2.8-4.5 2.9c-3.1-.1-6.2-1.6-6.1-4.7H95c0-2.9-.9-5.3-2.5-7.2M.1 11.2v3.5H25v-3.5zm28.3 0v3.5H64s-3.6-3.5-8.4-3.5zm42.6 0v3.5h21.5l-1.3-3.5zm36.9 0l-1.3 3.5h21.3v-3.5zM.1 18v3.5H25V18zm28.3 0v3.5H68s-.5-2.7-1.3-3.5zM71 18v3.5h23.8L93.6 18zm34.3 0l-1.2 3.5h23.7V18zm-98 6.8v3.5H18v-3.5zm28.3 0v3.5h10.8v-3.5zm21.4 0v3.5h10.8s.7-1.9.7-3.5zm21.2 0v3.5h19.1L96 24.8zm24.8 0l-1.3 3.5h19.2v-3.5zM7.3 31.7v3.5H18v-3.5zm28.3 0v3.5h27.6s2.3-1.8 3-3.5zm42.6 0v3.5H89v-1.9l.7 1.9h19.8l.7-1.9v1.9H121v-3.5h-20.3l-1.1 3l-1.1-3zM7.3 38.5V42H18v-3.5zm28.3 0V42h30.6c-.7-1.7-3-3.5-3-3.5zm42.6 0V42H89v-3.5zm12.7 0l1.3 3.5H107l1.2-3.5zm19.3 0V42H121v-3.5zM7.3 45.3v3.5H18v-3.5zm28.3 0v3.5h10.8v-3.5zm21.4 0v3.5h11.5c0-1.7-.7-3.5-.7-3.5zm21.2 0v3.5H89v-3.5zm15.2 0l1.3 3.5h9.9l1.3-3.5zm16.8 0v3.5H121v-3.5zM.3 52.1v3.5h24.9v-3.5zm28.1 0v3.5h38.4c.8-.8 1.3-3.5 1.3-3.5zm42.8 0v3.5H89v-3.5zm24.6 0l1.3 3.5h5.1l1.2-3.5zm14.4 0v3.5h17.9v-3.5zM.3 58.9v3.5h24.9v-3.5zm28.1 0v3.5h27.1c4.8 0 8.4-3.5 8.4-3.5zm42.8 0v3.5H89v-3.5zm27.1 0l1.3 3.5h.2l1.3-3.5zm11.9 0v3.5h17.9v-3.5z"/>
-                </svg>
-                <span class="text-xs text-text-muted font-black tracking-widest uppercase">SPSS / IBM</span>
-            </div>
-
-            <div class="glass-panel px-6 py-5 flex flex-col items-center justify-center w-[150px] hover:border-primary/30 transition-colors">
-                <svg class="w-12 h-12 mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                    <defs>
-                        <linearGradient id="SVGDM0jtdZw" x1="16" x2="16" y1="2" y2="30" gradientUnits="userSpaceOnUse">
-                            <stop offset="0" stop-color="#8aa7c0"/>
-                            <stop offset="1" stop-color="#3c6e8f"/>
-                        </linearGradient>
-                    </defs>
-                    <rect width="28" height="28" x="2" y="2" fill="url(#SVGDM0jtdZw)" rx="1.556" ry="1.556"/>
-                    <path fill="#fff" d="M13.171 6.015h5.756v5.756h-5.756zm7.155 0h5.756v5.756h-5.756zm0 7.156h5.756v5.756h-5.756zm-7.155 0h5.756v5.756h-5.756zm-7.156 0h5.756v5.756H6.015zm0 7.155h5.756v5.756H6.015zm7.156 0h5.756v5.756h-5.756z"/>
-                </svg>
-                <span class="text-xs text-text-muted font-black tracking-widest uppercase">Stata / Corp</span>
-            </div>
-        </div>
-    </div>
-</section>
-
+    </section>
 </Layout>

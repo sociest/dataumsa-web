@@ -45,3 +45,6 @@ Thumbs.db
 .claude/
 .cursor/
 skills-lock.json
+
+# Internal design guidelines
+DESIGN*.md

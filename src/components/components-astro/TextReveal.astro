@@ -1,16 +1,27 @@
 ---
 interface Props {
-  variant?: 'light' | 'dark';
-  class?: string;
-  delay?: string;
+    variant?: "light" | "dark" | "cyan" | "violet";
+    class?: string;
+    delay?: string;
 }
 
-const { variant = 'dark', class: className = '', delay } = Astro.props;
+const { variant = "light", class: className = "", delay } = Astro.props;
 
-const variantClass = variant === 'light' ? 'text-reveal-light' : 'text-reveal-dark';
-const style = delay ? `animation-delay: ${delay};` : '';
+// Bento Pop-Art sticker text highlight
+const variantClasses = {
+    light: "text-reveal-light bg-primary-light text-ink border-[1.5px] border-ink rounded-lg px-2 py-0.5",
+    dark: "text-reveal-dark bg-midnight-surface text-white border-[1.5px] border-ink rounded-lg px-2 py-0.5",
+    cyan: "bg-primary text-ink border-[1.5px] border-ink rounded-lg px-2 py-0.5",
+    violet: "bg-accent-light text-accent-dark border-[1.5px] border-ink rounded-lg px-2 py-0.5",
+};
+
+const selectedClass = variantClasses[variant] || variantClasses.light;
+const style = delay ? `animation-delay: ${delay};` : "";
 ---
 
-<span class={`${variantClass} ${className}`} style={style}>
-  <slot />
+<span
+    class={`relative inline-block font-inherit transition-transform duration-200 hover:-translate-y-0.5 select-none ${selectedClass} ${className}`}
+    style={style}
+>
+    <slot />
 </span>

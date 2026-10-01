@@ -1,63 +1,71 @@
 ---
-// Componente de Botón / Enlace Reutilizable para DataUMSA
+// Componente de Botón / Enlace Reutilizable para DATAUMSA (Adaptado a Bento)
 interface Props {
-  href?: string;
-  variant?: 'primary' | 'secondary' | 'bento-primary' | 'bento-secondary';
-  text?: string;
-  target?: string;
-  rel?: string;
-  class?: string;
-  [key: string]: any;
+    href?: string;
+    variant?:
+        | "primary"
+        | "secondary"
+        | "bento-primary"
+        | "bento-secondary"
+        | "white"
+        | "ghost";
+    text?: string;
+    target?: string;
+    rel?: string;
+    class?: string;
+    [key: string]: any;
 }
 
 const {
-  href,
-  variant = 'primary',
-  text,
-  target,
-  rel,
-  class: className = '',
-  ...rest
+    href,
+    variant = "primary",
+    text,
+    target,
+    rel,
+    class: className = "",
+    ...rest
 } = Astro.props;
 
 // Clases base para alineación y comportamiento con foco accesible para navegación por teclado
-const baseClasses = "inline-flex items-center justify-center gap-2 transition-all duration-300 font-sans cursor-pointer focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none select-none decoration-none";
+const baseClasses =
+    "inline-flex items-center justify-center gap-2 font-bold font-sans cursor-pointer focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none select-none transition-transform duration-150 active:translate-y-0.5 no-underline";
 
 // Mapeo de variantes con sus respectivas clases de Tailwind v4 / global.css tokens
 const variantStyles = {
-  primary: "btn btn-primary",
-  secondary: "btn btn-secondary",
-  "bento-primary": "bg-primary hover:bg-primary/95 text-bg-dark font-bold py-4 px-8 rounded-2xl hover:-translate-y-1 active:translate-y-0.5 active:scale-95 shadow-[0_8px_0_0_var(--color-primary-dark)] hover:shadow-[0_4px_0_0_var(--color-primary-dark)] active:shadow-none",
-  "bento-secondary": "bg-bg-dark-surface hover:bg-bg-dark-surface/80 text-white font-bold py-4 px-8 rounded-2xl border border-border-dark hover:border-border-dark-hover hover:-translate-y-0.5 active:translate-y-0"
+    primary: "btn btn-primary",
+    secondary: "btn btn-secondary",
+    white: "btn btn-white",
+    ghost: "btn btn-ghost",
+    // Bento Primary: Cyan fill #29b9f2, ink text #0f172a, 9999px pill radius, 2.5px solid #0f172a border, no shadow
+    "bento-primary": "btn btn-primary",
+    // Bento Secondary: White plate inverted CTA with 2.5px solid #0f172a border, no shadow
+    "bento-secondary": "btn btn-white",
 };
 
 const variantClasses = variantStyles[variant] || variantStyles.primary;
 
-// Si target es _blank y no se especificó rel, agregamos noopener noreferrer por seguridad contra reverse tabnabbing (XSS/Redirect)
+// Si target es _blank y no se especificó rel, agregamos noopener noreferrer por seguridad
 const finalRel = target === "_blank" && !rel ? "noopener noreferrer" : rel;
 ---
 
 {href ? (
-  <a
-    href={href}
-    target={target}
-    rel={finalRel}
-    class:list={[baseClasses, variantClasses, className]}
-    {...rest}
-  >
-    <slot name="left" />
-    {text && <span>{text}</span>}
-    <slot />
-    <slot name="right" />
-  </a>
+    <a
+        href={href}
+        target={target}
+        rel={finalRel}
+        class:list={[baseClasses, variantClasses, className]}
+        {...rest}
+    >
+        <slot name="left" />
+        {text && <span>{text}</span>}
+        <slot />
+        <slot name="right" />
+    </a>
 ) : (
-  <button
-    class:list={[baseClasses, variantClasses, className]}
-    {...rest}
-  >
-    <slot name="left" />
-    {text && <span>{text}</span>}
-    <slot />
-    <slot name="right" />
-  </button>
+    <button class:list={[baseClasses, variantClasses, className]} {...rest}>
+        <slot name="left" />
+        {text && <span>{text}</span>}
+        <slot />
+        <slot name="right" />
+    </button>
 )}

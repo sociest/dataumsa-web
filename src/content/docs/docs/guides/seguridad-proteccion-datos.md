@@ -5,13 +5,13 @@ description: Arquitectura de seguridad, soberanía institucional y protocolos é
 
 En proyectos de investigación académica, proyectos de extensión social y levantamientos administrativos, la confidencialidad de los participantes y el resguardo de la información son principios inviolables.
 
-La infraestructura de **DataUMSA** ha sido diseñada para garantizar soberanía tecnológica, control de acceso por roles y cumplimiento de estándares de ciberseguridad.
+La infraestructura de **DATAUMSA** ha sido diseñada para garantizar soberanía tecnológica, control de acceso por roles y cumplimiento de estándares de ciberseguridad.
 
 ---
 
 ## Soberanía Institucional de la Información
 
-A diferencia de soluciones comerciales privadas donde los datos suelen residir en servidores internacionales bajo legislaciones foráneas, DataUMSA garantiza la gobernanza universitaria:
+A diferencia de soluciones comerciales privadas donde los datos suelen residir en servidores internacionales bajo legislaciones foráneas, DATAUMSA garantiza la gobernanza universitaria:
 
 * **Gestión Local:** Los servidores y almacenes de datos están desplegados bajo la infraestructura de la Universidad Mayor de San Andrés, resguardando la información bajo la legislación y normativa nacional.
 * **Sin comercialización de información:** Los datos recopilados en los formularios jamás son cedidos, indexados, vendidos ni utilizados para entrenamiento de modelos de terceros.
@@ -23,7 +23,7 @@ A diferencia de soluciones comerciales privadas donde los datos suelen residir e
 
 Desde que el encuestador recopila la información en un dispositivo móvil hasta su almacenamiento final en base de datos:
 
-1. **Cifrado en tránsito (HTTPS/TLS):** Toda la comunicación entre navegadores, la aplicación DataUMSA Collect y los servidores centrales se realiza mediante túneles cifrados SSL/TLS con algoritmos modernos.
+1. **Cifrado en tránsito (HTTPS/TLS):** Toda la comunicación entre navegadores, la aplicación DATAUMSA Collect y los servidores centrales se realiza mediante túneles cifrados SSL/TLS con algoritmos modernos.
 2. **Almacenamiento temporal en dispositivos:** Cuando un encuestador trabaja sin conexión (offline) en áreas rurales o periféricas, los registros se almacenan de manera local y encriptada en el teléfono hasta que se detecta conectividad para su sincronización segura.
 3. **Control de Acceso Basado en Roles (RBAC):** El acceso a los proyectos se gestiona mediante credenciales institucionales. El administrador del proyecto puede asignar permisos granulares (sólo llenado, visualización de datos, edición de cuestionarios o administración total).
 
